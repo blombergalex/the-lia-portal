@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 300px;
+    background-color: darkseagreen;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+footer {
+    height: 60px;
+    background-color: darkseagreen;
+}
+
