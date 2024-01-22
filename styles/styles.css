@@ -23,7 +23,7 @@ header {
 }
 
 .hero-img {
-    background-image:linear-gradient(to right, rgba(106, 158, 123, 0.7) 0%, rgba(0, 128, 128, 0) 100%), url(/images/hero-mobile.jpg);
+    background-image:linear-gradient(to right, rgba(106, 158, 123, 0.7) 0%, rgba(0, 128, 128, 0) 100%), url(../images/hero-mobile.jpg);
     background-size: cover;
     height: 300px;
 }
@@ -46,7 +46,7 @@ footer {
 @media screen and (min-width: 769px) {
     
     .hero-img {
-        background-image:linear-gradient(to right, rgba(106, 158, 123, 0.7) 0%, rgba(0, 128, 128, 0) 100%), url(/images/hero-desktop.jpg);
+        background-image:linear-gradient(to right, rgba(106, 158, 123, 0.7) 0%, rgba(0, 128, 128, 0) 100%), url(../images/hero-desktop.jpg);
         background-size: cover;
         height: 400px;
     }
