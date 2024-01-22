@@ -11,7 +11,7 @@
     justify-content: center;
 }
 
-.profile-card {
+.profile-small {
     background-color: var(--main-greenish);
     width: 220px;
     aspect-ratio: 3/4;
@@ -20,7 +20,19 @@
     margin: 24px;
 }
 
-.profile-card > img {
+.profile-small > img {
     border: 0.5px solid var(--dark-color);
     border-radius: 50%;
+}
+
+.profile-small .name {
+    text-transform: capitalize;
+} 
+
+.profile-large {
+    width: 220px;
+    aspect-ratio: 3/4;
+    text-align: center;
+    padding: 16px;
+    margin: 24px;
 }
