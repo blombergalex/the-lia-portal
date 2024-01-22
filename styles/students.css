@@ -5,13 +5,15 @@
 
 .main-content {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: scroll;
+    width: 100%;
     justify-content: center;
 }
 
 .profile-card {
     background-color: var(--main-greenish);
-    width: 80%;
+    width: 220px;
     aspect-ratio: 3/4;
     text-align: center;
     padding: 16px;
