@@ -1,0 +1,13 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+  <style type="text/css">
+    .st0{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
+    .st1{display:none;}
+  </style>
+  <g id="Layer_1">
+    <line class="st0" x1="10" y1="10" x2="38" y2="38"/>
+    <line class="st0" x1="38" y1="10" x2="10" y2="38"/>
+  </g>
+  <g id="Layer_2" class="st1">
+  </g>
+</svg>

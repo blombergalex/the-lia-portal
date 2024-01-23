@@ -6,6 +6,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -19,15 +21,129 @@ body {
     flex-direction: column;
 }
 
+nav {
+    background-color: var(--main-greenish);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;  
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav a:hover {
+    background-color: var(--dark-color);
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav .sidebar li:first-child {
+    justify-content: flex-end;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(106, 158, 123, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+.viewOnDesktop {
+    display: none;
+}
+
+.menubutton a img, .closebutton a img {
+    height: 26px; 
+}
+
+.logo {
+    height: 48px;
+}
+
+
+
+
+
 .hero-img {
     background-image:linear-gradient(to right, rgba(106, 158, 123, 0.7) 0%, rgba(0, 128, 128, 0) 100%), url(../images/hero-mobile.jpg);
     background-size: cover;
     height: 300px;
+    justify-content: flex-end;
+    display: flex;
+}
+
+
+
+/* #menuToggle {
+    display: none;
+}
+
+#menuToggle:checked ~ .nav-menu {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.mobile-menu__trigger {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    padding: 10px;
+    background-image: url('../images/burgermenu.svg');
+    background-size: cover;
+    width: 30px; 
+    height: 30px; 
+    top: 10px;
+    left: 10px;
+    z-index:40;
 }
 
 .logo {
-    padding: 24px;
+
 }
+
+.nav-menu {
+    display: flex;
+    background-color: rgba(106, 158, 123, .8);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    z-index:30;
+}*/
 
 h1 {
     display: none;
@@ -43,6 +159,11 @@ footer {
 }
 
 
+@media(max-width: 400px){
+    .sidebar {
+        width: 100%;
+    }
+}
 
 @media screen and (min-width: 769px) {
     
@@ -50,6 +171,14 @@ footer {
         background-image:linear-gradient(to right, rgba(106, 158, 123, 0.7) 0%, rgba(0, 128, 128, 0) 100%), url(../images/hero-desktop.jpg);
         background-size: cover;
         height: 400px;
+    }
+
+    .menubutton {
+        display: none;
+    }
+
+    .viewOnDesktop {
+        display: flex;
     }
 
 }
