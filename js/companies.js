@@ -144,11 +144,13 @@ $(() => {
 
     $(companyArray).each((index, company) => company.createCompany());
 
-    $(".company-card, .card-image, .card-h3, .card-h4").on("click", e => {
-        let company = $(e.target).find("h3").text();
+    $(".company-card").on("click", e => {
+        let company = $(e.target).closest(".company-card").find("h3").text();
+        console.log(e.target);
         popup(company);
         $(".popup").toggle();
         $(".overlay").toggle();
+        $("html, body").animate({ scrollTop: 330 }, "slow");
     })
 
     $(".main-content").on("click", ".cancel-btn", () => {
