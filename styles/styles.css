@@ -23,6 +23,10 @@ body {
     height: 300px;
 }
 
+.logo {
+    padding: 24px;
+}
+
 h1 {
     display: none;
 }
