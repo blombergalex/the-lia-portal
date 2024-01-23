@@ -46,6 +46,10 @@
     margin: 24px;
 }
 
+.blur {
+    filter: blur(2px);
+}
+
 #cancel-btn {
     align-self: flex-end;
     background-color: transparent;

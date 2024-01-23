@@ -42,15 +42,16 @@ $(() => {
     $(studentArray).each((index, student) => student.createProfileSmall(index));
    
 
-    $(".profile-small").on("click", function() { // using reg function because $(this) attr not treated the same way in arrow functions
+    $(".profile-small").on("click", function() { 
         let index = $(this).data("index");
-        $(".profile-small").css("filter", "blur(2px)");
+        $(".profile-small").addClass("blur");
         studentArray[index].createProfileLarge();
     });
 
-    $("#cancel-btn").on("click", () => {
+    $(".main-content").on("click", "#cancel-btn", () => {
         console.log("cancel clicked")
-    //     $(".profile-large").toggle();
+        $(".profile-large").toggle();
+        $(".profile-small").removeClass("blur");
     })
 
 });
