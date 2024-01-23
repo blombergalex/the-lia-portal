@@ -43,8 +43,7 @@ $(() => {
 
     $(".profile-small").on("click", () => {
         console.log("profile card clicked");
-        $(".profile-large").toggleClass("hidden");
-        
+        $(".profile-large").toggle();
     });
 
   
