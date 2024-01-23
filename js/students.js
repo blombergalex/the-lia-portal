@@ -8,7 +8,7 @@ $(() => {
         this.createProfileSmall = function (index) {
             $(".main-content").append(`
                     <div class="${this.name} profile-small" data-index="${index}">
-                        <img class="profile-img" src="../images/${this.name}.png" height=100px width=100px alt="image of ${this.name}"></img>
+                        <img class="profile-img" src="images/${this.name}.png" height=100px width=100px alt="image of ${this.name}"></img>
                         <h3 class="name">${this.name}</h3>
                         <h4>${this.title}</h4>
                         <p>${this.description}</p>
