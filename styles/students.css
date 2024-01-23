@@ -32,11 +32,22 @@
 } 
 
 .profile-large {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 330px;
+    z-index: 100;
     background-color: var(--shadow-color);
     border-radius: 5px;
     width: 260px;
     aspect-ratio: 2/5;
-    text-align: center;
     padding: 16px;
     margin: 24px;
+}
+
+#cancel-btn {
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;   
 }
