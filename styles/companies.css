@@ -1,6 +1,11 @@
 :root {
     --main-greenish: rgb(106, 158, 123);
+    --hover-greenish: rgb(156, 186, 166);
     --dark-color: rgb(57, 63, 59);
+}
+
+body {
+    position: relative;;
 }
 
 .main-content {
@@ -11,18 +16,74 @@
     justify-content: center;
 }
 
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+    display: none;
+}
+
+.popup {
+    position: absolute;
+    top: 100px;
+    width: 85%;
+    /* height: 1000px; */
+    padding: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    background-color: var(--hover-greenish);
+    border-radius: 15px;
+    z-index: 2;
+    text-align: center;
+    /* display: none; */
+}
+
+.popup-image {
+    width: 40%;
+    border-radius: 20%;
+}
+
+.popup > h2 {
+    font-size: 2rem;
+}
+
+span {
+    font-weight: bold;
+}
+
 .company-card {
     background-color: var(--main-greenish);
-    width: 220px;
+    width: 80%;
     text-align: center;
     padding: 16px;
-    margin: 40px;
+    margin: 30px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     border-radius: 5px;
+    transition: 100ms;
+    cursor: pointer;
 }   
+
+
 
 .company-card > img {
     border: 0.5px solid var(--dark-color);
     border-radius: 20%;
     background-color: white;
+}
+
+
+@media screen and (min-width: 769px) {
+
+    .company-card {
+        width: 220px;
+        margin: 40px;
+    }   
+
+    .company-card:hover {
+    background-color: var(--hover-greenish);
+    }
+    
 }
