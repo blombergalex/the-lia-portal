@@ -1,5 +1,7 @@
 :root {
     --main-greenish: rgb(106, 158, 123);
+    --dark-color: rgb(57, 63, 59);
+    --shadow-color: rgb(38, 57, 77);
 }
 
 * {
