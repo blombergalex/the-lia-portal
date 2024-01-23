@@ -1,0 +1,26 @@
+:root {
+    --main-greenish: rgb(106, 158, 123);
+    --dark-color: rgb(57, 63, 59);
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    width: 100%;
+    justify-content: center;
+}
+
+.profile-card {
+    background-color: var(--main-greenish);
+    width: 220px;
+    aspect-ratio: 3/4;
+    text-align: center;
+    padding: 16px;
+    margin: 24px;
+}
+
+.profile-card > img {
+    border: 0.5px solid var(--dark-color);
+    border-radius: 50%;
+}
