@@ -32,24 +32,14 @@ $(() => {
         }
     }
 
-    // let mollie = new Student("mollie", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
-    // let hamilton = new Student("hamilton", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
-    // let felix = new Student("felix", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
-    // let lynn = new Student("lynn", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
-   
-    // let studentArray = [mollie, hamilton, felix, lynn];
-
-    //$(studentArray).each((index, student) => student.createProfileSmall());
     studentArray.push(new Student("mollie", "Frontend dev", "Eager to learn in a new team", ["javascript", "HTML", "React", "Node"]));
-    studentArray.push(new Student("hamilton", "Frontend dev", "Eager to learn in a new team", ["HTML", "css", "React", "Node"]));
-    studentArray.push(new Student("felix", "Frontend dev", "Eager to learn in a new team", ["HTML", "css", "React", "Node"]));
-    studentArray.push(new Student("lynn", "Frontend dev", "Eager to learn in a new team", ["HTML", "css", "React", "Node"]));    
-    $(studentArray).each((index, student) => student.createProfileSmall());
+    studentArray.push(new Student("hamilton", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"]));
+    studentArray.push(new Student("felix", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"]));
+    studentArray.push(new Student("lynn", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"]));    
+    $(studentArray).each((index, student) => student.createProfileSmall(index));
 
-    let search_javaScript = studentArray.filter(student => student.skills.includes("css")); 
+    let search_javaScript = studentArray.filter(student => student.skills.includes("CSS")); 
     console.log(search_javaScript);
-   
-    //console.log(studentArray[0].skills)
 
     $(".profile-small").on("click", function() { 
         let index = $(this).data("index");
