@@ -150,6 +150,7 @@ $(() => {
         popup(company);
         $(".popup").toggle();
         $(".overlay").toggle();
+        $("html, body").animate({ scrollTop: 330 }, "slow");
     })
 
     $(".main-content").on("click", ".cancel-btn", () => {
