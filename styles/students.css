@@ -11,6 +11,7 @@
     overflow: scroll;
     width: 100%;
     justify-content: center;
+    position: relative;
 }
 
 .profile-small {
@@ -42,11 +43,11 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 330px;
+    top: 20px;
     width: 260px;
     aspect-ratio: 2/5;
     padding: 16px;
-    margin: 24px;
+    margin: 20px;
     z-index: 100;
 }
 
@@ -70,7 +71,7 @@
 @media screen and (min-width: 769px) {
 
     .profile-large {
-        top: 424px;
+        /* top: 424px; */
         aspect-ratio: 4/3;
         width: 70%;
     }

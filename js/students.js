@@ -49,11 +49,10 @@ $(() => {
         studentArray[index].createProfileLarge();
     });
 
-    $(".main-content").on("click", "#cancel-btn", (event) => {
+    $(".main-content").on("click", "#cancel-btn", () => {
         $(".profile-large").hide();
         $(".profile-small").removeClass("blur");
         $(".main-content").removeClass("dark-blur");
-        event.stopPropagation();
     })
 
-});
+});2
