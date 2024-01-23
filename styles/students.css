@@ -33,6 +33,7 @@
 
 .profile-large {
     background-color: var(--shadow-color);
+    border-radius: 5px;
     width: 260px;
     aspect-ratio: 2/5;
     text-align: center;

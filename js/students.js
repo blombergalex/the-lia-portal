@@ -5,9 +5,9 @@ $(() => {
         this.title = title,
         this.description = description,
         this.skills = skills,
-        this.createProfileSmall = function () {
+        this.createProfileSmall = function (index) {
             $(".main-content").append(`
-                    <div class="profile-small">
+                    <div class="${this.name} profile-small" data-index="${index}">
                         <img class="profile-img" src="../images/${this.name}.png" height=100px width=100px alt="image of ${this.name}"></img>
                         <h3 class="name">${this.name}</h3>
                         <h4>${this.title}</h4>
@@ -38,13 +38,13 @@ $(() => {
    
     let studentArray = [mollie, hamilton, felix, lynn];
 
-    $(studentArray).each((index, student) => student.createProfileSmall());
-    $(studentArray).each((index, student) => student.createProfileLarge());
+    $(studentArray).each((index, student) => student.createProfileSmall(index));
+   
 
-    $(".profile-small").on("click", () => {
-        console.log("profile card clicked");
-        // $(".profile-large").toggle();
+    $(".profile-small").on("click", function() { // using reg function because $(this) attr not treated the same way in arrow functions
+        let index = $(this).data("index");
         $(".profile-small").css("filter", "blur(2px)");
+        studentArray[index].createProfileLarge();
     });
 
   
