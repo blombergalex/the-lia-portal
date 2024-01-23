@@ -50,7 +50,6 @@ $(() => {
     });
 
     $(".main-content").on("click", "#cancel-btn", (event) => {
-        console.log("cancel clicked")
         $(".profile-large").hide();
         $(".profile-small").removeClass("blur");
         $(".main-content").removeClass("dark-blur");
