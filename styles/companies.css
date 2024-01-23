@@ -42,9 +42,14 @@ body {
     display: none;
 }
 
-/* .hidden {
-    display: none;
-} */
+.cancel-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: none;
+    background-color: var(--hover-greenish);
+}
 
 .popup-image {
     width: 40%;
@@ -89,6 +94,14 @@ span {
 
     .company-card:hover {
     background-color: var(--hover-greenish);
+    }
+    
+}
+
+@media screen and (min-width: 1025px) {
+
+    .popup-image {
+        width: 25%;
     }
     
 }
