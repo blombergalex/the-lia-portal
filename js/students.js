@@ -1,5 +1,5 @@
 $(() => {
-
+    let students = [];
     function Student(name, title, description, skills) {
         this.name = name,
         this.title = title,
@@ -19,13 +19,10 @@ $(() => {
         }
     }
 
-    let mollie = new Student("Mollie", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
-    let hamilton = new Student("Hamilton", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
-    let felix = new Student("Felix", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
-    let lynn = new Student("Lynn", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
-   
-    let studentArray = [mollie, hamilton, felix, lynn];
+    students.push(new Student("Mollie", "Frontend dev", "Eager to learn in a new team", ["javaScript", "HTML", "React", "Node"]))
 
-    $(studentArray).each((index, student) => student.createStudent());
+    $(students).each((index, student) => student.createStudent());
     
+    let search_javaScript = students.find(student => student.skills.includes("javascript"))
+    console.log(search_javaScript);
 });
