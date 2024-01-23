@@ -22,7 +22,7 @@ $(() => {
                     <div class="${this.name} profile-large">
                         <button id="cancel-btn">&#10006;</button> 
                         <img class="profile-img" src="../images/${this.name}.png" height=100px width=100px alt="image of ${this.name}"></img>
-                        <h3>${this.name}</h3>
+                        <h3 class="name">${this.name}</h3>
                         <h4>${this.title}</h4>
                         <p>${this.description}</p>
                         <p class="student-skills">${this.skills}</p>
@@ -32,10 +32,32 @@ $(() => {
         }
     }
 
-    students.push(new Student("Mollie", "Frontend dev", "Eager to learn in a new team", ["javaScript", "HTML", "React", "Node"]))
+    let mollie = new Student("mollie", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
+    let hamilton = new Student("hamilton", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
+    let felix = new Student("felix", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
+    let lynn = new Student("lynn", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
+   
+    let studentArray = [mollie, hamilton, felix, lynn];
 
-    $(students).each((index, student) => student.createStudent());
+    $(studentArray).each((index, student) => student.createProfileSmall(index));
+   
+
+    $(".profile-small").on("click", function() { 
+        let index = $(this).data("index");
+        $(".profile-small").addClass("blur");
+        $(".main-content").addClass("dark-blur");
+        studentArray[index].createProfileLarge();
+    });
+
+    $(".main-content").on("click", "#cancel-btn", (event) => {
+        $(".profile-large").hide();
+        $(".profile-small").removeClass("blur");
+        $(".main-content").removeClass("dark-blur");
+        event.stopPropagation();
+    })
+
+    //$(students).each((index, student) => student.createStudent());
     
-    let search_javaScript = students.find(student => student.skills.includes("javascript"))
-    console.log(search_javaScript);
+    //let search_javaScript = students.find(student => student.skills.includes("javascript"))
+    //console.log(search_javaScript);
 });
