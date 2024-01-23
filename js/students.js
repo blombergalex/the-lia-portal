@@ -1,9 +1,10 @@
 $(() => {
     let studentArray = [];
-    function Student(name, title, description, skills) {
+    function Student(name, title, description, skills, location) {
         this.name = name,
         this.title = title,
         this.description = description,
+        this.location = location,
         this.skills = skills,
         this.createProfileSmall = function (index) {
             $(".main-content").append(`
@@ -13,6 +14,7 @@ $(() => {
                         <h4>${this.title}</h4>
                         <p>${this.description}</p>
                         <p class="student-skills">${this.skills}</p>
+                        <p class="student-location">&#128205; ${this.location}</p>
                     </div>
                 `
             )
@@ -26,16 +28,17 @@ $(() => {
                         <h4>${this.title}</h4>
                         <p>${this.description}</p>
                         <p class="student-skills">${this.skills}</p>
+                        <p class="student-location">&#128205; ${this.location}</p>
                     </div>
                 `
             )
         }
     }
 
-    studentArray.push(new Student("mollie", "Frontend dev", "Eager to learn in a new team", ["javascript", "HTML", "React", "Node"]));
-    studentArray.push(new Student("hamilton", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"]));
-    studentArray.push(new Student("felix", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"]));
-    studentArray.push(new Student("lynn", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"]));    
+    studentArray.push(new Student("mollie", "Frontend dev", "Eager to learn in a new team", ["javascript", "HTML", "React", "Node"], "Gothenburg"));
+    studentArray.push(new Student("hamilton", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"], "Luleå"));
+    studentArray.push(new Student("felix", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"], "Stockholm"));
+    studentArray.push(new Student("lynn", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"], "Jönköping"));    
     $(studentArray).each((index, student) => student.createProfileSmall(index));
 
     let search_javaScript = studentArray.filter(student => student.skills.includes("CSS")); 
