@@ -95,6 +95,10 @@ span {
     .company-card:hover {
     background-color: var(--hover-greenish);
     }
+
+    .popup {
+        width: 70%;
+    }
     
 }
 
@@ -102,6 +106,10 @@ span {
 
     .popup-image {
         width: 25%;
+    }
+
+    .popup {
+        width: 55%;
     }
     
 }
