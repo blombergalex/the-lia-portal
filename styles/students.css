@@ -1,6 +1,7 @@
 :root {
     --main-greenish: rgb(106, 158, 123);
     --dark-color: rgb(57, 63, 59);
+    --shadow-color: rgb(38, 57, 77);
 }
 
 .main-content {
@@ -13,7 +14,7 @@
 
 .profile-small {
     background-color: var(--main-greenish);
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    box-shadow: var(--shadow-color) 0px 20px 30px -10px;
     border-radius: 5px;
     width: 220px;
     aspect-ratio: 3/4;
