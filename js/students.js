@@ -1,5 +1,5 @@
 $(() => {
-
+    let students = [];
     function Student(name, title, description, skills) {
         this.name = name,
         this.title = title,
@@ -32,26 +32,10 @@ $(() => {
         }
     }
 
-    let mollie = new Student("mollie", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
-    let hamilton = new Student("hamilton", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
-    let felix = new Student("felix", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
-    let lynn = new Student("lynn", "Frontend dev", "Eager to learn in a new team", "HTML, CSS, React, Node") // TEST OBJECT
-   
-    let studentArray = [mollie, hamilton, felix, lynn];
+    students.push(new Student("Mollie", "Frontend dev", "Eager to learn in a new team", ["javaScript", "HTML", "React", "Node"]))
 
-    $(studentArray).each((index, student) => student.createProfileSmall(index));
-   
-
-    $(".profile-small").on("click", function() { 
-        let index = $(this).data("index");
-        $(".profile-small").addClass("blur");
-        studentArray[index].createProfileLarge();
-    });
-
-    $(".main-content").on("click", "#cancel-btn", () => {
-        console.log("cancel clicked")
-        $(".profile-large").toggle();
-        $(".profile-small").removeClass("blur");
-    })
-
+    $(students).each((index, student) => student.createStudent());
+    
+    let search_javaScript = students.find(student => student.skills.includes("javascript"))
+    console.log(search_javaScript);
 });
