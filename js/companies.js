@@ -147,6 +147,8 @@ $(() => {
     $(".company-card, .card-image, .card-h3, .card-h4").on("click", e => {
         let company = $(e.target).find("h3").text();
         popup(company);
+        $(".popup").toggle();
+        $(".overlay").toggle();
     })
 
     const popup = company => {

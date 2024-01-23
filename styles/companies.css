@@ -5,10 +5,11 @@
 }
 
 body {
-    position: relative;;
+
 }
 
 .main-content {
+    position: relative;;
     display: flex;
     flex-wrap: wrap;
     overflow: scroll;
@@ -22,14 +23,14 @@ body {
     width: 100%;
     height: 100%;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.8;
     z-index: 1;
     display: none;
 }
 
 .popup {
     position: absolute;
-    top: 100px;
+    top: 30px;
     width: 85%;
     /* height: 1000px; */
     padding: 20px;
@@ -38,8 +39,12 @@ body {
     border-radius: 15px;
     z-index: 2;
     text-align: center;
-    /* display: none; */
+    display: none;
 }
+
+/* .hidden {
+    display: none;
+} */
 
 .popup-image {
     width: 40%;
