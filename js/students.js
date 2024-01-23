@@ -45,6 +45,8 @@ $(() => {
     $(".profile-small").on("click", function() { 
         let index = $(this).data("index");
         $(".profile-small").addClass("blur");
+        $(".main-content").addClass("dark-blur");
+
         studentArray[index].createProfileLarge();
     });
 
@@ -52,6 +54,7 @@ $(() => {
         console.log("cancel clicked")
         $(".profile-large").toggle();
         $(".profile-small").removeClass("blur");
+        $(".main-content").removeClass("dark-blur");
     })
 
 });

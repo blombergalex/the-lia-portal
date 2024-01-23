@@ -2,6 +2,7 @@
     --main-greenish: rgb(106, 158, 123);
     --dark-color: rgb(57, 63, 59);
     --shadow-color: rgb(38, 57, 77);
+    --hover-greenish: rgb(156, 186, 166);
 }
 
 .main-content {
@@ -33,12 +34,13 @@
 
 .profile-large {
     align-items: center;
+    box-shadow: var(--shadow-color) 0px 20px 30px -10px;
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 330px;
     z-index: 100;
-    background-color: var(--shadow-color);
+    background-color: var(--hover-greenish);
     border-radius: 5px;
     width: 260px;
     aspect-ratio: 2/5;
@@ -47,11 +49,17 @@
 }
 
 .blur {
-    filter: blur(2px);
+    filter: blur(2px) brightness(0.5);
+}
+
+.dark-blur {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 #cancel-btn {
     align-self: flex-end;
     background-color: transparent;
     border: none;   
+    height: 30px;
+    width: 30px;
 }
