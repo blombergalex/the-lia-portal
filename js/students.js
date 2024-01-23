@@ -46,15 +46,15 @@ $(() => {
         let index = $(this).data("index");
         $(".profile-small").addClass("blur");
         $(".main-content").addClass("dark-blur");
-
         studentArray[index].createProfileLarge();
     });
 
-    $(".main-content").on("click", "#cancel-btn", () => {
+    $(".main-content").on("click", "#cancel-btn", (event) => {
         console.log("cancel clicked")
-        $(".profile-large").toggle();
+        $(".profile-large").hide();
         $(".profile-small").removeClass("blur");
         $(".main-content").removeClass("dark-blur");
+        event.stopPropagation();
     })
 
 });
