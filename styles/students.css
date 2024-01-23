@@ -13,11 +13,13 @@
 
 .profile-small {
     background-color: var(--main-greenish);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 5px;
     width: 220px;
     aspect-ratio: 3/4;
     text-align: center;
     padding: 16px;
-    margin: 24px;
+    margin: 40px;
 }
 
 .profile-small > img {
