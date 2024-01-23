@@ -14,9 +14,9 @@ $(() => {
         this.createCompany = function () {
             $(".main-content").append(`
                 <div class="company-card">
-                    <img src="${this.image}" height=100px width=100px alt="image of ${this.name}">
-                    <h3>${this.name}</h3>
-                    <h4>${this.aboutUsShort}</h4>
+                    <img class="card-image" src="${this.image}" height=100px width=100px alt="image of ${this.name}">
+                    <h3 class="card-h3" >${this.name}</h3>
+                    <h4 class="card-h4" >${this.aboutUsShort}</h4>
                 </div>
                 `
             )
@@ -143,5 +143,38 @@ $(() => {
     let companyArray = [google, microsoft, hm, spotify, bcg, epidemicSound, dhl, tradera, nokia]
 
     $(companyArray).each((index, company) => company.createCompany());
+
+    $(".company-card, .card-image, .card-h3, .card-h4").on("click", e => {
+        let company = $(e.target).find("h3").text();
+        popup(company);
+        $(".popup").toggle();
+        $(".overlay").toggle();
+    })
+
+    $(".main-content").on("click", ".cancel-btn", () => {
+        $(".popup").toggle();
+        $(".overlay").toggle();
+    })
+
+    const popup = company => {
+        $(companyArray).each((index, y) => {
+            if (y.name === company) {
+                $(".popup").empty().append(
+                    `
+                    <button class="cancel-btn">&#10006;</button>
+                    <img class="popup-image" src="${y.image}">
+                    <h2>${y.name}</h2>
+                    <p><span>Office:</span> ${y.location}</p>
+                    <p>${y.number}</p>
+                    <p>${y.email}</p>
+                    <a href="${y.website}">${y.website}</a>
+                    <p><span>About Us:</span> ${y.aboutUs}</p>
+                    <p><span>What to expect:</span> ${y.weCanOffer}</p>
+                    <p><span>Required skills:</span> ${y.requiredSkills}</p>
+                    `
+                )
+            }
+        })
+    }
 
 });
