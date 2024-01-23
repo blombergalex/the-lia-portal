@@ -23,6 +23,7 @@
     padding: 16px;
     margin: 40px;
     z-index:1;
+    position: relative;
 }
 
 .profile-img {
@@ -71,7 +72,6 @@
 @media screen and (min-width: 769px) {
 
     .profile-large {
-        /* top: 424px; */
         aspect-ratio: 4/3;
         width: 70%;
     }
