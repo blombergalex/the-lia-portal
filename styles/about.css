@@ -24,14 +24,12 @@ body {
     cursor: pointer;
 }
 
-.sidebar-coder:hover {
-    background-color: var(--main-greenish);
-}
 
 .about-me {
     padding: 24px;
     width: 75%;
     text-align: center;
+    display: none;
 }
 
 span {
@@ -59,6 +57,10 @@ span {
     padding: 24px;
     width: 75%;
     max-width: 1000px;
+}
+
+.hidden {
+    display: none;
 }
 
 .joke {
@@ -95,6 +97,10 @@ span {
 
     .about-welcome {
         margin-left: 8%; 
+    }
+
+    .sidebar-coder:hover {
+        background-color: var(--main-greenish);
     }
     
 }

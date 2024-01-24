@@ -8,7 +8,8 @@ $(() => {
         this.pet = pet,
         this.about = about,
         this.createAbout = function () {
-            $(".main-content").append(`
+            $(".about-container").append(`
+                
                 <div class="about-me">
                     <img class="coder-image" src="${this.image}" height=100px width=100px alt="image of ${this.name}">
                     <h2>${this.name}</h2>
@@ -17,6 +18,7 @@ $(() => {
                     <p><span>Favourite Animal: </span>${this.pet}</p>
                     <p>${this.about}</p>
                 </div>
+                
                 `
             )
         }
@@ -28,7 +30,7 @@ $(() => {
         "darius@kaya.com",
         "Good food",
         "Rhino",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corrupti incidunt voluptas magni voluptatem eum, accusantium suscipit fuga sequi laborum minima voluptates maiores sit at sed dolorem temporibus necessitatibus unde deleniti corporis. Nam voluptatibus consequuntur quasi magni error nostrum illo incidunt. Itaque ipsa ab blanditiis. Eius itaque similique mollitia dolorem voluptate dolore animi inventore consequuntur? Tempore laboriosam dolorem porro quis dolore beatae deserunt saepe nobis? Nemo deserunt nisi adipisci quia quae obcaecati numquam quas qui, assumenda fuga temporibus. Tempore ab quis doloremque sit, quo eius similique dolore nemo facilis voluptas voluptatibus quos recusandae adipisci corporis ratione maiores saepe atque optio."
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corrupti incidunt voluptas magni voluptatem eum, accusantium suscipit fuga sequi laborum minima voluptates maiores sit at sed dolorem temporibus necessitatibus unde deleniti corporis. Nam voluptatibus consequuntur quasi magni error nostrum illo incidunt. Itaque ipsa ab blanditiis. Eius itaque similique mollitia dolorem voluptate dolore animi inventore consequuntur? Tempore laboriosam dolorem porro quis dolore beatae deserunt saepe nobis? Nemo deserunt nisi adipisci quia quae obcaecati numquam quas qui, assumenda fuga temporibus."
     );
 
     let shada = new Coder(
@@ -60,7 +62,7 @@ $(() => {
 
     let alex = new Coder(
         "./images/otter.png",
-        "Alexandra Blomberg",
+        "Alex Blomberg",
         "blombergalexandras@gmail.com",
         "Sushi. If that's not available; anything homemade with love",
         "Otter",
@@ -69,32 +71,20 @@ $(() => {
 
     const coderArray = [darius, alex, shada, maria, erika];
 
+    $(coderArray).each((index, coder) => coder.createAbout()) 
+
     $(document).ready(function() {
 
         const params = new URLSearchParams(window.location.search);
         const name = params.get('name');
     
-        $(coderArray).each((index, coder) => {
-            if (name === coder.name) {
-                coder.createAbout();
+        $(".about-me").each((index, coder) => {
+            if ($(coder).find("h2").text() === name) {
+                $(coder).toggle();
+                $(".about-welcome").toggle();
             } 
         })        
     });
-
-    $(".main-content").append(
-        `
-        <div class="about-welcome">
-            <img class="welcome-image" src="./images/kittens.jpg"
-            <p><span>this.webpage</span> was built by Alex, Shada, Erika, Maria, and Darius. Building this webpage filled our souls with joy. Building webpages is more fun than rollercoasters. Here is a coder joke for you:
-            <div class="joke">
-                <p>Knock Knock!</p>
-                <p>Who's there?</p> 
-                <p>404</p> 
-                <p>HEY! Who's there!?</p> 
-            </div>
-        </div>
-        `
-    )
 
     $(coderArray).each((index, coder) => {
         $(".about-side-bar").append(
@@ -103,6 +93,26 @@ $(() => {
             `
         )
     })  
+    
+
+    $(".sidebar-coder").on("click", e => {
+        $(".about-me").fadeOut(1);
+        $(".about-welcome").fadeOut(1);
+    
+        $(".about-me").each((index, coderInfo) => {
+            let h2Text = $(coderInfo).find("h2").text();
+    
+            if ($(e.target).text() === h2Text) {
+                $(coderInfo).toggle();
+            }
+        });
+    
+        const anyAboutMeVisible = $(".about-me:visible").length > 0;
+    
+        if (!anyAboutMeVisible) {
+            $(".about-welcome").fadeIn(1);
+        }
+    });
 
 });
 
