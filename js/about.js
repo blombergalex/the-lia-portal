@@ -59,15 +59,15 @@ $(() => {
     );
 
     let alex = new Coder(
-        "./images/cat.jpg",
+        "./images/otter.png",
         "Alexandra Blomberg",
-        "email",
-        "favoritmat",
-        "favoritdjur",
-        "några meningar om dig själv"
+        "blombergalexandras@gmail.com",
+        "Sushi. If that's not available; anything homemade with love",
+        "Otter",
+        "Alex resonates with the otter. Although intelligent and witty, otters have a tendency to suffer from self-doubt, and fear of failure can prevent them from living up to their true potential. Still, they are a great problem solvers, with the ability to spend endless hours on abstract or practical challenges. As workers, they are dedicated and capable and always eager for a chance to prove themselves. Some might say otters are lazy, but a more fitting description is easily distracted. Life has so many diversions for the otter that it's impossible to predict how it will fill its day. But when an otter gets focused on a problem, its keen intelligence rises to the challenge and it won’t give up until the last nut is cracked."
     );
 
-    const coderArray = [darius, ];
+    const coderArray = [darius, alex];
 
     $(document).ready(function() {
 
@@ -82,3 +82,10 @@ $(() => {
     });
 
 });
+
+// links for nav-bars
+/* <li><a href="about.html?name=Alex Blomberg">Alex</a></li>
+<li><a href="about.html?name=Erika Lundström">Erika</a></li>
+<li><a href="about.html?name=Shada Bazger">Shada</a></li>
+<li><a href="about.html?name=Maria Hendricks">Maria</a></li>
+<li><a href="about.html?name=Darius Kaya">Darius</a></li> */
