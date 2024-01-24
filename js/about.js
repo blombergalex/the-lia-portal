@@ -41,12 +41,12 @@ $(() => {
     );
 
     let maria = new Coder(
-        "./images/cat.jpg",
+        "./images/workaholic.jpg",
         "Maria Hendricks",
-        "email",
-        "favoritmat",
-        "favoritdjur",
-        "några meningar om dig själv"
+        "maria.hendricks26@gmail.com",
+        "Tiraminsu and Chicken Tikka Masala!",
+        "Tiny rabbits, although I'm allgergic to them",
+        "Unfortunately I'm a workaholic, as long as I know what I'm doing and its FUN nothing can really stop me... Well if I start looking like my pic, please SAVE ME thank you ;))"
     );
 
     let erika = new Coder(
