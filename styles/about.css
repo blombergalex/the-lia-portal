@@ -10,13 +10,42 @@ body {
 
 .main-content {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+}
+
+.about-side-bar {
+    width: 105px;
+    background-color: var(--hover-greenish);
+    padding: 8px;
+    border-right: solid black 1px;
+}
+
+.sidebar-coder {
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.center-content > * {
+    margin: 5px;
 }
 
 .about-me {
     padding: 24px;
+    margin-left: 5%;
     width: 90%;
-    text-align: center;
+    /* text-align: center; */
+    display: none;
+}
+
+.about-me p {
+    margin: 10px;
 }
 
 span {
@@ -28,17 +57,56 @@ span {
     height: auto;
     border: black solid 3px;
     border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.welcome-image {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.about-welcome {
+    margin-left: 4%;
+    padding: 24px;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.hidden {
+    display: none;
+}
+
+.joke {
+    margin: 20px;
+    line-height: 2rem;
+    font-weight: 600;
 }
 
 
 @media screen and (min-width: 769px) {
 
     .coder-image {
-        width: 50%;
+        width: 40%;
     }
 
     .about-me {
-        width: 70%;
+        width: 75%;
+        margin-left: 4%;
+    }
+
+    .about-welcome {
+        margin-left: 4%; 
+    }
+
+    .about-side-bar {
+        width: 125px;
+    }
+
+    .welcome-image {
+        width: 75%;
     }
     
 }
@@ -46,11 +114,27 @@ span {
 @media screen and (min-width: 1025px) {
 
     .coder-image {
-        width: 40%;
+        width: 30%;
     }
 
     .about-me {
-        width: 50%;
+        width: 60%;
+        margin-left: 10%;
+    }
+
+    .about-welcome {
+        margin-left: 10%; 
+    }
+
+    .sidebar-coder:hover {
+        color: var(--dark-color);
     }
     
+    .about-side-bar {
+        width: 135px;
+    }
+
+    .welcome-image {
+        width: 65%;
+    }
 }

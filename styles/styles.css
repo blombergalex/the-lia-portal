@@ -51,7 +51,7 @@ nav a:hover {
     background-color: var(--dark-color);
 }
 
-nav li:first-child {
+.navbar > li:first-child {
     margin-right: auto;
 }
 
@@ -82,6 +82,24 @@ nav .sidebar li:first-child {
     width: 100%;
 }
 
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--main-greenish);
+    position: absolute;
+    z-index: 1100;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav ul li  {
+    position: relative;
+}
+nav ul li:hover .submenu {
+    display: flex;
+}
+
+
 .viewOnDesktop {
     display: none;
 }
@@ -93,6 +111,7 @@ nav .sidebar li:first-child {
 .logo {
     height: 48px;
 }
+
 
 
 .container {
@@ -187,6 +206,10 @@ footer {
 
 @media screen and (min-width: 769px) {
     
+    .navbar li:not(.menubutton) {
+        display: block;
+    }
+
     .hero-img {
         background-image:linear-gradient(to right, rgba(106, 158, 123, 0.7) 0%, rgba(0, 128, 128, 0) 100%), url(../images/hero-desktop.jpg);
         background-size: cover;

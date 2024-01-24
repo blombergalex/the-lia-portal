@@ -32,7 +32,6 @@ body {
     position: absolute;
     top: 30px;
     width: 85%;
-    /* height: 1000px; */
     padding: 20px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     background-color: var(--hover-greenish);
@@ -40,6 +39,10 @@ body {
     z-index: 2;
     text-align: center;
     display: none;
+}
+
+.popup > * {
+    margin: 8px;
 }
 
 .cancel-btn {
@@ -66,9 +69,9 @@ span {
 
 .company-card {
     background-color: var(--main-greenish);
-    width: 80%;
+    width: 50%;
     text-align: center;
-    padding: 16px;
+    padding: 20px;
     margin: 30px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     border-radius: 5px;
@@ -76,12 +79,14 @@ span {
     cursor: pointer;
 }   
 
-
-
 .company-card > img {
     border: 0.5px solid var(--dark-color);
     border-radius: 20%;
     background-color: white;
+}
+
+.card-h3 {
+    margin: 10px;
 }
 
 
