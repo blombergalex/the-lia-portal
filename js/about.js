@@ -67,7 +67,7 @@ $(() => {
         "Alex resonates with the otter. Although intelligent and witty, otters have a tendency to suffer from self-doubt, and fear of failure can prevent them from living up to their true potential. Still, they are a great problem solvers, with the ability to spend endless hours on abstract or practical challenges. As workers, they are dedicated and capable and always eager for a chance to prove themselves. Some might say otters are lazy, but a more fitting description is easily distracted. Life has so many diversions for the otter that it's impossible to predict how it will fill its day. But when an otter gets focused on a problem, its keen intelligence rises to the challenge and it won’t give up until the last nut is cracked."
     );
 
-    const coderArray = [darius, alex];
+    const coderArray = [darius, alex, shada, maria, erika];
 
     $(document).ready(function() {
 
@@ -95,6 +95,14 @@ $(() => {
         </div>
         `
     )
+
+    $(coderArray).each((index, coder) => {
+        $(".about-side-bar").append(
+            `
+            <p class="sidebar-coder">${coder.name}</p>
+            `
+        )
+    })  
 
 });
 

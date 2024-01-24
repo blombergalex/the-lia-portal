@@ -10,12 +10,22 @@ body {
 
 .main-content {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .about-side-bar {
     width: 105px;
-    background-color: aquamarine;
+    background-color: var(--hover-greenish);
+    padding: 8px;
+}
+
+.sidebar-coder {
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.sidebar-coder:hover {
+    background-color: var(--main-greenish);
 }
 
 .about-me {
@@ -36,6 +46,7 @@ span {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+
 .welcome-image {
     width: 100%;
     margin-bottom: 20px;
@@ -44,8 +55,10 @@ span {
 }
 
 .about-welcome {
+    margin-left: 0;
     padding: 24px;
     width: 75%;
+    max-width: 1000px;
 }
 
 .joke {
@@ -63,6 +76,10 @@ span {
     .about-me {
         width: 70%;
     }
+
+    .about-welcome {
+        margin-left: 4%; 
+    }
     
 }
 
@@ -74,6 +91,10 @@ span {
 
     .about-me {
         width: 50%;
+    }
+
+    .about-welcome {
+        margin-left: 8%; 
     }
     
 }
