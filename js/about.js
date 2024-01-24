@@ -36,12 +36,12 @@ $(() => {
     );
 
     let shada = new Coder(
-        "./images/cat.jpg",
+        "./images/harry.jpg",
         "Shada Bazger",
-        "email",
-        "favoritmat",
-        "favoritdjur",
-        "några meningar om dig själv"
+        "shada.bazger@gmail.com",
+        "Falafel",
+        "Katten Harry",
+        "Jag gillar resor och besöka historiska och religösa platser. En dag kommer jag att resa runt hela världen:)"
     );
 
     let maria = new Coder(
