@@ -11,11 +11,13 @@ $(() => {
             $(".about-container").append(`
                 
                 <div class="about-me">
-                    <img class="coder-image" src="${this.image}" height=100px width=100px alt="image of ${this.name}">
-                    <h2>${this.name}</h2>
-                    <a href="mailto: ${this.email}">${this.email}</a>
-                    <p><span>Favourite Food: </span>${this.food}</p>
-                    <p><span>Favourite Animal: </span>${this.pet}</p>
+                    <div class="center-content">
+                        <img class="coder-image" src="${this.image}" height=100px width=100px alt="image of ${this.name}">
+                        <h2>${this.name}</h2>
+                        <a href="mailto: ${this.email}">${this.email}</a>
+                        <p><span>Favourite Food: </span>${this.food}</p>
+                        <p><span>Favourite Animal: </span>${this.pet}</p>
+                    </div>
                     <p>${this.about}</p>
                 </div>
                 

@@ -16,7 +16,7 @@ $(() => {
                 <div class="company-card">
                     <img class="card-image" src="${this.image}" height=100px width=100px alt="image of ${this.name}">
                     <h3 class="card-h3">${this.name}</h3>
-                    <h4 class="card-h4">${this.aboutUsShort}</h4>
+                    <p class="card-h4">${this.aboutUsShort}</p>
                 </div>
                 `
             )

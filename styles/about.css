@@ -17,6 +17,7 @@ body {
     width: 105px;
     background-color: var(--hover-greenish);
     padding: 8px;
+    border-right: solid black 1px;
 }
 
 .sidebar-coder {
@@ -24,12 +25,27 @@ body {
     cursor: pointer;
 }
 
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.center-content > * {
+    margin: 5px;
+}
 
 .about-me {
     padding: 24px;
-    width: 75%;
-    text-align: center;
+    margin-left: 5%;
+    width: 90%;
+    /* text-align: center; */
     display: none;
+}
+
+.about-me p {
+    margin: 10px;
 }
 
 span {
@@ -53,9 +69,9 @@ span {
 }
 
 .about-welcome {
-    margin-left: 0;
+    margin-left: 4%;
     padding: 24px;
-    width: 75%;
+    width: 90%;
     max-width: 1000px;
 }
 
@@ -66,21 +82,31 @@ span {
 .joke {
     margin: 20px;
     line-height: 2rem;
+    font-weight: 600;
 }
 
 
 @media screen and (min-width: 769px) {
 
     .coder-image {
-        width: 50%;
+        width: 40%;
     }
 
     .about-me {
-        width: 70%;
+        width: 75%;
+        margin-left: 4%;
     }
 
     .about-welcome {
         margin-left: 4%; 
+    }
+
+    .about-side-bar {
+        width: 125px;
+    }
+
+    .welcome-image {
+        width: 75%;
     }
     
 }
@@ -88,19 +114,27 @@ span {
 @media screen and (min-width: 1025px) {
 
     .coder-image {
-        width: 40%;
+        width: 30%;
     }
 
     .about-me {
-        width: 50%;
+        width: 60%;
+        margin-left: 10%;
     }
 
     .about-welcome {
-        margin-left: 8%; 
+        margin-left: 10%; 
     }
 
     .sidebar-coder:hover {
-        background-color: var(--main-greenish);
+        color: var(--dark-color);
     }
     
+    .about-side-bar {
+        width: 135px;
+    }
+
+    .welcome-image {
+        width: 65%;
+    }
 }
