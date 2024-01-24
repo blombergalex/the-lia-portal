@@ -43,21 +43,21 @@ $(() => {
     );
 
     let maria = new Coder(
-        "./images/cat.jpg",
+        "./images/workaholic.jpg",
         "Maria Hendricks",
-        "email",
-        "favoritmat",
-        "favoritdjur",
-        "några meningar om dig själv"
+        "maria.hendricks26@gmail.com",
+        "Tiraminsu and Chicken Tikka Masala!",
+        "Tiny rabbits, although I'm allgergic to them",
+        "Unfortunately I'm a workaholic, as long as I know what I'm doing and its FUN nothing can really stop me... Well if I start looking like my pic, please SAVE ME thank you ;))"
     );
 
     let erika = new Coder(
         "./images/cat.jpg",
         "Erika Lundström",
-        "email",
-        "favoritmat",
-        "favoritdjur",
-        "några meningar om dig själv"
+        "erimarilin@outlook.com",
+        "Home cooked food!",
+        "Do we have to pick one? I like most animals except silver fiskar and tipuloidea!",
+        "This will be hard, im often opposite to my self, Im forgetful, even tho i hate forget things, but i can have excellent memories about something I heard or did 10 years ago. I love to do spontaneous things, but i dont like when things never be as expected. I think my strong side is I love to learn new things, dig up information, to discuss why/how things are as they are, and figure out how to solve things and brainstorm in my head and with others, after solutions, Im never out of ideas!"
     );
 
     let alex = new Coder(
