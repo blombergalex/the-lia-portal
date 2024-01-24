@@ -35,10 +35,16 @@ $(() => {
         }
     }
 
-    studentArray.push(new Student("mollie", "Frontend dev", "Eager to learn in a new team", ["javascript", "HTML", "React", "Node"], "Gothenburg"));
-    studentArray.push(new Student("hamilton", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"], "Luleå"));
-    studentArray.push(new Student("felix", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"], "Stockholm"));
-    studentArray.push(new Student("lynn", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"], "Jönköping"));    
+    studentArray.push(new Student("mollie", "Frontend dev", "Eager to learn in a new team", ["javascript", "HTML", "React", "Node"],["stockholm"]));
+    studentArray.push(new Student("hamilton", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"],["göteborg"]));
+    studentArray.push(new Student("felix", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "javascript"],["malmö"]));
+    studentArray.push(new Student("lynn", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React"],["stockholm"]));
+    studentArray.push(new Student("rebecca", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "javascript"],["stockholm"]));
+    studentArray.push(new Student("alma", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "Node"],["göteborg"]));
+    studentArray.push(new Student("sofia", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React"],["luleå"]));
+    studentArray.push(new Student("christina", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"],["göteborg"]));
+    studentArray.push(new Student("daniel", "Frontend dev", "Eager to learn in a new team", ["HTML", "javascript", "React", "javascript"],["stockholm"])); 
+
     $(studentArray).each((index, student) => student.createProfileSmall(index));
 
     let search_javaScript = studentArray.filter(student => student.skills.includes("CSS")); 
@@ -59,4 +65,4 @@ $(() => {
     })
    
 
-});2
+});
