@@ -82,3 +82,10 @@ $(() => {
     });
 
 });
+
+// links for nav-bars
+/* <li><a href="about.html?name=Alex Blomberg">Alex</a></li>
+<li><a href="about.html?name=Erika Lundström">Erika</a></li>
+<li><a href="about.html?name=Shada Bazger">Shada</a></li>
+<li><a href="about.html?name=Maria Hendricks">Maria</a></li>
+<li><a href="about.html?name=Darius Kaya">Darius</a></li> */
