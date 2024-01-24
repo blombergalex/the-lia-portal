@@ -28,7 +28,7 @@ $(() => {
         "darius@kaya.au",
         "Good food",
         "Rhino",
-        "I am a coder who likes to code. When not coding I think of code. My favourite medicin is codeine because it sounds like 'coding'. If code was a person we would get married. Knock knock! Who's there? Code."
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corrupti incidunt voluptas magni voluptatem eum, accusantium suscipit fuga sequi laborum minima voluptates maiores sit at sed dolorem temporibus necessitatibus unde deleniti corporis. Nam voluptatibus consequuntur quasi magni error nostrum illo incidunt. Itaque ipsa ab blanditiis. Eius itaque similique mollitia dolorem voluptate dolore animi inventore consequuntur? Tempore laboriosam dolorem porro quis dolore beatae deserunt saepe nobis? Nemo deserunt nisi adipisci quia quae obcaecati numquam quas qui, assumenda fuga temporibus. Tempore ab quis doloremque sit, quo eius similique dolore nemo facilis voluptas voluptatibus quos recusandae adipisci corporis ratione maiores saepe atque optio."
     );
 
     let shada = new Coder(
