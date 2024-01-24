@@ -35,15 +35,15 @@ $(() => {
         }
     }
 
-    studentArray.push(new Student("mollie", "Frontend dev", "Eager to learn in a new team", ["javascript", "HTML", "React", "Node"]));
-    studentArray.push(new Student("hamilton", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"]));
-    studentArray.push(new Student("felix", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "javascript"]));
-    studentArray.push(new Student("lynn", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React"]));
-    studentArray.push(new Student("rebecca", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "javascript"]));
-    studentArray.push(new Student("alma", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "Node"]));
-    studentArray.push(new Student("sofia", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React"]));
-    studentArray.push(new Student("christina", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"]));
-    studentArray.push(new Student("daniel", "Frontend dev", "Eager to learn in a new team", ["HTML", "javascript", "React", "javascript"])); 
+    studentArray.push(new Student("mollie", "Frontend dev", "Eager to learn in a new team", ["javascript", "HTML", "React", "Node"],["stockholm"]));
+    studentArray.push(new Student("hamilton", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"],["göteborg"]));
+    studentArray.push(new Student("felix", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "javascript"],["malmö"]));
+    studentArray.push(new Student("lynn", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React"],["stockholm"]));
+    studentArray.push(new Student("rebecca", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "javascript"],["stockholm"]));
+    studentArray.push(new Student("alma", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "Node"],["göteborg"]));
+    studentArray.push(new Student("sofia", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React"],["luleå"]));
+    studentArray.push(new Student("christina", "Frontend dev", "Eager to learn in a new team", ["HTML", "CSS", "React", "Node"],["göteborg"]));
+    studentArray.push(new Student("daniel", "Frontend dev", "Eager to learn in a new team", ["HTML", "javascript", "React", "javascript"],["stockholm"])); 
 
     $(studentArray).each((index, student) => student.createProfileSmall(index));
 
@@ -65,4 +65,4 @@ $(() => {
     })
    
 
-});2
+});
