@@ -1,0 +1,56 @@
+:root {
+    --main-greenish: rgb(106, 158, 123);
+    --hover-greenish: rgb(156, 186, 166);
+    --dark-color: rgb(57, 63, 59);
+}
+
+body {
+
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+}
+
+.about-me {
+    padding: 24px;
+    width: 90%;
+    text-align: center;
+}
+
+span {
+    font-weight: bold;
+}
+
+.coder-image {
+    width: 60%;
+    height: auto;
+    border: black solid 3px;
+    border-radius: 50%;
+}
+
+
+@media screen and (min-width: 769px) {
+
+    .coder-image {
+        width: 50%;
+    }
+
+    .about-me {
+        width: 70%;
+    }
+    
+}
+
+@media screen and (min-width: 1025px) {
+
+    .coder-image {
+        width: 40%;
+    }
+
+    .about-me {
+        width: 50%;
+    }
+    
+}

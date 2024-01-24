@@ -29,6 +29,10 @@ body {
     padding: 24px;
 }
 
+#language-selector img {
+    cursor: pointer;
+}
+
 h1 {
     display: none;
 }

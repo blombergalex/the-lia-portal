@@ -2,6 +2,7 @@
     --main-greenish: rgb(106, 158, 123);
     --dark-color: rgb(57, 63, 59);
     --shadow-color: rgb(38, 57, 77);
+    --hover-greenish: rgb(156, 186, 166);
 }
 
 .main-content {
@@ -10,6 +11,7 @@
     overflow: scroll;
     width: 100%;
     justify-content: center;
+    position: relative;
 }
 
 .profile-small {
@@ -20,38 +22,67 @@
     text-align: center;
     padding: 16px;
     margin: 40px;
+    z-index:1;
 }
 
-.profile-small > img {
+.profile-img {
     border: 0.5px solid var(--dark-color);
     border-radius: 50%;
 }
 
-.profile-small .name {
+.profile-small .name,
+.profile-large .name {
     text-transform: capitalize;
 } 
 
 .profile-large {
     align-items: center;
+    background-color: var(--hover-greenish);
+    border-radius: 15px;
+    box-shadow: var(--shadow-color) 0px 20px 30px -10px;
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 330px;
-    z-index: 100;
-    background-color: var(--shadow-color);
-    border-radius: 5px;
+    top: 20px;
     width: 260px;
     aspect-ratio: 2/5;
     padding: 16px;
-    margin: 24px;
+    margin: 20px;
+    z-index: 100;
 }
 
 .blur {
-    filter: blur(2px);
+    filter: blur(2px) brightness(0.5);
+}
+
+.dark-blur {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 #cancel-btn {
     align-self: flex-end;
     background-color: transparent;
     border: none;   
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
 }
+
+@media screen and (min-width: 769px) {
+
+    .profile-large {
+        aspect-ratio: 4/3;
+        width: 70%;
+        top: 20px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    .profile-large {
+        width: 55%;
+    }
+
+    
+}
+
