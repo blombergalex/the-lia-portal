@@ -81,6 +81,21 @@ $(() => {
         })        
     });
 
+    $(".main-content").append(
+        `
+        <div class="about-welcome">
+            <img class="welcome-image" src="./images/kittens.jpg"
+            <p><span>this.webpage</span> was built by Alex, Shada, Erika, Maria, and Darius. Building this webpage filled our souls with joy. Building webpages is more fun than rollercoasters. Here is a coder joke for you:
+            <div class="joke">
+                <p>Knock Knock!</p>
+                <p>Who's there?</p> 
+                <p>404</p> 
+                <p>HEY! Who's there!?</p> 
+            </div>
+        </div>
+        `
+    )
+
 });
 
 // links for nav-bars

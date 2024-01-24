@@ -13,9 +13,14 @@ body {
     justify-content: center;
 }
 
+.about-side-bar {
+    width: 105px;
+    background-color: aquamarine;
+}
+
 .about-me {
     padding: 24px;
-    width: 90%;
+    width: 75%;
     text-align: center;
 }
 
@@ -28,6 +33,24 @@ span {
     height: auto;
     border: black solid 3px;
     border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.welcome-image {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.about-welcome {
+    padding: 24px;
+    width: 75%;
+}
+
+.joke {
+    margin: 20px;
+    line-height: 2rem;
 }
 
 
