@@ -125,6 +125,29 @@ nav ul li:hover .submenu {
     height: 48px;
 }
 
+.container {
+    align-items: center;
+    text-align: center;
+    color: #3F6634;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    background-color: aquamarine;
+    max-width: 100%;
+    padding-bottom: 20px;
+    
+  }
+  
+  .text-container {
+    text-align: center;
+  }
+
+  .img rect{
+    float: left;
+    margin-left: 20px;;
+    background-color: aquamarine;
+    
+  }
+
 .hero-img {
     background-image:linear-gradient(to right, rgba(106, 158, 123, 0.7) 0%, rgba(0, 128, 128, 0) 100%), url(../images/hero-mobile.jpg);
     background-size: cover;
@@ -134,7 +157,7 @@ nav ul li:hover .submenu {
 }
 
 h1 {
-    display: none;
+    text-align: center;
 }
 
 .main-content {
@@ -175,5 +198,4 @@ footer {
     .viewOnDesktop {
         display: flex;
     }
-    
 }

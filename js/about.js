@@ -36,12 +36,12 @@ $(() => {
     );
 
     let shada = new Coder(
-        "./images/cat.jpg",
+        "./images/harry.jpg",
         "Shada Bazger",
-        "email",
-        "favoritmat",
-        "favoritdjur",
-        "några meningar om dig själv"
+        "shada.bazger@gmail.com",
+        "Falafel",
+        "Katten Harry",
+        "Jag gillar resor och besöka historiska och religösa platser. En dag kommer jag att resa runt hela världen:)"
     );
 
     let maria = new Coder(
@@ -75,7 +75,7 @@ $(() => {
 
     $(coderArray).each((index, coder) => coder.createAbout()) 
 
-    $(document).ready(function() {
+    // $(document).ready(function() {
 
         const params = new URLSearchParams(window.location.search);
         const name = params.get('name');
@@ -86,7 +86,7 @@ $(() => {
                 $(".about-welcome").toggle();
             } 
         })        
-    });
+    // });
 
     $(coderArray).each((index, coder) => {
         $(".about-side-bar").append(
