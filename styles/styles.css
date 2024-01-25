@@ -1,6 +1,8 @@
 :root {
-    --main-greenish: rgb(106, 158, 123);
     --dark-color: rgb(57, 63, 59);
+    --main-greenish: rgb(106, 158, 123);
+    --nav-color: rgb(255, 255, 255);
+    --nav-hover-color: rgb(75, 105, 85);
     --shadow-color: rgb(38, 57, 77);
 }
 
@@ -24,6 +26,8 @@ body {
 nav {
     background-color: var(--main-greenish);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 999;
 }
 
 nav ul {
@@ -35,7 +39,7 @@ nav ul {
 }
 
 nav li {
-    height: 50px;  
+    height: 50px; 
 }
 
 nav a {
@@ -44,26 +48,24 @@ nav a {
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: black;
+    color: var(--nav-color);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 nav a:hover {
-    background-color: var(--dark-color);
-}
-
-.navbar > li:first-child {
-    margin-right: auto;
+    background-color: var(--nav-hover-color);
 }
 
 nav .sidebar li:first-child {
     justify-content: flex-end;
 }
+
 .sidebar {
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
-    width: 250px;
+    width: 350px;
     z-index: 999;
     background-color: rgba(106, 158, 123, 0.7);
     backdrop-filter: blur(10px);
@@ -82,14 +84,22 @@ nav .sidebar li:first-child {
     width: 100%;
 }
 
-
 .submenu {
     display: none;
     flex-direction: column;
-    background-color: var(--main-greenish);
+    background-color: rgba(117, 150, 127, 0.7);
+    backdrop-filter: blur(5px);
     position: absolute;
     z-index: 1100;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+   }
+
+.submenu li {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid var(--nav-hover-color);
+
 }
 
 nav ul li  {
@@ -99,6 +109,9 @@ nav ul li:hover .submenu {
     display: flex;
 }
 
+.navbar > li:first-child {
+    margin-right: auto;
+}
 
 .viewOnDesktop {
     display: none;
@@ -112,7 +125,6 @@ nav ul li:hover .submenu {
     height: 48px;
 }
 
-
 .hero-img {
     background-image:linear-gradient(to right, rgba(106, 158, 123, 0.7) 0%, rgba(0, 128, 128, 0) 100%), url(../images/hero-mobile.jpg);
     background-size: cover;
@@ -120,45 +132,6 @@ nav ul li:hover .submenu {
     justify-content: flex-end;
     display: flex;
 }
-
-
-
-/* #menuToggle {
-    display: none;
-}
-
-#menuToggle:checked ~ .nav-menu {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
-.mobile-menu__trigger {
-    cursor: pointer;
-    display: block;
-    position: absolute;
-    padding: 10px;
-    background-image: url('../images/burgermenu.svg');
-    background-size: cover;
-    width: 30px; 
-    height: 30px; 
-    top: 10px;
-    left: 10px;
-    z-index:40;
-}
-
-.logo {
-
-}
-
-.nav-menu {
-    display: flex;
-    background-color: rgba(106, 158, 123, .8);
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%; 
-    z-index:30;
-}*/
 
 h1 {
     display: none;
@@ -181,6 +154,9 @@ footer {
 }
 
 @media screen and (min-width: 769px) {
+    nav a {
+        justify-content: center;
+    }
     
     .navbar li:not(.menubutton) {
         display: block;
@@ -199,5 +175,5 @@ footer {
     .viewOnDesktop {
         display: flex;
     }
-
+    
 }
