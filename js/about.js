@@ -39,7 +39,7 @@ $(() => {
         "./images/harry.jpg",
         "Shada Bazger",
         "shada.bazger@gmail.com",
-        "Falafel with Anba sås",
+        "Falafel with Anba souce",
         "Katten Harry",
         "I like to travel and visit historical and religious places. One day I will travel around the whole world :)"
     );
