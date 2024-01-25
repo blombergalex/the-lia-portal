@@ -75,7 +75,7 @@ $(() => {
 
     $(coderArray).each((index, coder) => coder.createAbout()) 
 
-    $(document).ready(function() {
+    // $(document).ready(function() {
 
         const params = new URLSearchParams(window.location.search);
         const name = params.get('name');
@@ -86,7 +86,7 @@ $(() => {
                 $(".about-welcome").toggle();
             } 
         })        
-    });
+    // });
 
     $(coderArray).each((index, coder) => {
         $(".about-side-bar").append(
