@@ -50,8 +50,14 @@ $(() => {
 
     $(studentArray).each((index, student) => student.createProfileSmall(index));
 
-    let search_javaScript = studentArray.filter(student => student.skills.includes("CSS")); 
-    console.log(search_javaScript);
+    $("#button-search").on("click", function () {
+        const search = $("#search-input").val().toLowerCase();
+        console.log(search)
+
+    })
+
+    // let search_javaScript = studentArray.filter(student => student.skills.includes("javascript")); 
+    // console.log(search_javaScript);
 
     $(".profile-small").on("click", function() { 
         let index = $(this).data("index");
