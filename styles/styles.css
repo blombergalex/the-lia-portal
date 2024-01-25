@@ -102,15 +102,19 @@ nav .sidebar li:first-child {
 
 }
 
+.submenu.open {
+    display: flex;
+}
 nav ul li  {
     position: relative;
-}
-nav ul li:hover .submenu {
-    display: flex;
 }
 
 .navbar > li:first-child {
     margin-right: auto;
+}
+
+.active {
+    background-color: var(--nav-hover-color);
 }
 
 .viewOnDesktop {
@@ -146,7 +150,6 @@ nav ul li:hover .submenu {
     float: left;
     margin-left: 20px;;
     background-color: aquamarine;
-    
   }
 
 .hero-img {
