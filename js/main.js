@@ -44,3 +44,18 @@ $(() => {
    
 
 });
+
+// Här kan du ange ditt dynamiska innehåll för sidfoten
+const dynamicFooterContent = {
+    author: "LIA Portalen",
+    year: new Date().getFullYear()
+  };
+  
+  window.addEventListener("load", function() {
+    const dynamicFooterSection = document.getElementById("dynamic-footer-content");
+  
+    const content = document.createElement("p");
+    content.textContent = " " + dynamicFooterContent.author + " © " + dynamicFooterContent.year;
+  
+    dynamicFooterSection.appendChild(content);
+  });

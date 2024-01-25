@@ -166,9 +166,14 @@ h1 {
 }
 
 footer {
-    height: 60px;
+
+    color: #05275e;
+    font-size: 2rem;
     background-color: var(--main-greenish);
-}
+    text-align: center;
+    padding-top: 20px;
+      height: 60px;
+} 
 
 
 @media(max-width: 400px){
