@@ -15,6 +15,12 @@
 .filter-btn {
     display: flex;
     align-items: center;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.filter-btn:hover {
+    color: var(--hover-greenish);
 }
 
 .filter-image {
@@ -27,8 +33,12 @@
     display: none;
 }
 
+input {
+    cursor: pointer;
+}
+
 .filter-options h4 {
-    margin: 15px 10px 3px 8px;
+    margin: 15px 10px 3px -8px;
 }
 
 .filter-location {
@@ -40,8 +50,17 @@
 .search-btn {
     color: white;
     background-color: var(--main-greenish);
-    width: 70px;
+    width: 75px;
+    height: 25px;
     margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.search-btn:hover {
+    background-color: var(--hover-greenish);
 }
 
 .info-content {
