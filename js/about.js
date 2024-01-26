@@ -39,9 +39,9 @@ $(() => {
         "./images/harry.jpg",
         "Shada Bazger",
         "shada.bazger@gmail.com",
-        "Falafel",
+        "Falafel with Anba souce",
         "Katten Harry",
-        "Jag gillar resor och besöka historiska och religösa platser. En dag kommer jag att resa runt hela världen:)"
+        "I like to travel and visit historical and religious places. One day I will travel around the whole world :)"
     );
 
     let maria = new Coder(
