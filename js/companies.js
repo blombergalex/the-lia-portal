@@ -1,6 +1,7 @@
 $(() => {
 
     let filterLocationArray = [];
+    let locationsArray = [];
 
     function Company(image, name, location, number, email, website, aboutUsShort, aboutUs, weCanOffer, requiredSkills) {
         this.image = image,
@@ -184,11 +185,28 @@ $(() => {
         })
     }
 
+    $(companyArray).each((index, company) => {
+        if (!locationsArray.includes(company.location)) {
+            locationsArray.push(company.location);
+        }
+    });
+
+    $(locationsArray).each((index, location) => {
+        $(".filter-location").append(
+            `
+            <div>
+                <label for="${location}">${location}</label>
+                <input type="checkbox" id="${location}" name="${location}" value="${location}">
+            </div>
+            `
+        )
+    })
+
     $(".filter-btn").on("click", () => {
         $(".filter-options").slideToggle();
     })
 
-    $(".search-btn").on("click", () => {
+    const filter = () => {
         filterLocationArray = [];
         $("input").each((index, inputElement) => {
             if ($(inputElement).prop("checked")) {
@@ -211,28 +229,10 @@ $(() => {
                 })
             } 
         })
+    }
+
+    $(".search-btn").on("click", () => {
+        filter();
     });
-
-    // $(".search-btn").on("click", () => {
-    //     filterLocationArray = [];
-    //     $("input").each((index, inputElement) => {
-    //         if ($(inputElement).prop("checked")) {
-    //             filterLocationArray.push($(inputElement).val())
-    //         }
-    //     });
-
-    //     $(".info-content").empty();
-    //     // $(".info-content").append(`<div class="overlay" style="display: none;"></div>`)
-    //     // $(".info-content").append(`<div class="popup" style="display: none;"></div>`)
-
-    //     $(companyArray).each((index, company) => {
-
-    //         if (filterLocationArray.length === 0) {
-    //             company.createCompany();
-    //         } else if (filterLocationArray.includes(company.location)) {
-    //             company.createCompany();
-    //         } 
-    //     })
-    // });
 
 });
