@@ -1,6 +1,7 @@
 $(() => {
 
     let filterLocationArray = [];
+    let filterSkillsArray = [];
     let locationsArray = [];
     let skillsArray = [];
 
@@ -229,31 +230,84 @@ $(() => {
 
     const filter = () => {
         filterLocationArray = [];
-        $("input").each((index, inputElement) => {
+        filterSkillsArray = [];
+    
+        $(".filter-location input").each((index, inputElement) => {
             if ($(inputElement).prop("checked")) {
                 filterLocationArray.push($(inputElement).val())
             }
         });
-
+    
+        $(".filter-skills input").each((index, inputElement) => {
+            if ($(inputElement).prop("checked")) {
+                filterSkillsArray.push($(inputElement).val());
+            }
+        });
+    
         $(".company-card").fadeOut(1);
-
+    
         $(companyArray).each((index, company) => {
-
-            if (filterLocationArray.length === 0) {
-                console.log("hello");
-                $(".company-card").fadeIn(1);
-            } else if (filterLocationArray.includes(company.location)) {
+            let skills = company.requiredSkills.split(", ");
+            if (
+                (filterLocationArray.length === 0 || filterLocationArray.includes(company.location)) &&
+                (filterSkillsArray.length === 0 || filterSkillsArray.some(skill => skills.includes(skill)))
+            ) {
                 $(".company-card").each((index, card) => {
                     if ($(card).find("h3").text() === company.name) {
                         $(card).fadeIn(1);
                     }
-                })
-            } 
-        })
-    }
+                });
+            }
+        });
+    };
 
     $(".search-btn").on("click", () => {
         filter();
     });
+
+
+    // const filterLocations = () => {
+    //     filterLocationArray = [];
+    //     $("input").each((index, inputElement) => {
+    //         if ($(inputElement).prop("checked")) {
+    //             filterLocationArray.push($(inputElement).val())
+    //         }
+    //     });
+
+    //     filterSkillsArray = [];
+    //     $("input").each((index, inputElement) => {
+    //         if ($(inputElement).prop("checked")) {
+    //             filterSkillsArray.push($(inputElement).val())
+    //         }
+    //     });
+
+    //     $(".company-card").fadeOut(1);
+
+    //     $(companyArray).each((index, company) => {
+
+    //         if (filterLocationArray.length === 0) {
+    //             $(".company-card").fadeIn(1);
+    //         } else if (filterLocationArray.includes(company.location)) {
+    //             $(".company-card").each((index, card) => {
+    //                 if ($(card).find("h3").text() === company.name) {
+    //                     $(card).fadeIn(1);
+    //                 }
+    //             })
+    //         } 
+
+    //         if (filterSkillsArray.length === 0) {
+    //             $(".company-card").fadeIn(1);
+    //         } else if (filterSkillsArray.includes(company.requiredSkills)) {
+    //             $(".company-card").each((index, card) => {
+    //                 if ($(card).find("h3").text() === company.name) {
+    //                     $(card).fadeIn(1);
+    //                 }
+    //             })
+    //         } 
+    //     })
+    // }
+
+    
+    
 
 });
