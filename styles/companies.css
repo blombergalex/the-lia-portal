@@ -27,6 +27,10 @@
     display: none;
 }
 
+.filter-options h4 {
+    margin: 15px 10px 3px 8px;
+}
+
 .filter-location {
     display: flex;
     flex-direction: column;
