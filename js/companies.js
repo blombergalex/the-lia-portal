@@ -148,14 +148,14 @@ $(() => {
         let company = $(e.target).closest(".company-card").find("h3").text();
         console.log(e.target);
         popup(company);
-        $(".popup").toggle();
-        $(".overlay").toggle();
+        $(".popup").fadeToggle();
+        $(".overlay").fadeToggle();
         $("html, body").animate({ scrollTop: 330 }, "slow");
     })
 
     $(".main-content").on("click", ".cancel-btn", () => {
-        $(".popup").toggle();
-        $(".overlay").toggle();
+        $(".popup").fadeToggle();
+        $(".overlay").fadeToggle();
     })
 
     const popup = company => {

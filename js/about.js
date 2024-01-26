@@ -72,10 +72,7 @@ $(() => {
     );
 
     const coderArray = [darius, alex, shada, maria, erika];
-
     $(coderArray).each((index, coder) => coder.createAbout()) 
-
-    // $(document).ready(function() {
 
         const params = new URLSearchParams(window.location.search);
         const name = params.get('name');
@@ -85,8 +82,7 @@ $(() => {
                 $(coder).toggle();
                 $(".about-welcome").toggle();
             } 
-        })        
-    // });
+        })
 
     $(coderArray).each((index, coder) => {
         $(".about-side-bar").append(
@@ -95,7 +91,6 @@ $(() => {
             `
         )
     })  
-    
 
     $(".sidebar-coder").on("click", e => {
         $(".about-me").fadeOut(1);
@@ -117,10 +112,3 @@ $(() => {
     });
 
 });
-
-// links for nav-bars
-/* <li><a href="about.html?name=Alex Blomberg">Alex</a></li>
-<li><a href="about.html?name=Erika Lundström">Erika</a></li>
-<li><a href="about.html?name=Shada Bazger">Shada</a></li>
-<li><a href="about.html?name=Maria Hendricks">Maria</a></li>
-<li><a href="about.html?name=Darius Kaya">Darius</a></li> */
