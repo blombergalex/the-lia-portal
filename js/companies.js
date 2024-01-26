@@ -1,5 +1,7 @@
 $(() => {
 
+    let filterLocationArray = [];
+
     function Company(image, name, location, number, email, website, aboutUsShort, aboutUs, weCanOffer, requiredSkills) {
         this.image = image,
         this.name = name,
@@ -12,7 +14,7 @@ $(() => {
         this.weCanOffer = weCanOffer,
         this.requiredSkills = requiredSkills,
         this.createCompany = function () {
-            $(".main-content").append(`
+            $(".info-content").append(`
                 <div class="company-card">
                     <img class="card-image" src="${this.image}" height=100px width=100px alt="image of ${this.name}">
                     <h3 class="card-h3">${this.name}</h3>
@@ -46,7 +48,7 @@ $(() => {
         "Microsoft, a global tech giant, empowers interns with transformative projects, mentorship, and unparalleled opportunities for innovation.",
         "Microsoft, a tech leader, pioneers software, hardware, and services globally. Known for Windows, Office, and Azure, Microsoft's vision extends to AI, gaming, and cloud computing, redefining tech boundaries. Their mission is to empower every person and organization on the planet to achieve more.",
         "Microsoft provides interns unique chances for growth, innovation, and impactful contributions. Engage in cutting-edge projects, collaborate with diverse teams, and benefit from mentorship. Join a worldwide community committed to creativity, pushing tech boundaries, and shaping the future.",
-        "JavaScript, C#, .NET, Azure, SQL"
+        "JavaScript, C#, HTML, CSS"
     );
 
     let hm = new Company(
@@ -146,16 +148,19 @@ $(() => {
 
     $(".company-card").on("click", e => {
         let company = $(e.target).closest(".company-card").find("h3").text();
-        console.log(e.target);
         popup(company);
+        let popupHeight = $(".popup").height() + 650;
+        $("html, body").animate({ minHeight: popupHeight }, 'fast');
+        $(".filter-options").slideUp();
         $(".popup").fadeToggle();
         $(".overlay").fadeToggle();
         $("html, body").animate({ scrollTop: 330 }, "slow");
     })
 
-    $(".main-content").on("click", ".cancel-btn", () => {
+    $(".info-content").on("click", ".cancel-btn", () => {
         $(".popup").fadeToggle();
         $(".overlay").fadeToggle();
+        $("html, body").animate({ 'min-height': "100%" }, 'fast');
     })
 
     const popup = company => {
@@ -178,5 +183,56 @@ $(() => {
             }
         })
     }
+
+    $(".filter-btn").on("click", () => {
+        $(".filter-options").slideToggle();
+    })
+
+    $(".search-btn").on("click", () => {
+        filterLocationArray = [];
+        $("input").each((index, inputElement) => {
+            if ($(inputElement).prop("checked")) {
+                filterLocationArray.push($(inputElement).val())
+            }
+        });
+
+        $(".company-card").fadeOut(1);
+
+        $(companyArray).each((index, company) => {
+
+            if (filterLocationArray.length === 0) {
+                console.log("hello");
+                $(".company-card").fadeIn(1);
+            } else if (filterLocationArray.includes(company.location)) {
+                $(".company-card").each((index, card) => {
+                    if ($(card).find("h3").text() === company.name) {
+                        $(card).fadeIn(1);
+                    }
+                })
+            } 
+        })
+    });
+
+    // $(".search-btn").on("click", () => {
+    //     filterLocationArray = [];
+    //     $("input").each((index, inputElement) => {
+    //         if ($(inputElement).prop("checked")) {
+    //             filterLocationArray.push($(inputElement).val())
+    //         }
+    //     });
+
+    //     $(".info-content").empty();
+    //     // $(".info-content").append(`<div class="overlay" style="display: none;"></div>`)
+    //     // $(".info-content").append(`<div class="popup" style="display: none;"></div>`)
+
+    //     $(companyArray).each((index, company) => {
+
+    //         if (filterLocationArray.length === 0) {
+    //             company.createCompany();
+    //         } else if (filterLocationArray.includes(company.location)) {
+    //             company.createCompany();
+    //         } 
+    //     })
+    // });
 
 });

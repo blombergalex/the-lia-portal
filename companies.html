@@ -25,8 +25,41 @@
         </div>
     </header>
     <section class="main-content">
-        <div class="overlay"></div>
-        <div class="popup"></div>
+        <div class="filter-container">
+            <div class="filter-btn">
+                <img class="filter-image" src="./images/filter.svg" alt="filter-button" height=20px width=20px>
+                <h4>Filter</h4>
+            </div>
+            <div class="filter-options">
+                <div class="filter-location">
+                    <div>
+                        <label for="silicon valley">Silicon Valley</label>
+                        <input type="checkbox" id="silicon valley" name="silicon valley" value="Silicon Valley">
+                    </div>
+                    <div>
+                        <label for="stockholm">Stockholm</label>
+                        <input type="checkbox" id="stockholm" name="stockholm" value="Stockholm">
+                    </div>
+                    <div>
+                        <label for="boston">Boston</label>
+                        <input type="checkbox" id="boston" name="boston" value="Boston">
+                    </div>
+                    <div>
+                        <label for="berlin">Berlin</label>
+                        <input type="checkbox" id="berlin" name="berlin" value="Berlin">
+                    </div>
+                    <div>
+                        <label for="helsinki">Helsinki</label>
+                        <input type="checkbox" id="helsinki" name="helsinki" value="Helsinki">
+                    </div>
+                </div>
+                <button class="search-btn">Search</button>
+            </div>
+        </div>
+        <div class="info-content">
+            <div class="overlay"></div>
+            <div class="popup"></div>
+        </div>
     </section>
     <footer>
         <div id="dynamic-footer-content">
