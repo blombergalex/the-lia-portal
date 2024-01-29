@@ -50,30 +50,27 @@ $(() => {
 
     $(studentArray).each((index, student) => student.createProfileSmall(index));
 
-    $("#button-search").on("click", function () {
-        const search = $("#search-input").val().toLowerCase();
-        console.log(search)
-
-    })
-
-    // let search_javaScript = studentArray.filter(student => student.skills.includes("javascript")); 
-    // console.log(search_javaScript);
     $("#button-search").on("click", () => {
         const searchTerm = $("#search-input").val().toLowerCase();
+        $(".no").empty()
+        $(".main-content").empty()
         
-        const searchResults = studentArray.filter(function(student){
-            let testStudent = student.skills.find(function(skill){
-            return skill.toLowerCase() === searchTerm
+        $(studentArray).each((index, student) => {
+            let findSkill = student.skills.find((skill) => {
+                return skill.toLowerCase() === searchTerm;
             })
-            console.log(testStudent)
-            return testStudent;
+            let findLocation = student.location.find((locations) => {
+                return locations.toLowerCase() === searchTerm;
+            })
+            if(findSkill || findLocation) {
+                student.createProfileSmall(index)
+            }
         })
-        console.log(searchResults);
-       
-    })
+        if ($(".main-content").is(":empty")) {
+               $(".no").text(` there are no student matching your search`)
+               $(studentArray).each((index, student) => student.createProfileSmall(index));
+        }
 
-    //  let search_javaScript = studentArray.filter(student => student.skills.includes("javascript")); 
-    //  console.log(search_javaScript);
 
     $(".profile-small").on("click", function() { 
         let index = $(this).data("index");
