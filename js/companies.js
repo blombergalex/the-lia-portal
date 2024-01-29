@@ -245,8 +245,10 @@ $(() => {
         });
     
         $(".company-card").fadeOut(1);
-    
+        let matchFound = false; 
+        
         $(companyArray).each((index, company) => {
+
             let skills = company.requiredSkills.split(", ");
             if (
                 (filterLocationArray.length === 0 || filterLocationArray.includes(company.location)) &&
@@ -255,10 +257,17 @@ $(() => {
                 $(".company-card").each((index, card) => {
                     if ($(card).find("h3").text() === company.name) {
                         $(card).fadeIn(1);
+                        matchFound = true;
                     }
                 });
-            }
+            } 
         });
+
+        if (!matchFound) {
+            $(".info-content").append(
+            `<p class="no-match-message">No match found. You might want to change your criterias? :)</p>`
+            );
+        }
     };
 
     $(".search-btn").on("click", () => {
