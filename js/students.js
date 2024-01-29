@@ -50,31 +50,6 @@ $(() => {
 
     $(studentArray).each((index, student) => student.createProfileSmall(index));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a28fdf1 (find test)
-    $("#button-search").on("click", () => {
-        const searchTerm = $("#search-input").val().toLowerCase();
-        
-        const searchResults = studentArray.filter(function(student){
-            let testStudent = student.skills.find(function(skill){
-            return skill.toLowerCase() === searchTerm
-            })
-            console.log(testStudent)
-            return testStudent;
-        })
-        console.log(searchResults);
-       
-<<<<<<< HEAD
-    })
-
-    //  let search_javaScript = studentArray.filter(student => student.skills.includes("javascript")); 
-    //  console.log(search_javaScript);
-=======
-=======
->>>>>>> 2b759b0 (testing)
     $("#button-search").on("click", function () {
         const search = $("#search-input").val().toLowerCase();
         console.log(search)
@@ -83,16 +58,6 @@ $(() => {
 
     // let search_javaScript = studentArray.filter(student => student.skills.includes("javascript")); 
     // console.log(search_javaScript);
-<<<<<<< HEAD
->>>>>>> 3a61f0c (testing)
-=======
-    })
-
-    //  let search_javaScript = studentArray.filter(student => student.skills.includes("javascript")); 
-    //  console.log(search_javaScript);
->>>>>>> a28fdf1 (find test)
-=======
->>>>>>> 2b759b0 (testing)
 
     $(".profile-small").on("click", function() { 
         let index = $(this).data("index");
