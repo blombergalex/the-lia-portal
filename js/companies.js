@@ -231,6 +231,7 @@ $(() => {
     const filter = () => {
         filterLocationArray = [];
         filterSkillsArray = [];
+        $(".no-match-message").remove();
     
         $(".filter-location input").each((index, inputElement) => {
             if ($(inputElement).prop("checked")) {
