@@ -1,9 +1,9 @@
 :root {
     --dark-color: rgb(57, 63, 59);
+    --hover-greenish: rgb(156, 186, 166);
     --main-greenish: rgb(106, 158, 123);
-    --nav-active-color: rgb(164, 201, 176);
+    --nav-active-color: rgb(59, 83, 67);
     --nav-color: rgb(255, 255, 255);
-    --nav-hover-color: rgb(82, 128, 97);
     --shadow-color: rgb(38, 57, 77);
 }
 
@@ -54,7 +54,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--nav-hover-color);
+    background-color: var(--hover-greenish);
 }
 
 nav .sidebar li:first-child {
@@ -126,9 +126,15 @@ nav ul li  {
     height: 26px; 
 }
 
-.logo {
+.logo img {
     height: 48px;
-    margin-left: 30px;
+    background-color: var(--main-greenish);
+}
+
+.navbar .logo a:hover,
+.sidebar .logo a:hover,
+.logo.active {
+    background: var(--main-greenish);
 }
 
 .container {
