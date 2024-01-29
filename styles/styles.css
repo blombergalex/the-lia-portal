@@ -1,7 +1,7 @@
 :root {
     --dark-color: rgb(57, 63, 59);
     --main-greenish: rgb(106, 158, 123);
-    --nav-color: rgb(255, 255, 255);
+    --light-text-color: rgb(255, 255, 255);
     --nav-hover-color: rgb(75, 105, 85);
     --shadow-color: rgb(38, 57, 77);
 }
@@ -17,6 +17,7 @@ html {
 }
 
 body {
+    font-family: Lexend, Verdana, Geneva, Tahoma, sans-serif;
     min-height: 100%;
     margin: 0;
     display: flex;
@@ -48,8 +49,7 @@ nav a {
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: var(--nav-color);
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--light-text-color);
 }
 
 nav a:hover {
@@ -134,12 +134,9 @@ nav ul li  {
     align-items: center;
     text-align: center;
     color: #3F6634;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1rem;
-    background-color: aquamarine;
     max-width: 100%;
     padding-bottom: 20px;
-    
   }
   
   .text-container {
@@ -169,13 +166,11 @@ h1 {
 }
 
 footer {
-
-    color: #05275e;
-    font-size: 2rem;
+    color: var(--light-text-color);
     background-color: var(--main-greenish);
     text-align: center;
     padding-top: 20px;
-      height: 60px;
+    height: 60px;
 } 
 
 

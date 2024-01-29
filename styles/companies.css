@@ -128,6 +128,7 @@ span {
 .company-card,
 .no-match-message {
     background-color: var(--main-greenish);
+    font-size: 0.9rem;
     width: 50%;
     text-align: center;
     padding: 20px;
