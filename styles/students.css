@@ -66,10 +66,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /*top: 20px;
-    width: 85%;
-    padding: 16px;
-    margin: 20px;*/
     width: 85%;
     z-index: 100;
 }
@@ -95,20 +91,9 @@
 
     .profile-large {
         max-width: 800px;
-        /*top: 20px*/
     }
 
     .profile-small:hover {
         background-color: var(--hover-greenish);
     }
 }
-
-@media screen and (min-width: 1025px) {
-
-    /*.profile-large {
-        width: 55%;
-    }*/
-
-    
-}
-
