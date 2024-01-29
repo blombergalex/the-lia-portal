@@ -72,17 +72,42 @@ $(() => {
 
 });
 
-// Här kan du ange ditt dynamiska innehåll för sidfoten
-const dynamicFooterContent = {
-    author: "LIA Portalen",
-    year: new Date().getFullYear()
-  };
+// Funktion för att generera sociala medier-ikoner
+function generateSocialMediaIcons() {
+    var socialMediaList = document.getElementById("socialMediaList");
+    
+    var socialMedia = [
+      { name: "Facebook", iconClass: "fab fa-facebook-f", link: "https://www.facebook.com" },
+      { name: "Twitter", iconClass: "fab fa-twitter", link: "https://www.twitter.com" },
+      { name: "Instagram", iconClass: "fab fa-instagram", link: "https://www.instagram.com" },
+      { name: "Snapchat", iconClass: "fab fa-linkedin-in", link: "https://snapchat.com" }
+    ];
+    
+    for (var i = 0; i < socialMedia.length; i++) {
+      var socialMediaItem = document.createElement("li");
+      var socialMediaLink = document.createElement("a");
+      var socialMediaIcon = document.createElement("i");
+      
+      socialMediaLink.href = socialMedia[i].link; facebook.com
+      socialMediaIcon.className = socialMedia[i].iconClass; // Lägg till ikonklassen
+      
+      socialMediaLink.appendChild(socialMediaIcon);
+      socialMediaItem.appendChild(socialMediaLink);
+      socialMediaList.appendChild(socialMediaItem);
+    }
+  }
   
-  window.addEventListener("load", function() {
-    const dynamicFooterSection = document.getElementById("dynamic-footer-content");
+  function generateContactInfo() {
+    var contactInfo = document.getElementById("contactInfo");
+    var email = " kontakt:info@edu.cmeducations.se";
+
+    contactText += "<a href='mailto:" + email + "'>" + email + "</a>";
+    contactText += "Villkor"
+    contactText += "GDPR"
+    
+    contactInfo.innerHTML = contactText;
+  }
   
-    const content = document.createElement("p");
-    content.textContent = " " + dynamicFooterContent.author + " © " + dynamicFooterContent.year;
+  generateSocialMediaIcons();
   
-    dynamicFooterSection.appendChild(content);
-  });
+  generateContactInfo();

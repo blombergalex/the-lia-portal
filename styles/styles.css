@@ -146,10 +146,12 @@ nav ul li  {
     text-align: center;
   }
 
-  .img rect{
+  .img lia-logo2{
     float: left;
     margin-left: 20px;;
     background-color: aquamarine;
+    height: 100px;
+    width: 100px;
   }
 
 .hero-img {
@@ -171,12 +173,9 @@ h1 {
 footer {
 
     color: #05275e;
-    font-size: 2rem;
+    font-size: 1,5rem;
     background-color: var(--main-greenish);
-    text-align: center;
-    padding-top: 20px;
-      height: 60px;
-} 
+}
 
 
 @media(max-width: 400px){
