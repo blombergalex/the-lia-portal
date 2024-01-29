@@ -21,7 +21,7 @@ $(() => {
         if (className === ".sidebar") {
             menuContent = `<li class="closebutton" onclick=hideSidebar()><a><img src="./images/closecross.svg"></a></li>` + menuContent;
         } else if (className === ".navbar") {
-            menuContent = `<li><img class="logo" src="./images/lia-logo2.png"></li>` + menuContent + `<li class="menubutton" onclick=showSidebar()><a><img src="./images/burgermenu.svg"></a></li>`;
+            menuContent = `<li class="logo"><a href="index.html"><img src="./images/lia-logo2.png"></a></li>` + menuContent + `<li class="menubutton" onclick=showSidebar()><a><img src="./images/burgermenu.svg"></a></li>`;
         }
 
         $(className).append(menuContent);
@@ -32,13 +32,12 @@ $(() => {
         createMenu(".navbar");
 
         const currentPage = window.location.pathname.split("/").pop();
-        const currentQuery = window.location.search;
+        const currentQuery = decodeURIComponent(window.location.search);
         const currentHash = window.location.hash;
         const currentHref = currentPage + currentQuery + currentHash;
-        console.log(currentHref);
-        $(".navbar a[href='" + currentPage + "'], .sidebar a[href='" + currentPage + "']").parent().addClass("active");
+        $(".navbar li:has(a[href='" + currentHref + "']), .sidebar li:has(a[href='" + currentHref + "'])").addClass("active");
 
-        $(".submenu-toggle").on("click", function() {
+        $(".submenu-toggle").on("click", () => {
             isSubmenuOpen = !isSubmenuOpen;
             $(".submenu").toggleClass("open", isSubmenuOpen);
             
@@ -83,6 +82,7 @@ function generateSocialMediaIcons() {
     ];
     
     var socialMediaList = document.getElementById("socialMediaList");
+}
 
 for (var i = 0; i < socialMedia.length; i++) {
   var listItem = document.createElement("li");

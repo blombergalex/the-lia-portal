@@ -4,15 +4,73 @@
     --dark-color: rgb(57, 63, 59);
 }
 
-body {
-
+.main-content {
+    position: relative;
 }
 
-.main-content {
-    position: relative;;
+.filter-container {
+    padding: 16px 16px 0 16px;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.filter-btn:hover {
+    color: var(--hover-greenish);
+}
+
+.filter-image {
+    height: 25px;
+    width: 25px;
+}
+
+.filter-options {
+    margin: 15px;
+    display: none;
+    
+}
+
+.filter-boxes {
+    display: flex;
+}
+
+input {
+    cursor: pointer;
+}
+
+.filter-options h4 {
+    margin: 15px 10px 3px -8px;
+}
+
+.filter-location,
+.filter-skills {
+    margin: 20px;
+}
+
+.search-btn {
+    color: white;
+    background-color: var(--main-greenish);
+    width: 75px;
+    height: 25px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-left: 20px;
+}
+
+.search-btn:hover {
+    background-color: var(--hover-greenish);
+}
+
+.info-content {
     display: flex;
     flex-wrap: wrap;
-    overflow: scroll;
     width: 100%;
     justify-content: center;
 }
@@ -24,21 +82,25 @@ body {
     height: 100%;
     background-color: black;
     opacity: 0.8;
-    z-index: 1;
+    z-index: 2;
     display: none;
 }
 
 .popup {
-    position: absolute;
-    top: 30px;
-    width: 85%;
-    padding: 20px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    text-align: center;
     background-color: var(--hover-greenish);
     border-radius: 15px;
-    z-index: 2;
-    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    z-index: 3;
+    padding: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     display: none;
+    max-height: 85%;
+    overflow-y: auto;
 }
 
 .popup > * {
@@ -67,8 +129,10 @@ span {
     font-weight: bold;
 }
 
-.company-card {
+.company-card,
+.no-match-message {
     background-color: var(--main-greenish);
+    font-size: 0.9rem;
     width: 50%;
     text-align: center;
     padding: 20px;

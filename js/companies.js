@@ -1,5 +1,10 @@
 $(() => {
 
+    let filterLocationArray = [];
+    let filterSkillsArray = [];
+    let locationsArray = [];
+    let skillsArray = [];
+
     function Company(image, name, location, number, email, website, aboutUsShort, aboutUs, weCanOffer, requiredSkills) {
         this.image = image,
         this.name = name,
@@ -12,7 +17,7 @@ $(() => {
         this.weCanOffer = weCanOffer,
         this.requiredSkills = requiredSkills,
         this.createCompany = function () {
-            $(".main-content").append(`
+            $(".info-content").append(`
                 <div class="company-card">
                     <img class="card-image" src="${this.image}" height=100px width=100px alt="image of ${this.name}">
                     <h3 class="card-h3">${this.name}</h3>
@@ -33,7 +38,7 @@ $(() => {
         "Google, a tech powerhouse, offers interns dynamic projects, global impact, innovation, mentorship, and unparalleled opportunities.",
         "Google, a tech titan, revolutionizes the digital landscape with innovative products and services. Renowned for its search engine, Google offers a diverse ecosystem, including Android, Gmail, and YouTube. Beyond technology, the company ventures into AI, cloud computing, and self-driving cars, continually pushing boundaries. Google's mission is to organize the world's information and make it universally accessible and useful, impacting billions worldwide.",
         "Google offers interns unparalleled opportunities for growth, innovation, and impact. Engage in cutting-edge projects, collaborate with diverse teams, and benefit from mentorship. Join a global community that fosters creativity, pushing boundaries, and shaping the future of technology.",
-        "Javascript, CSS, HTML, REACT"
+        "JavaScript, CSS, HTML, REACT"
     );
 
     let microsoft = new Company(
@@ -46,7 +51,7 @@ $(() => {
         "Microsoft, a global tech giant, empowers interns with transformative projects, mentorship, and unparalleled opportunities for innovation.",
         "Microsoft, a tech leader, pioneers software, hardware, and services globally. Known for Windows, Office, and Azure, Microsoft's vision extends to AI, gaming, and cloud computing, redefining tech boundaries. Their mission is to empower every person and organization on the planet to achieve more.",
         "Microsoft provides interns unique chances for growth, innovation, and impactful contributions. Engage in cutting-edge projects, collaborate with diverse teams, and benefit from mentorship. Join a worldwide community committed to creativity, pushing tech boundaries, and shaping the future.",
-        "JavaScript, C#, .NET, Azure, SQL"
+        "JavaScript, C#, HTML, CSS"
     );
 
     let hm = new Company(
@@ -59,7 +64,7 @@ $(() => {
         "H&M, a global fashion retailer, offers interns creative projects, mentorship, and exciting opportunities for innovation in the fashion industry.",
         "H&M, a trendsetter in the fashion world, operates globally with a commitment to sustainability. Known for affordable and stylish clothing, H&M embraces diversity and sustainability, influencing the fashion landscape. Their mission is to offer fashion and quality at the best price, in a sustainable way.",
         "H&M provides interns unique opportunities to contribute to creative projects, collaborate with diverse teams, and receive mentorship in the dynamic fashion industry.",
-        "Java, Javascript, Typescript, Python"
+        "Java, JavaScript, Typescript, Python"
     );
 
     let spotify = new Company(
@@ -85,7 +90,7 @@ $(() => {
         "Boston Consulting Group (BCG), a global management consulting firm, offers interns impactful projects, mentorship, and transformative opportunities in strategy and business consulting.",
         "BCG, a leader in management consulting, partners with clients to tackle their most critical challenges. Known for strategy, innovation, and data-driven insights, BCG empowers organizations to thrive in a rapidly changing world. Their mission is to unlock the potential of those who advance the world.",
         "Interns at BCG can contribute to impactful projects, collaborate with diverse teams, and receive mentorship in the dynamic field of strategy consulting.",
-        "Javascript, C#, Typescript"
+        "JavaScript, C#, Typescript"
     );
 
     let epidemicSound = new Company(
@@ -111,7 +116,7 @@ $(() => {
         "DHL, a global logistics company, offers interns dynamic projects, mentorship, and transformative opportunities in the logistics and supply chain industry.",
         "DHL, a leader in logistics and express delivery services, connects businesses worldwide. Known for its extensive network, DHL facilitates global trade, e-commerce, and supply chain solutions, shaping the future of logistics. Their mission is to be the logistics company for the world.",
         "Interns at DHL can contribute to dynamic projects, collaborate with diverse teams, and receive mentorship in the fast-paced logistics and supply chain industry.",
-        "Javascript, CSS, HTML, REACT"
+        "JavaScript, CSS, HTML, REACT"
     );
 
     let tradera = new Company(
@@ -137,7 +142,7 @@ $(() => {
         "Nokia, a global technology company, offers interns dynamic projects, mentorship, and transformative opportunities in telecommunications and digital innovation.",
         "Nokia, a pioneer in telecommunications, connects people and devices globally. Known for its networks, Nokia drives technological advancements in 5G, IoT, and digital health, shaping the future of connectivity. Their mission is to create the technology to connect the world.",
         "Interns at Nokia can contribute to dynamic projects, collaborate with diverse teams, and receive mentorship in the evolving field of telecommunications and digital innovation.",
-        "Javascript, CSS, HTML"
+        "JavaScript, CSS, HTML"
     );
 
     let companyArray = [google, microsoft, hm, spotify, bcg, epidemicSound, dhl, tradera, nokia]
@@ -146,16 +151,18 @@ $(() => {
 
     $(".company-card").on("click", e => {
         let company = $(e.target).closest(".company-card").find("h3").text();
-        console.log(e.target);
         popup(company);
-        $(".popup").toggle();
-        $(".overlay").toggle();
-        $("html, body").animate({ scrollTop: 330 }, "slow");
+        let popupHeight = $(".popup").height() + 250;
+        $(".main-content").animate({ minHeight: popupHeight }, 'fast');
+        $(".filter-options").slideUp();
+        $(".popup").fadeToggle();
+        $(".overlay").fadeToggle();
     })
 
-    $(".main-content").on("click", ".cancel-btn", () => {
-        $(".popup").toggle();
-        $(".overlay").toggle();
+    $(".info-content").on("click", ".cancel-btn", () => {
+        $(".popup").fadeToggle();
+        $(".overlay").fadeToggle();
+        $(".main-content").animate({ 'min-height': "100%" }, 'fast');
     })
 
     const popup = company => {
@@ -178,5 +185,97 @@ $(() => {
             }
         })
     }
+
+    $(companyArray).each((index, company) => {
+        if (!locationsArray.includes(company.location)) {
+            locationsArray.push(company.location);
+        }
+    });
+
+    $(companyArray).each((index, company) => {
+        let skills = company.requiredSkills.split(", "); 
+        $(skills).each((index, skill) => {
+            if (!skillsArray.includes(skill)) {
+                skillsArray.push(skill);
+            }
+        });
+    });
+
+
+    $(locationsArray).each((index, location) => {
+        $(".filter-location").append(
+            `
+            <div>
+                <label for="${location}">${location}</label>
+                <input type="checkbox" id="${location}" name="${location}" value="${location}">
+            </div>
+            `
+        )
+    })
+
+    $(skillsArray).each((index, skill) => {
+        $(".filter-skills").append(
+            `
+            <div>
+                <label for="${skill}">${skill}</label>
+                <input type="checkbox" id="${skill}" name="${skill}" value="${skill}">
+            </div>
+            `
+        )
+    })
+
+    $(".filter-btn").on("click", () => {
+        $(".filter-options").slideToggle();
+    })
+
+    const filter = () => {
+        filterLocationArray = [];
+        filterSkillsArray = [];
+        $(".no-match-message").remove();
+    
+        $(".filter-location input").each((index, inputElement) => {
+            if ($(inputElement).prop("checked")) {
+                filterLocationArray.push($(inputElement).val())
+            }
+        });
+    
+        $(".filter-skills input").each((index, inputElement) => {
+            if ($(inputElement).prop("checked")) {
+                filterSkillsArray.push($(inputElement).val());
+            }
+        });
+    
+        let matchFound = false; 
+        $(".company-card").hide();
+        
+        $(companyArray).each((index, company) => {
+
+            let skills = company.requiredSkills.split(", ");
+            if (
+                (filterLocationArray.length === 0 || filterLocationArray.includes(company.location)) &&
+                (filterSkillsArray.length === 0 || filterSkillsArray.some(skill => skills.includes(skill)))
+            ) {
+                $(".company-card").each((index, card) => {
+                    if ($(card).find("h3").text() === company.name) {
+                        $(card).show();
+                        matchFound = true;
+                    }
+                });
+            } 
+        });
+
+        if (!matchFound) {
+            $(".info-content").append(
+            `<div class="no-match-message">
+            <img class="card-image" src="./images/shrug.png" height=100px width=100px alt="image of shoulder shrugging emoji">
+                <p>Oops! There is no match for your criterias.</p>
+            </div>`
+            );
+        }
+    };
+
+    $(".search-btn").on("click", () => {
+        filter();
+    });  
 
 });
