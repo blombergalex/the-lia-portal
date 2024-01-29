@@ -48,7 +48,10 @@ $(() => {
     studentArray.push(new Student("christina", "Frontend Developer", "chra@solutions.com", "Creative problem-solver with a focus on user interfaces!", "Christina is a creative and detail-oriented frontend developer with a focus on crafting engaging user interfaces. Proficient in HTML, CSS, JavaScript, and Vue.js, she combines technical expertise with a passion for creating visually appealing and intuitive web experiences. Christina is excited to contribute her skills to collaborative development projects.", ["HTML", "CSS", "Vue.js"], ["oslo"]));
     studentArray.push(new Student("daniel", "Cybersecurity Analyst", "daniel@sec.com", "Security enthusiast with a commitment to safeguarding digital assets!", "Daniel is a dedicated cybersecurity analyst with a commitment to safeguarding digital assets and ensuring secure online environments. Proficient in ethical hacking, network security, and incident response, he brings a comprehensive approach to cybersecurity challenges. Daniel is eager to contribute his skills to protect and defend against evolving cyber threats.", ["Ethical Hacking", "Network Security"], ["amsterdam"])); 
 
-    $(studentArray).each((index, student) => student.createProfileSmall(index));
+    const displayAllStudents = () => {
+        $(studentArray).each((index, student) => student.createProfileSmall(index));
+    }
+    displayAllStudents();
 
     $("#button-search").on("click", () => {
         const searchTerm = $("#search-input").val().toLowerCase();
@@ -69,7 +72,7 @@ $(() => {
         })
         if ($(".main-content").is(":empty")) {
                $(".no-match").text(` There are no student matching your search`)
-               $(studentArray).each((index, student) => student.createProfileSmall(index));
+               displayAllStudents();
                profiles();
         }
     });
@@ -84,14 +87,6 @@ $(() => {
         });
     }
     profiles();
-
-    // $(".profile-small").on("click", function() { 
-    //     let index = $(this).data("index");
-    //     $(".profile-small").addClass("blur");
-    //     $(".main-content").addClass("dark-blur");
-    //     studentArray[index].createProfileLarge();
-    //     $("html, body").animate({ scrollTop: 330 }, "slow");
-    // });
 
     $(".main-content").on("click", "#cancel-btn", () => {
         $(".profile-large").hide();
