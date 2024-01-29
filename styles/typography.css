@@ -1,12 +1,11 @@
 
 @font-face {
     font-family: "lexend";
-    font-style: normal;
     src: url("../webfonts/lexend/lexend-variablefont_wght-webfont.woff");
 }
 
+
 @font-face {
     font-family: "lexend";
-    font-style: normal;
     src: url("../webfonts/lexend/lexend-variablefont_wght-webfont.woff2");
 }
