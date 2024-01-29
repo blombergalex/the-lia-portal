@@ -50,6 +50,7 @@ $(() => {
 
     $(studentArray).each((index, student) => student.createProfileSmall(index));
 
+<<<<<<< HEAD
     $("#button-search").on("click", () => {
         const searchTerm = $("#search-input").val().toLowerCase();
         
@@ -66,6 +67,16 @@ $(() => {
 
     //  let search_javaScript = studentArray.filter(student => student.skills.includes("javascript")); 
     //  console.log(search_javaScript);
+=======
+    $("#button-search").on("click", function () {
+        const search = $("#search-input").val().toLowerCase();
+        console.log(search)
+
+    })
+
+    // let search_javaScript = studentArray.filter(student => student.skills.includes("javascript")); 
+    // console.log(search_javaScript);
+>>>>>>> 3a61f0c (testing)
 
     $(".profile-small").on("click", function() { 
         let index = $(this).data("index");
