@@ -87,15 +87,17 @@ input {
 }
 
 .popup {
-    position: absolute;
-    top: 25px;
-    width: 85%;
-    padding: 20px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    text-align: center;
     background-color: var(--hover-greenish);
     border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
     z-index: 3;
-    text-align: center;
+    padding: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     display: none;
 }
 

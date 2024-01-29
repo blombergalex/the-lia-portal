@@ -157,7 +157,6 @@ $(() => {
         $(".filter-options").slideUp();
         $(".popup").fadeToggle();
         $(".overlay").fadeToggle();
-        $("html, body").animate({ scrollTop: 330 }, "slow");
     })
 
     $(".info-content").on("click", ".cancel-btn", () => {
