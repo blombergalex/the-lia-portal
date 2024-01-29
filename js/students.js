@@ -80,10 +80,11 @@ $(() => {
     const profiles = () => {
         $(".profile-small").on("click", function() { 
             let index = $(this).data("index");
+
             $(".profile-small").addClass("blur");
             $(".main-content").addClass("dark-blur");
             studentArray[index].createProfileLarge();
-            $("html, body").animate({ scrollTop: 330 }, "slow");
+            //$("html, body").animate({ scrollTop: 330 }, "slow");
         });
     }
     profiles();
