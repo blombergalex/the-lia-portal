@@ -244,9 +244,11 @@ $(() => {
             }
         });
     
+        let matchFound = false; 
         $(".company-card").fadeOut(1);
-    
+        
         $(companyArray).each((index, company) => {
+
             let skills = company.requiredSkills.split(", ");
             if (
                 (filterLocationArray.length === 0 || filterLocationArray.includes(company.location)) &&
@@ -255,10 +257,20 @@ $(() => {
                 $(".company-card").each((index, card) => {
                     if ($(card).find("h3").text() === company.name) {
                         $(card).fadeIn(1);
+                        matchFound = true;
                     }
                 });
-            }
+            } 
         });
+
+        if (!matchFound) {
+            $(".info-content").append(
+            `<div class="no-match-message">
+            <img class="card-image" src="./images/shrug.png" height=100px width=100px alt="image of shoulder shrugging emoji">
+                <p>Oops! There is no match for your criterias.</p>
+            </div>`
+            );
+        }
     };
 
     $(".search-btn").on("click", () => {

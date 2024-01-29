@@ -52,7 +52,7 @@ $(() => {
 
     $("#button-search").on("click", () => {
         const searchTerm = $("#search-input").val().toLowerCase();
-        $(".no").empty()
+        $(".no-match").empty()
         $(".main-content").empty()
         
         $(studentArray).each((index, student) => {
@@ -64,21 +64,34 @@ $(() => {
             })
             if(findSkill || findLocation) {
                 student.createProfileSmall(index)
+                profiles();
             }
         })
         if ($(".main-content").is(":empty")) {
-               $(".no").text(` there are no student matching your search`)
+               $(".no-match").text(` There are no student matching your search`)
                $(studentArray).each((index, student) => student.createProfileSmall(index));
+               profiles();
         }
     });
+   
+    const profiles = () => {
+        $(".profile-small").on("click", function() { 
+            let index = $(this).data("index");
+            $(".profile-small").addClass("blur");
+            $(".main-content").addClass("dark-blur");
+            studentArray[index].createProfileLarge();
+            $("html, body").animate({ scrollTop: 330 }, "slow");
+        });
+    }
+    profiles();
 
-    $(".profile-small").on("click", function() { 
-        let index = $(this).data("index");
-        $(".profile-small").addClass("blur");
-        $(".main-content").addClass("dark-blur");
-        studentArray[index].createProfileLarge();
-        $("html, body").animate({ scrollTop: 330 }, "slow");
-    });
+    // $(".profile-small").on("click", function() { 
+    //     let index = $(this).data("index");
+    //     $(".profile-small").addClass("blur");
+    //     $(".main-content").addClass("dark-blur");
+    //     studentArray[index].createProfileLarge();
+    //     $("html, body").animate({ scrollTop: 330 }, "slow");
+    // });
 
     $(".main-content").on("click", "#cancel-btn", () => {
         $(".profile-large").hide();

@@ -121,7 +121,8 @@ span {
     font-weight: bold;
 }
 
-.company-card {
+.company-card,
+.no-match-message {
     background-color: var(--main-greenish);
     width: 50%;
     text-align: center;
