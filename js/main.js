@@ -72,7 +72,6 @@ $(() => {
 
 });
 
-// Funktion för att generera sociala medier-ikoner
 function generateSocialMediaIcons() {
     var socialMediaList = document.getElementById("socialMediaList");
     
@@ -83,20 +82,16 @@ function generateSocialMediaIcons() {
       { name: "Snapchat", iconClass: "fab fa-linkedin-in", link: "https://snapchat.com" }
     ];
     
-    for (var i = 0; i < socialMedia.length; i++) {
-      var socialMediaItem = document.createElement("li");
-      var socialMediaLink = document.createElement("a");
-      var socialMediaIcon = document.createElement("i");
-      
-      socialMediaLink.href = socialMedia[i].link; facebook.com
-      socialMediaIcon.className = socialMedia[i].iconClass; // Lägg till ikonklassen
-      
-      socialMediaLink.appendChild(socialMediaIcon);
-      socialMediaItem.appendChild(socialMediaLink);
-      socialMediaList.appendChild(socialMediaItem);
-    }
-  }
-  
+    var socialMediaList = document.getElementById("socialMediaList");
+
+for (var i = 0; i < socialMedia.length; i++) {
+  var listItem = document.createElement("li");
+  var link = document.createElement("a");
+  link.href = socialMedia[i].link;
+  link.textContent = socialMedia[i].name;
+  listItem.appendChild(link);
+  socialMediaList.appendChild(listItem);
+}
   function generateContactInfo() {
     var contactInfo = document.getElementById("contactInfo");
     var email = " kontakt:info@edu.cmeducations.se";
