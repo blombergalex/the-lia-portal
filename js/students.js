@@ -94,5 +94,4 @@ $(() => {
         $(".main-content").removeClass("dark-blur");
     })
    
-
 });
