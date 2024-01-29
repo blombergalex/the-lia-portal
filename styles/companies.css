@@ -99,6 +99,8 @@ input {
     padding: 20px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     display: none;
+    max-height: 85%;
+    overflow-y: auto;
 }
 
 .popup > * {
