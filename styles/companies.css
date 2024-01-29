@@ -129,6 +129,7 @@ span {
 .no-match-message {
     background-color: var(--main-greenish);
     font-size: 0.9rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 50%;
     text-align: center;
     padding: 20px;
