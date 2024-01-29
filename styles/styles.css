@@ -1,8 +1,9 @@
 :root {
     --dark-color: rgb(57, 63, 59);
     --main-greenish: rgb(106, 158, 123);
+    --nav-active-color: rgb(164, 201, 176);
     --nav-color: rgb(255, 255, 255);
-    --nav-hover-color: rgb(75, 105, 85);
+    --nav-hover-color: rgb(82, 128, 97);
     --shadow-color: rgb(38, 57, 77);
 }
 
@@ -114,7 +115,7 @@ nav ul li  {
 }
 
 .active {
-    background-color: var(--nav-hover-color);
+    background-color: var(--nav-active-color);
 }
 
 .viewOnDesktop {
