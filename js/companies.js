@@ -244,8 +244,8 @@ $(() => {
             }
         });
     
-        $(".company-card").fadeOut(1);
         let matchFound = false; 
+        $(".company-card").fadeOut(1);
         
         $(companyArray).each((index, company) => {
 
@@ -265,7 +265,10 @@ $(() => {
 
         if (!matchFound) {
             $(".info-content").append(
-            `<p class="no-match-message">No match found. You might want to change your criterias? :)</p>`
+            `<div class="no-match-message">
+            <img class="card-image" src="./images/shrug.png" height=100px width=100px alt="image of shoulder shrugging emoji">
+                <p>Oops! There is no match for your criterias.</p>
+            </div>`
             );
         }
     };
