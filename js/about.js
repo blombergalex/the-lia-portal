@@ -107,7 +107,7 @@ $(() => {
         const anyAboutMeVisible = $(".about-me:visible").length > 0;
     
         if (!anyAboutMeVisible) {
-            $(".about-welcome").fadeIn(1);
+            $(".about-welcome").show();
         }
     });
 

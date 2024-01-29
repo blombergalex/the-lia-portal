@@ -13,8 +13,12 @@ body {
     /* justify-content: center; */
 }
 
+.about-container {
+    width: 75%;
+}
+
 .about-side-bar {
-    width: 105px;
+    width: 100px;
     background-color: var(--hover-greenish);
     padding: 8px;
     border-right: solid black 1px;

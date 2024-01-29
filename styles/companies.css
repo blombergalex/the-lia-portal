@@ -31,6 +31,11 @@
 .filter-options {
     margin: 15px;
     display: none;
+    
+}
+
+.filter-boxes {
+    display: flex;
 }
 
 input {
@@ -41,10 +46,9 @@ input {
     margin: 15px 10px 3px -8px;
 }
 
-.filter-location {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+.filter-location,
+.filter-skills {
+    margin: 20px;
 }
 
 .search-btn {
@@ -57,6 +61,7 @@ input {
     border: none;
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-left: 20px;
 }
 
 .search-btn:hover {
