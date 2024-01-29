@@ -13,14 +13,12 @@
 
 @font-face {
     font-family: "lexend";
-    font-style: bold;
     font-weight: 800;
     src: url("../webfonts/lexend/lexend-variablefont_wght-webfont.woff");
 }
 
 @font-face {
     font-family: "lexend";
-    font-style: bold;
     font-weight: 800;
     src: url("../webfonts/lexend/lexend-variablefont_wght-webfont.woff2");
 }

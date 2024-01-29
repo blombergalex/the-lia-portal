@@ -21,7 +21,7 @@ $(() => {
                 `
             )
         }
-        this.createProfileLarge = function () {
+        this.createProfileLarge = function () { 
             $(".main-content").append(`
                     <div class="${this.name} profile-large">
                         <button id="cancel-btn">&#10006;</button> 
