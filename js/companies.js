@@ -152,8 +152,8 @@ $(() => {
     $(".company-card").on("click", e => {
         let company = $(e.target).closest(".company-card").find("h3").text();
         popup(company);
-        let popupHeight = $(".popup").height() + 650;
-        $("html, body").animate({ minHeight: popupHeight }, 'fast');
+        let popupHeight = $(".popup").height() + 250;
+        $(".main-content").animate({ minHeight: popupHeight }, 'fast');
         $(".filter-options").slideUp();
         $(".popup").fadeToggle();
         $(".overlay").fadeToggle();
@@ -163,7 +163,7 @@ $(() => {
     $(".info-content").on("click", ".cancel-btn", () => {
         $(".popup").fadeToggle();
         $(".overlay").fadeToggle();
-        $("html, body").animate({ 'min-height': "100%" }, 'fast');
+        $(".main-content").animate({ 'min-height': "100%" }, 'fast');
     })
 
     const popup = company => {

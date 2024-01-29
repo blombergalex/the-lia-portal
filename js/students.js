@@ -70,7 +70,7 @@ $(() => {
                $(".no").text(` there are no student matching your search`)
                $(studentArray).each((index, student) => student.createProfileSmall(index));
         }
-
+    });
 
     $(".profile-small").on("click", function() { 
         let index = $(this).data("index");
