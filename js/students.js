@@ -72,8 +72,8 @@ $(() => {
                $(studentArray).each((index, student) => student.createProfileSmall(index));
                profiles();
         }
-
-    })    
+    });
+   
     const profiles = () => {
         $(".profile-small").on("click", function() { 
             let index = $(this).data("index");
