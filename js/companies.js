@@ -159,9 +159,23 @@ $(() => {
         $(".overlay").fadeToggle();
     })
 
-    $(".info-content").on("click", ".cancel-btn", () => {
+    const hidePopup = () => {
         $(".popup").fadeToggle();
         $(".overlay").fadeToggle();
+        $(".main-content").animate({ 'min-height': "100%" }, 'fast');
+    }
+
+    $(".info-content").on("click", ".cancel-btn", () => {
+        hidePopup();
+    })
+
+    $(".overlay").on("click", () => {
+        hidePopup();
+    })
+
+    $(".hero-img").on("click", () => {
+        $(".popup").fadeOut();
+        $(".overlay").fadeOut();
         $(".main-content").animate({ 'min-height': "100%" }, 'fast');
     })
 
@@ -201,28 +215,43 @@ $(() => {
         });
     });
 
+    const addFilters = (array, filterType) => {
+        $(array).each((index, item) => {
+            $(`.filter-${filterType}`).append(
+                `
+                <div>
+                    <label for="${item}">${item}</label>
+                    <input type="checkbox" id="${item}" name="${item}" value="${item}">
+                </div>
+                `
+            )
+        })
+    }
 
-    $(locationsArray).each((index, location) => {
-        $(".filter-location").append(
-            `
-            <div>
-                <label for="${location}">${location}</label>
-                <input type="checkbox" id="${location}" name="${location}" value="${location}">
-            </div>
-            `
-        )
-    })
+    addFilters(locationsArray, "location");
+    addFilters(skillsArray, "skills");
 
-    $(skillsArray).each((index, skill) => {
-        $(".filter-skills").append(
-            `
-            <div>
-                <label for="${skill}">${skill}</label>
-                <input type="checkbox" id="${skill}" name="${skill}" value="${skill}">
-            </div>
-            `
-        )
-    })
+    // $(locationsArray).each((index, location) => {
+    //     $(".filter-location").append(
+    //         `
+    //         <div>
+    //             <label for="${location}">${location}</label>
+    //             <input type="checkbox" id="${location}" name="${location}" value="${location}">
+    //         </div>
+    //         `
+    //     )
+    // })
+
+    // $(skillsArray).each((index, skill) => {
+    //     $(".filter-skills").append(
+    //         `
+    //         <div>
+    //             <label for="${skill}">${skill}</label>
+    //             <input type="checkbox" id="${skill}" name="${skill}" value="${skill}">
+    //         </div>
+    //         `
+    //     )
+    // })
 
     $(".filter-btn").on("click", () => {
         $(".filter-options").slideToggle();

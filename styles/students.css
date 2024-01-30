@@ -59,6 +59,17 @@ label {
     justify-content: center;
  } 
 
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: black;
+    opacity: 0.8; */
+    z-index: 2;
+    display: none;
+}
+
 .profile-small {
     align-items: center;
     background-color: var(--main-greenish);
@@ -116,14 +127,22 @@ label {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    padding: 16px;
+    transform: translate(-50%, -50%); 
     width: 85%;
     z-index: 100;
     overflow-y: auto;
 }
 
+.profile-large .description,
+.profile-large .student-skills,
+.profile-large .student-location {
+    font-size: 0.9rem;
+}
+
 .blur {
-    filter: blur(2px) brightness(0.5);
+    filter: blur(2px) brightness(0.3);
+    animation: fadeAnimation ease-in-out 0.5s;
 }
 
 .dark-blur {
@@ -138,6 +157,24 @@ label {
     height: 30px;
     width: 30px;
 }
+
+@media screen and (max-width: 300px) {
+
+    .profile-small {
+        height: 420px;
+        width: 205px;
+    }
+
+    .profile-large {
+        font-size: 0.8rem;
+        padding: 4px;
+    }
+
+    .profile-large .student-location,
+    .profile-large .student-skills {
+        font-size: 0.8rem;
+    }
+}    
 
 @media screen and (min-width: 769px) {
 

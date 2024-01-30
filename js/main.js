@@ -69,40 +69,23 @@ $(() => {
     window.showSidebar = showSidebar;
     window.hideSidebar = hideSidebar
 
+    let email = " kontakt:info@edu.cmeducations.se";
+ 
+    $("footer").append(
+        `
+        <div class="footer-info">
+            <a href="mailto:${email}">${email}</a>
+            <p>Villkor</p>
+            <p>GDPR</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/" target="_blank"><img src="./images/insta.png" height= 30px width= 30px></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="./images/facebook.png" height= 30px width= 30px></a>
+            <a href="https://www.snapchat.com/sv-SE" target="_blank"><img src="./images/snap.png" height= 30px width= 30px></a>
+            <a href="https://twitter.com/?lang=sv" target="_blank"><img src="./images/twitter.png" height= 30px width= 30px></a>
+        </div>
+        `
+    )
+
 });
 
-function generateSocialMediaIcons() {
-    var socialMediaList = document.getElementById("socialMediaList");
-    
-    var socialMedia = [
-      { name: "Facebook", iconClass: "fab fa-facebook-f", link: "https://www.facebook.com" },
-      { name: "Twitter", iconClass: "fab fa-twitter", link: "https://www.twitter.com" },
-      { name: "Instagram", iconClass: "fab fa-instagram", link: "https://www.instagram.com" },
-      { name: "Snapchat", iconClass: "fab fa-linkedin-in", link: "https://snapchat.com" }
-    ];
-    
-    var socialMediaList = document.getElementById("socialMediaList");
-}
-
-for (var i = 0; i < socialMedia.length; i++) {
-  var listItem = document.createElement("li");
-  var link = document.createElement("a");
-  link.href = socialMedia[i].link;
-  link.textContent = socialMedia[i].name;
-  listItem.appendChild(link);
-  socialMediaList.appendChild(listItem);
-}
-  function generateContactInfo() {
-    var contactInfo = document.getElementById("contactInfo");
-    var email = " kontakt:info@edu.cmeducations.se";
-
-    contactText += "<a href='mailto:" + email + "'>" + email + "</a>";
-    contactText += "Villkor"
-    contactText += "GDPR"
-    
-    contactInfo.innerHTML = contactText;
-  }
-  
-  generateSocialMediaIcons();
-  
-  generateContactInfo();
