@@ -79,10 +79,10 @@ $(() => {
             <p>GDPR</p>
         </div>
         <div class="footer-social">
-            <a href="https://www.instagram.com/" target="_blank"><img src="./images/insta.png" height= 30px width= 30px></a>
-            <a href="https://www.facebook.com/" target="_blank"><img src="./images/facebook.png" height= 30px width= 30px></a>
-            <a href="https://www.snapchat.com/sv-SE" target="_blank"><img src="./images/snap.png" height= 30px width= 30px></a>
-            <a href="https://twitter.com/?lang=sv" target="_blank"><img src="./images/twitter.png" height= 30px width= 30px></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="./images/insta.svg" height= 30px width= 30px></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="./images/facebook.svg" height= 30px width= 30px></a>
+            <a href="https://www.snapchat.com/sv-SE" target="_blank"><img src="./images/snap.svg" height= 30px width= 30px></a>
+            <a href="https://twitter.com/?lang=sv" target="_blank"><img src="./images/twitter.svg" height= 30px width= 30px></a>
         </div>
         `
     )
