@@ -86,6 +86,11 @@ $(() => {
             $(".profile-small").addClass("blur");
             $(".main-content").addClass("dark-blur");
             $(".main-search").addClass("dark-blur");
+
+            $("html, body").animate({
+                scrollTop: $(this).offset().top
+            }, 800); 
+            
             studentArray[index].createProfileLarge();
         });
     }
