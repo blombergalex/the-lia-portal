@@ -154,6 +154,7 @@ $(() => {
         let popupHeight = $(".popup").height() + 250;
         $(".main-content").animate({ minHeight: popupHeight }, 'fast');
         $(".filter-options").slideUp();
+        $(".filter-image").removeClass("rotate");
         $(".popup").fadeToggle();
         $(".overlay").fadeToggle();
     })
@@ -240,6 +241,7 @@ $(() => {
 
     $(".filter-btn").on("click", () => {
         $(".filter-options").slideToggle();
+        $(".filter-image").toggleClass("rotate");
     })
 
     const filter = () => {

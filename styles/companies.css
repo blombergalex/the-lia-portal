@@ -10,6 +10,7 @@
 
 .filter-container {
     padding: 16px 16px 0 16px;
+    position: relative;
 }
 
 .filter-btn {
@@ -26,12 +27,26 @@
 .filter-image {
     height: 25px;
     width: 25px;
+    margin-right: 2px;
+    transition: transform 0.3s ease; 
+}
+
+.rotate {
+    transform: rotate(180deg);
 }
 
 .filter-options {
     margin: 0 15px 15px 15px;
+    padding-left: 10px;
+    width: 95%;
     display: none;
-    
+    position: absolute;
+    top: 41px;
+    left: -5px;
+    z-index: 3;
+    background-color: white;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    opacity: 0.93;
 }
 
 .filter-boxes {
@@ -61,7 +76,7 @@ input {
     border: none;
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin-left: 20px;
+    margin: 0 0 10px 20px;
 }
 
 .clear-filter:hover {
@@ -82,7 +97,7 @@ input {
     height: 100%;
     background-color: black;
     opacity: 0.8;
-    z-index: 2;
+    z-index: 5;
     display: none;
 }
 
@@ -95,7 +110,7 @@ input {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 85%;
-    z-index: 3;
+    z-index: 10;
     padding: 20px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     display: none;
