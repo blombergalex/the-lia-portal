@@ -82,6 +82,7 @@ $(() => {
     const profiles = () => {
         $(".profile-small").on("click", function() { 
             let index = $(this).data("index");
+            $(".overlay").toggle();
             $(".profile-small").addClass("blur");
             $(".main-content").addClass("dark-blur");
             studentArray[index].createProfileLarge();
@@ -89,12 +90,20 @@ $(() => {
     }
     profiles();
 
-    $(".main-content").on("click", "#cancel-btn", () => {
-        $(".profile-large").fadeOut(500, function () {
-            $(this).remove();
-          });
+    const hidePopup = () => {
+        $(".overlay").hide();
+        $(".profile-large").fadeOut(500) 
+        $(this).remove();         
         $(".profile-small").removeClass("blur");
         $(".main-content").removeClass("dark-blur");
+    }
+
+    $(".main-content").on("click", "#cancel-btn", () => {
+        hidePopup();
+    })
+
+    $(".overlay").on("click", () => {
+        hidePopup();
     })
    
 });
