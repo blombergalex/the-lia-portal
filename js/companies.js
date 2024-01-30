@@ -279,7 +279,12 @@ $(() => {
         }
     };
 
-    $(".search-btn").on("click", () => {
+    $(".filter-location, .filter-skills").on("change", () => {
+        filter(); 
+    });
+
+    $(".clear-filter").on("click", () => {
+        $("input").prop("checked", false);
         filter();
     });  
 

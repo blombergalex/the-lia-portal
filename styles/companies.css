@@ -29,7 +29,7 @@
 }
 
 .filter-options {
-    margin: 15px;
+    margin: 0 15px 15px 15px;
     display: none;
     
 }
@@ -51,10 +51,10 @@ input {
     margin: 20px;
 }
 
-.search-btn {
+.clear-filter {
     color: white;
     background-color: var(--main-greenish);
-    width: 75px;
+    width: 85px;
     height: 25px;
     margin-top: 10px;
     cursor: pointer;
@@ -64,7 +64,7 @@ input {
     margin-left: 20px;
 }
 
-.search-btn:hover {
+.clear-filter:hover {
     background-color: var(--hover-greenish);
 }
 
