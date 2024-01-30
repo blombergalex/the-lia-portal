@@ -92,11 +92,8 @@ $(() => {
 
     const hidePopup = () => {
         $(".overlay").hide();
-        // $(".profile-large").hide();
-    
         $(".profile-large").fadeOut(500) 
-        $(this).remove();
-         
+        $(this).remove();         
         $(".profile-small").removeClass("blur");
         $(".main-content").removeClass("dark-blur");
     }
