@@ -80,7 +80,7 @@ $(() => {
     const profiles = () => {
         $(".profile-small").on("click", function() { 
             let index = $(this).data("index");
-
+            $(".overlay").toggle();
             $(".profile-small").addClass("blur");
             $(".main-content").addClass("dark-blur");
             studentArray[index].createProfileLarge();
@@ -88,10 +88,19 @@ $(() => {
     }
     profiles();
 
-    $(".main-content").on("click", "#cancel-btn", () => {
+    const hidePopup = () => {
+        $(".overlay").hide();
         $(".profile-large").hide();
         $(".profile-small").removeClass("blur");
         $(".main-content").removeClass("dark-blur");
+    }
+
+    $(".main-content").on("click", "#cancel-btn", () => {
+        hidePopup();
+    })
+
+    $(".overlay").on("click", () => {
+        hidePopup();
     })
    
 });
