@@ -157,6 +157,11 @@ $(() => {
         $(".filter-image").removeClass("rotate");
         $(".popup").fadeToggle();
         $(".overlay").fadeToggle();
+
+        $("html, body").animate({
+            scrollTop: $(e.currentTarget).offset().top
+        }, 800);
+
     })
 
     const hidePopup = () => {
