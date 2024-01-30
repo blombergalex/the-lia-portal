@@ -9,19 +9,22 @@ $(() => {
         this.location = location,
         this.skills = skills,
         this.createProfileSmall = function (index) {
+            let skillString = this.skills.map(skill =>`<span class="skill">${skill}</span>`).join(' ');
+
             $(".main-content").append(`
                     <div class="${this.name} profile-small" data-index="${index}">
                         <img class="profile-img" src="images/${this.name}.png" height=100px width=100px alt="image of ${this.name}"></img>
                         <h3 class="name">${this.name}</h3>
-                        <h4>${this.title}</h4>
+                        <h4 class="title">${this.title}</h4>
                         <p>${this.tagline}</p>
-                        <p class="student-skills">${this.skills}</p>
+                        <div class="student-skills">${skillString}</div>
                         <p class="student-location">&#128205; ${this.location}</p>
                     </div>
                 `
             )
         }
         this.createProfileLarge = function () { 
+
             const $profileLarge = $(`
                 <div class="${this.name} profile-large" style="display: none;">
                 <button id="cancel-btn">&#10006;</button> 
