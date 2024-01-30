@@ -146,7 +146,6 @@ $(() => {
     );
 
     let companyArray = [google, microsoft, hm, spotify, bcg, epidemicSound, dhl, tradera, nokia]
-
     $(companyArray).each((index, company) => company.createCompany());
 
     $(".company-card").on("click", e => {
@@ -231,27 +230,13 @@ $(() => {
     addFilters(locationsArray, "location");
     addFilters(skillsArray, "skills");
 
-    // $(locationsArray).each((index, location) => {
-    //     $(".filter-location").append(
-    //         `
-    //         <div>
-    //             <label for="${location}">${location}</label>
-    //             <input type="checkbox" id="${location}" name="${location}" value="${location}">
-    //         </div>
-    //         `
-    //     )
-    // })
-
-    // $(skillsArray).each((index, skill) => {
-    //     $(".filter-skills").append(
-    //         `
-    //         <div>
-    //             <label for="${skill}">${skill}</label>
-    //             <input type="checkbox" id="${skill}" name="${skill}" value="${skill}">
-    //         </div>
-    //         `
-    //     )
-    // })
+    const filterToArray = (filterType, array) => {
+        $(`.filter-${filterType} input`).each((index, inputElement) => {
+            if ($(inputElement).prop("checked")) {
+                array.push($(inputElement).val())
+            }
+        });
+    }
 
     $(".filter-btn").on("click", () => {
         $(".filter-options").slideToggle();
@@ -262,18 +247,9 @@ $(() => {
         filterSkillsArray = [];
         $(".no-match-message").remove();
     
-        $(".filter-location input").each((index, inputElement) => {
-            if ($(inputElement).prop("checked")) {
-                filterLocationArray.push($(inputElement).val())
-            }
-        });
-    
-        $(".filter-skills input").each((index, inputElement) => {
-            if ($(inputElement).prop("checked")) {
-                filterSkillsArray.push($(inputElement).val());
-            }
-        });
-    
+        filterToArray("location", filterLocationArray);
+        filterToArray("skills", filterSkillsArray);
+        
         let matchFound = false; 
         $(".company-card").hide();
         

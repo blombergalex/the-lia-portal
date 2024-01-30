@@ -16,6 +16,51 @@
     position: relative;
 }
 
+.main-search {
+    display: flex;
+    padding: 5px;
+    background-color: var(--main-greenish);  
+}
+
+#search-input {
+    background-color: var(--hover-greenish);
+    border: none;
+    padding: 5px;
+    width: 200px;
+    outline: none;
+ }
+
+#button-search {
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    background-color: var(--hover-greenish);
+}
+
+#button-search:hover {
+    background-color: var(--main-greenish);
+    border: 0.5px solid var(--dark-color);
+}
+
+label { 
+    background-color: var(--hover-greenish);
+    color: gray;
+    font-size: 13px;
+    display: inline-flex; 
+    align-items : center; 
+    justify-content: center; 
+}
+
+ .no-match { 
+    font-size: 13px;
+    color: rgb(77, 77, 77);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+ } 
+
 .overlay {
     position: absolute;
     top: 0;
