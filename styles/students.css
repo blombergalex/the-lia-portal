@@ -113,6 +113,23 @@
     width: 30px;
 }
 
+@media screen and (max-width: 300px) {
+
+    .profile-small {
+        height: 420px;
+    }
+
+    .profile-large {
+        font-size: 0.8rem;
+        padding: 4px;
+    }
+
+    .profile-large .student-location,
+    .profile-large .student-skills {
+        font-size: 0.8rem;
+    }
+}    
+
 @media screen and (min-width: 769px) {
 
     .profile-large {
