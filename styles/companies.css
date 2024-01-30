@@ -31,6 +31,11 @@
 .filter-options {
     margin: 15px;
     display: none;
+    
+}
+
+.filter-boxes {
+    display: flex;
 }
 
 input {
@@ -41,10 +46,9 @@ input {
     margin: 15px 10px 3px -8px;
 }
 
-.filter-location {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+.filter-location,
+.filter-skills {
+    margin: 20px;
 }
 
 .search-btn {
@@ -57,6 +61,7 @@ input {
     border: none;
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-left: 20px;
 }
 
 .search-btn:hover {
@@ -82,16 +87,20 @@ input {
 }
 
 .popup {
-    position: absolute;
-    top: 25px;
-    width: 85%;
-    padding: 20px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    text-align: center;
     background-color: var(--hover-greenish);
     border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
     z-index: 3;
-    text-align: center;
+    padding: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     display: none;
+    max-height: 85%;
+    overflow-y: auto;
 }
 
 .popup > * {
@@ -123,6 +132,7 @@ span {
 .company-card,
 .no-match-message {
     background-color: var(--main-greenish);
+    font-size: 0.9rem;
     width: 50%;
     text-align: center;
     padding: 20px;

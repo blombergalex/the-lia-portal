@@ -8,6 +8,7 @@
     <link rel="apple-touch-icon" href="./images/lia-logo2.png">
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/companies.css">
+    <link rel="stylesheet" href="./styles/typography.css">
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="./js/companies.js" defer></script>
     <script src="./js/main.js" defer></script>
@@ -31,13 +32,16 @@
                 <h4>Filter</h4>
             </div>
             <div class="filter-options">
-                <div class="filter-location">
-                    <h4>Locations:</h4>
+                <div class="filter-boxes">
+                    <div class="filter-location">
+                        <h4>Locations:</h4>
+                    </div>
+                    <div class="filter-skills">
+                        <h4>Skills:</h4>
+                    </div>
+                    
                 </div>
-                <div class="filter-skills">
-                    <h4>Skills:</h4>
-                </div>
-                <button class="search-btn">Search</button>
+                <button class="search-btn">Apply</button>
             </div>
         </div>
         <div class="info-content">
@@ -45,9 +49,13 @@
             <div class="popup"></div>
         </div>
     </section>
-    <footer>
-        <div id="dynamic-footer-content">
-        </div>
+    <footer id="footer">
+        <ul id="socialMediaList"></ul>
+        <p id="contactInfo">
+            <br>Kontakt:info@edu.cmeducations.se<br>
+            <br> Villkor<br>
+            <br>GDPR<br>  
+        </p>
       </footer>
 </body>
 </html>

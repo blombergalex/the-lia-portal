@@ -9,6 +9,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    min-height: 850px;
     justify-content: center;
     position: relative;
 }
@@ -26,16 +27,21 @@
 
 
 .profile-small {
+    align-items: center;
     background-color: var(--main-greenish);
     box-shadow: var(--shadow-color) 0px 20px 30px -10px;
     border-radius: 5px;
-    width: 220px;
-    height: min-content;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    width: 230px;
+    height: 400px;
     text-align: center;
     padding: 16px;
     margin: 40px;
     z-index: 1;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .profile-img {
@@ -48,11 +54,22 @@
     margin: 8px;
 } 
 
+.profile-small h3,
+.profile-small h4 {
+    font-weight: 900;
+    font-size: 1rem;
+}
+
 .name,
 .student-location,
 .student-skills {
     text-transform: capitalize;
 } 
+
+.student-location {
+    position: relative;
+    right: 10px;
+}
 
 .profile-large {
     align-items: center;
@@ -63,12 +80,13 @@
     display: flex;
     flex-direction: column;
     height: min-content;
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 85%;
-    padding: 16px;
-    margin: 20px;
     z-index: 100;
+    overflow-y: auto;
 }
 
 .blur {
@@ -91,8 +109,7 @@
 @media screen and (min-width: 769px) {
 
     .profile-large {
-        width: 70%;
-        top: 20px;
+        max-width: 70%;
     }
 
     .profile-small:hover {
@@ -105,7 +122,4 @@
     .profile-large {
         width: 55%;
     }
-
-    
 }
-

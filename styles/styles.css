@@ -1,8 +1,9 @@
 :root {
     --dark-color: rgb(57, 63, 59);
+    --hover-greenish: rgb(156, 186, 166);
     --main-greenish: rgb(106, 158, 123);
-    --nav-color: rgb(255, 255, 255);
-    --nav-hover-color: rgb(75, 105, 85);
+    --nav-active-color: rgb(59, 83, 67);
+    --light-text-color: rgb(255, 255, 255);
     --shadow-color: rgb(38, 57, 77);
 }
 
@@ -17,10 +18,11 @@ html {
 }
 
 body {
-    min-height: 100%;
-    margin: 0;
+    font-family: Lexend, Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-direction: column;
+    min-height: 100%;
+    margin: 0;
 }
 
 nav {
@@ -31,11 +33,11 @@ nav {
 }
 
 nav ul {
-    width: 100%;
-    list-style: none;
+    align-items: center;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    list-style: none;
+    width: 100%;
 }
 
 nav li {
@@ -43,17 +45,16 @@ nav li {
 }
 
 nav a {
+    align-items: center;
+    color: var(--light-text-color);
+    display: flex;
     height: 100%;
     padding: 0 30px;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: var(--nav-color);
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 nav a:hover {
-    background-color: var(--nav-hover-color);
+    background-color: var(--hover-greenish);
 }
 
 nav .sidebar li:first-child {
@@ -61,19 +62,19 @@ nav .sidebar li:first-child {
 }
 
 .sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 350px;
-    z-index: 999;
+    align-items: flex-start;
     background-color: rgba(106, 158, 123, 0.7);
     backdrop-filter: blur(10px);
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
     display: none;
     flex-direction: column;
-    align-items: flex-start;
+    height: 100vh;
     justify-content: flex-start;
+    right: 0;
+    position: fixed;
+    top: 0;
+    width: 350px;
+    z-index: 999;
 }
 
 .sidebar li {
@@ -85,26 +86,26 @@ nav .sidebar li:first-child {
 }
 
 .submenu {
-    display: none;
-    flex-direction: column;
     background-color: rgba(117, 150, 127, 0.7);
     backdrop-filter: blur(5px);
-    position: absolute;
-    z-index: 1100;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    position: absolute;
     text-align: center;
-   }
+    z-index: 1100;
+}
 
 .submenu li {
-    width: 100%;
-    height: 50px;
     border-bottom: 1px solid var(--nav-hover-color);
-
+    height: 50px;
+    width: 100%;
 }
 
 .submenu.open {
     display: flex;
 }
+
 nav ul li  {
     position: relative;
 }
@@ -114,7 +115,7 @@ nav ul li  {
 }
 
 .active {
-    background-color: var(--nav-hover-color);
+    background-color: var(--nav-active-color);
 }
 
 .viewOnDesktop {
@@ -125,39 +126,41 @@ nav ul li  {
     height: 26px; 
 }
 
-.logo {
+.logo img {
     height: 48px;
-    margin-left: 30px;
+    background-color: var(--main-greenish);
+}
+
+.navbar .logo a:hover,
+.sidebar .logo a:hover,
+.logo.active {
+    background: var(--main-greenish);
 }
 
 .container {
     align-items: center;
     text-align: center;
     color: #3F6634;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1rem;
-    background-color: aquamarine;
     max-width: 100%;
-    padding-bottom: 20px;
-    
+    padding-bottom: 20px; 
   }
   
   .text-container {
     text-align: center;
   }
 
-  .img rect{
-    float: left;
-    margin-left: 20px;;
-    background-color: aquamarine;
+  .container img {
+    margin-left: 20px;
+    padding: 20px;
   }
 
 .hero-img {
     background-image:linear-gradient(to right, rgba(106, 158, 123, 0.7) 0%, rgba(0, 128, 128, 0) 100%), url(../images/hero-mobile.jpg);
     background-size: cover;
+    display: flex;
     height: 300px;
     justify-content: flex-end;
-    display: flex;
 }
 
 h1 {
@@ -169,13 +172,11 @@ h1 {
 }
 
 footer {
-
-    color: #05275e;
-    font-size: 2rem;
+    color: var(--light-text-color);
     background-color: var(--main-greenish);
     text-align: center;
     padding-top: 20px;
-      height: 60px;
+    height: 60px;
 } 
 
 

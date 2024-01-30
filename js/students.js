@@ -21,7 +21,7 @@ $(() => {
                 `
             )
         }
-        this.createProfileLarge = function () {
+        this.createProfileLarge = function () { 
             $(".main-content").append(`
                     <div class="${this.name} profile-large">
                         <button id="cancel-btn">&#10006;</button> 
@@ -38,7 +38,7 @@ $(() => {
         }
     }
 
-    studentArray.push(new Student("mollie", "Frontend dev", "mollie@dev.com", "Eager to learn in a new team!", "Mollie is an enthusiastic and dedicated junior frontend developer actively seeking an apprenticeship to kickstart her career. Proficient in HTML, CSS, JavaScript, and React, she brings a solid foundation to any development project. Eager to contribute her skills and collaborate within a dynamic team environment, Mollie is driven by a passion for creating engaging and user-friendly web experiences. Her adaptability, coupled with a genuine eagerness to learn, makes her an ideal candidate for a thriving and innovative team.", ["javascript", "HTML", "React", "Node"],["stockholm"]));
+    studentArray.push(new Student("mollie", "Frontend Developer", "mollie@dev.com", "Eager to learn in a new team!", "Mollie is an enthusiastic and dedicated junior frontend developer actively seeking an apprenticeship to kickstart her career. Proficient in HTML, CSS, JavaScript, and React, she brings a solid foundation to any development project. Eager to contribute her skills and collaborate within a dynamic team environment, Mollie is driven by a passion for creating engaging and user-friendly web experiences. Her adaptability, coupled with a genuine eagerness to learn, makes her an ideal candidate for a thriving and innovative team.", ["javascript", "HTML", "React", "Node"],["stockholm"]));
     studentArray.push(new Student("hamilton", "Backend Developer", "hi@hamilton.com", "Passionate about crafting efficient solutions!", "Hamilton is an aspiring backend developer with a passion for crafting efficient and scalable solutions. Seeking opportunities to enhance his skills in server-side development, he excels in languages like Python and Java. Hamilton thrives in collaborative environments and is eager to contribute to innovative projects.", ["python", "SQL", "Node.js"], ["gothenburg"]));
     studentArray.push(new Student("felix", "Full Stack Developer", "felix@fsd.com", "Driven by creativity and problem-solving!", "Felix is a creative and detail-oriented full-stack developer adept at navigating the entire web development stack. Proficient in languages such as JavaScript, Python, and React, he brings a unique blend of technical expertise and artistic flair to his projects. Eager to take on challenges and deliver exceptional results.", ["Python", "React", "Django"], ["vancouver"]));
     studentArray.push(new Student("lynn", "UX/UI Designer", "lynn@ui.com", "Passionate about creating intuitive user experiences!", "Lynn is a dedicated UX/UI designer with a keen eye for detail and a passion for creating intuitive and visually appealing user experiences. With expertise in tools like Sketch and Figma, she combines creativity with a user-centric approach. Lynn is excited to contribute her design skills to collaborative and innovative projects.", ["Figma", "Adobe XD", "UX Design"], ["rome"]));
@@ -80,10 +80,10 @@ $(() => {
     const profiles = () => {
         $(".profile-small").on("click", function() { 
             let index = $(this).data("index");
+
             $(".profile-small").addClass("blur");
             $(".main-content").addClass("dark-blur");
             studentArray[index].createProfileLarge();
-            $("html, body").animate({ scrollTop: 330 }, "slow");
         });
     }
     profiles();
@@ -94,5 +94,4 @@ $(() => {
         $(".main-content").removeClass("dark-blur");
     })
    
-
 });

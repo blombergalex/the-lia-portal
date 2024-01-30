@@ -21,7 +21,7 @@ $(() => {
         if (className === ".sidebar") {
             menuContent = `<li class="closebutton" onclick=hideSidebar()><a><img src="./images/closecross.svg"></a></li>` + menuContent;
         } else if (className === ".navbar") {
-            menuContent = `<li><img class="logo" src="./images/lia-logo2.png"></li>` + menuContent + `<li class="menubutton" onclick=showSidebar()><a><img src="./images/burgermenu.svg"></a></li>`;
+            menuContent = `<li class="logo"><a href="index.html"><img src="./images/lia-logo2.png"></a></li>` + menuContent + `<li class="menubutton" onclick=showSidebar()><a><img src="./images/burgermenu.svg"></a></li>`;
         }
 
         $(className).append(menuContent);
@@ -32,13 +32,12 @@ $(() => {
         createMenu(".navbar");
 
         const currentPage = window.location.pathname.split("/").pop();
-        const currentQuery = window.location.search;
+        const currentQuery = decodeURIComponent(window.location.search);
         const currentHash = window.location.hash;
         const currentHref = currentPage + currentQuery + currentHash;
-        console.log(currentHref);
-        $(".navbar a[href='" + currentPage + "'], .sidebar a[href='" + currentPage + "']").parent().addClass("active");
+        $(".navbar li:has(a[href='" + currentHref + "']), .sidebar li:has(a[href='" + currentHref + "'])").addClass("active");
 
-        $(".submenu-toggle").on("click", function() {
+        $(".submenu-toggle").on("click", () => {
             isSubmenuOpen = !isSubmenuOpen;
             $(".submenu").toggleClass("open", isSubmenuOpen);
             
@@ -72,17 +71,38 @@ $(() => {
 
 });
 
-// Här kan du ange ditt dynamiska innehåll för sidfoten
-const dynamicFooterContent = {
-    author: "LIA Portalen",
-    year: new Date().getFullYear()
-  };
+function generateSocialMediaIcons() {
+    var socialMediaList = document.getElementById("socialMediaList");
+    
+    var socialMedia = [
+      { name: "Facebook", iconClass: "fab fa-facebook-f", link: "https://www.facebook.com" },
+      { name: "Twitter", iconClass: "fab fa-twitter", link: "https://www.twitter.com" },
+      { name: "Instagram", iconClass: "fab fa-instagram", link: "https://www.instagram.com" },
+      { name: "Snapchat", iconClass: "fab fa-linkedin-in", link: "https://snapchat.com" }
+    ];
+    
+    var socialMediaList = document.getElementById("socialMediaList");
+}
+
+for (var i = 0; i < socialMedia.length; i++) {
+  var listItem = document.createElement("li");
+  var link = document.createElement("a");
+  link.href = socialMedia[i].link;
+  link.textContent = socialMedia[i].name;
+  listItem.appendChild(link);
+  socialMediaList.appendChild(listItem);
+}
+  function generateContactInfo() {
+    var contactInfo = document.getElementById("contactInfo");
+    var email = " kontakt:info@edu.cmeducations.se";
+
+    contactText += "<a href='mailto:" + email + "'>" + email + "</a>";
+    contactText += "Villkor"
+    contactText += "GDPR"
+    
+    contactInfo.innerHTML = contactText;
+  }
   
-  window.addEventListener("load", function() {
-    const dynamicFooterSection = document.getElementById("dynamic-footer-content");
+  generateSocialMediaIcons();
   
-    const content = document.createElement("p");
-    content.textContent = " " + dynamicFooterContent.author + " © " + dynamicFooterContent.year;
-  
-    dynamicFooterSection.appendChild(content);
-  });
+  generateContactInfo();

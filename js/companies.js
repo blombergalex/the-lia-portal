@@ -157,7 +157,6 @@ $(() => {
         $(".filter-options").slideUp();
         $(".popup").fadeToggle();
         $(".overlay").fadeToggle();
-        $("html, body").animate({ scrollTop: 330 }, "slow");
     })
 
     $(".info-content").on("click", ".cancel-btn", () => {
@@ -201,6 +200,7 @@ $(() => {
             }
         });
     });
+
 
     $(locationsArray).each((index, location) => {
         $(".filter-location").append(
@@ -246,7 +246,7 @@ $(() => {
         });
     
         let matchFound = false; 
-        $(".company-card").fadeOut(1);
+        $(".company-card").hide();
         
         $(companyArray).each((index, company) => {
 
@@ -257,7 +257,7 @@ $(() => {
             ) {
                 $(".company-card").each((index, card) => {
                     if ($(card).find("h3").text() === company.name) {
-                        $(card).fadeIn(1);
+                        $(card).show();
                         matchFound = true;
                     }
                 });
