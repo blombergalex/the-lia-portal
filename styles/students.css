@@ -13,6 +13,18 @@
     position: relative;
 }
 
+.main-search {
+    padding: 5px;
+    background-color: var(--main-greenish);  
+}
+ #search-input {
+    background-color: var(--hover-greenish);
+    border: none;
+    padding: 4px;
+ }
+
+
+
 .profile-small {
     background-color: var(--main-greenish);
     box-shadow: var(--shadow-color) 0px 20px 30px -10px;
