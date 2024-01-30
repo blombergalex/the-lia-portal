@@ -169,6 +169,7 @@ h1 {
 
 .main-content {
     flex-grow: 1;
+    width: 100%;
 }
 
 footer {
@@ -182,20 +183,32 @@ footer {
  
 footer > * {
     font-size: 12px;
+    margin: 6px;
+    cursor: pointer;
 }
  
 .footer-social {
     display: flex;
 }
+
  
 footer img {
     margin: 2px;
 }
 
-
 @media(max-width: 400px){
     .sidebar {
         width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
 }
 
