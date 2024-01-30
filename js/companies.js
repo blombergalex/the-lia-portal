@@ -177,6 +177,9 @@ $(() => {
         $(".popup").fadeOut();
         $(".overlay").fadeOut();
         $(".main-content").animate({ 'min-height': "100%" }, 'fast');
+
+        $(".filter-options").slideUp();
+            $(".filter-image").removeClass("rotate");
     })
 
     const popup = company => {
