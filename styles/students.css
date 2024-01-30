@@ -79,6 +79,7 @@
 
 .blur {
     filter: blur(2px) brightness(0.3);
+    animation: fadeAnimation ease-in-out 0.5s;
 }
 
 .dark-blur {
