@@ -174,10 +174,23 @@ h1 {
 footer {
     color: var(--light-text-color);
     background-color: var(--main-greenish);
-    text-align: center;
-    padding-top: 20px;
-    height: 60px;
-} 
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ 
+footer > * {
+    font-size: 12px;
+}
+ 
+.footer-social {
+    display: flex;
+}
+ 
+footer img {
+    margin: 2px;
+}
 
 
 @media(max-width: 400px){
@@ -207,5 +220,7 @@ footer {
 
     .viewOnDesktop {
         display: flex;
-    }
+    
+    } 
 }
+
