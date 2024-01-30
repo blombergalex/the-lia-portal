@@ -22,19 +22,21 @@ $(() => {
             )
         }
         this.createProfileLarge = function () { 
-            $(".main-content").append(`
-                    <div class="${this.name} profile-large">
-                        <button id="cancel-btn">&#10006;</button> 
-                        <img class="profile-img" src="images/${this.name}.png" height=100px width=100px alt="image of ${this.name}"></img>
-                        <h3 class="name">${this.name}</h3>
-                        <h4>${this.title}</h4>
-                        <a href="mailto:${this.contact}">${this.contact}</a>
-                        <p>${this.description}</p>
-                        <p class="student-skills">Skills: ${this.skills}</p>
-                        <p class="student-location">&#128205; ${this.location}</p>
-                    </div>
-                `
-            )
+            const $profileLarge = $(`
+                <div class="${this.name} profile-large" style="display: none;">
+                <button id="cancel-btn">&#10006;</button> 
+                <img class="profile-img" src="images/${this.name}.png" height=100px width=100px alt="image of ${this.name}"></img>
+                <h3 class="name">${this.name}</h3>
+                <h4>${this.title}</h4>
+                <a href="mailto:${this.contact}">${this.contact}</a>
+                <p>${this.description}</p>
+                <p class="student-skills">Skills: ${this.skills}</p>
+                <p class="student-location">&#128205; ${this.location}</p>
+                </div>
+            `);
+        
+          $(".main-content").append($profileLarge);
+          $profileLarge.fadeIn(700);
         }
     }
 
@@ -88,7 +90,9 @@ $(() => {
     profiles();
 
     $(".main-content").on("click", "#cancel-btn", () => {
-        $(".profile-large").remove();
+        $(".profile-large").fadeOut(500, function () {
+            $(this).remove();
+          });
         $(".profile-small").removeClass("blur");
         $(".main-content").removeClass("dark-blur");
     })
