@@ -244,6 +244,13 @@ $(() => {
         $(".filter-image").toggleClass("rotate");
     })
 
+    $(".main-content").on("click", e => {
+        if (!$(e.target).closest(".filter-options").length && !$(e.target).closest(".company-card").length && !$(e.target).closest(".filter-btn").length) {
+            $(".filter-options").slideUp();
+            $(".filter-image").removeClass("rotate");
+        }
+    });
+
     const filter = () => {
         filterLocationArray = [];
         filterSkillsArray = [];
