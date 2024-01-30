@@ -85,6 +85,7 @@ $(() => {
             $(".overlay").toggle();
             $(".profile-small").addClass("blur");
             $(".main-content").addClass("dark-blur");
+            $(".main-search").addClass("dark-blur");
             studentArray[index].createProfileLarge();
         });
     }
@@ -96,6 +97,7 @@ $(() => {
         $(this).remove();         
         $(".profile-small").removeClass("blur");
         $(".main-content").removeClass("dark-blur");
+        $(".main-search").removeClass("dark-blur");
     }
 
     $(".main-content").on("click", "#cancel-btn", () => {
@@ -103,6 +105,10 @@ $(() => {
     })
 
     $(".overlay").on("click", () => {
+        hidePopup();
+    })
+
+    $(".hero-img").on("click", () => {
         hidePopup();
     })
    
