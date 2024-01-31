@@ -186,7 +186,16 @@ footer > * {
     margin: 6px;
     cursor: pointer;
 }
- 
+
+.footer-info a {
+    text-decoration: none;
+    color: var(--light-text-color);
+}
+
+.footer-info a:hover {
+    color: var(--nav-active-color);
+}
+
 .footer-social {
     display: flex;
 }
@@ -233,7 +242,7 @@ footer img {
 
     .viewOnDesktop {
         display: flex;
+    }
     
-    } 
 }
 
