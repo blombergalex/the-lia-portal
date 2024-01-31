@@ -62,16 +62,16 @@ $(() => {
         "This will be hard, im often opposite to my self, Im forgetful, even tho i hate forget things, but i can have excellent memories about something I heard or did 10 years ago. I love to do spontaneous things, but i dont like when things never be as expected. I think my strong side is I love to learn new things, dig up information, to discuss why/how things are as they are, and figure out how to solve things and brainstorm in my head and with others, after solutions, Im never out of ideas!"
     );
 
-    let alex = new Coder(
+    let alexandra = new Coder(
         "./images/otter.png",
-        "Alex Blomberg",
+        "Alexandra Blomberg",
         "blombergalexandras@gmail.com",
         "Sushi. If that's not available; anything homemade with love",
         "Otter",
         "Alex resonates with the otter. Although intelligent and witty, otters have a tendency to suffer from self-doubt, and fear of failure can prevent them from living up to their true potential. Still, they are a great problem solvers, with the ability to spend endless hours on abstract or practical challenges. As workers, they are dedicated and capable and always eager for a chance to prove themselves. Some might say otters are lazy, but a more fitting description is easily distracted. Life has so many diversions for the otter that it's impossible to predict how it will fill its day. But when an otter gets focused on a problem, its keen intelligence rises to the challenge and it won’t give up until the last nut is cracked."
     );
 
-    const coderArray = [darius, alex, shada, maria, erika];
+    const coderArray = [darius, alexandra, shada, maria, erika];
     $(coderArray).each((index, coder) => coder.createAbout()) 
 
         const params = new URLSearchParams(window.location.search);
