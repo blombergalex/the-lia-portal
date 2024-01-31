@@ -173,15 +173,13 @@ h1 {
 }
 
 .cookie-box {
-    /* align-items: center; */
-    /* justify-content: center; */
     background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 0px 20px 30px -10px var(--shadow-color);
     display: flex;
     flex-direction: column;
     margin: 40px;
-    padding: 16px;
+    padding: 24px;
     text-align: center;
     position: fixed;
     bottom: 0;
@@ -193,14 +191,38 @@ h1 {
 }
 
 
-.cookie-buttons {
+.button-wrapper {
   display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  padding: 8px 0 0;
+
 }
 
 .cookie-btn {
     border: none;
+    border-radius: 5px;
+    margin: 4px;
+    padding: 10px;
+    font-weight: 700;
+    box-shadow: 0px 10px 30px -10px var(--shadow-color);
+    cursor: pointer;
 }
 
+.allow {
+    background-color: var(--hover-greenish);
+    color: var(--light-text-color);
+    text-shadow: 1px 1px 2px var(--shadow-color);
+
+}
+
+.deny:hover {
+    box-shadow: 0px 0px 15px 5px rgb(228, 144, 144);
+}
+
+.allow:hover {
+    box-shadow: 0px 0px 15px 10px rgb(146, 202, 165);
+}
 
 footer {
     color: var(--light-text-color);

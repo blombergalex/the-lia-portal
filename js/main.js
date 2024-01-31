@@ -90,12 +90,13 @@ $(() => {
     $(".main-content").append(
         `
         <div class="cookie-box">
-            <p>Hi there!<br>This site uses cookies for a better experience.</p>
-            <div class="cookie-buttons>
-                <button class="deny cookie-btn>Deny</button>
-                <button class="deny cookie-btn>Allow</button>
-            </div>
+        <p>Hi there!</p>
+        <p>This site uses cookies for a better experience.</p>
+        <div class="button-wrapper">
+            <button class="deny cookie-btn">Deny</button>
+            <button class="allow cookie-btn">Allow</button>
         </div>
+    </div>
         `
     )
 
