@@ -173,17 +173,24 @@ h1 {
 }
 
 .cookie-box {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 20px 30px -10px var(--shadow-color);
     display: flex;
     flex-direction: column;
-    margin: 40px;
+    margin: 40px; 
     padding: 24px;
     text-align: center;
+    z-index: 1000; 
     position: fixed;
+    right: -2000;
+    width: 80%;
+}
+
+.cookie-box.show-cookie {
     bottom: 0;
-    z-index: 1000;
+    left: 40%;
+    transform: translate(-50%, -50%); 
 }
 
 .cookie-box > * {
@@ -213,7 +220,6 @@ h1 {
     background-color: var(--hover-greenish);
     color: var(--light-text-color);
     text-shadow: 1px 1px 2px var(--shadow-color);
-
 }
 
 .deny:hover {

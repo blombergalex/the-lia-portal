@@ -74,31 +74,41 @@ $(() => {
     $("footer").append(
         `
         <div class="footer-info">
-            <a href="mailto:${email}">${email}</a>
-            <p>Villkor</p>
-            <p>GDPR</p>
+        <a href="mailto:${email}">${email}</a>
+        <p>Villkor</p>
+        <p>GDPR</p>
         </div>
         <div class="footer-social">
-            <a href="https://www.instagram.com/" target="_blank"><img src="./images/insta.svg" height= 30px width= 30px></a>
-            <a href="https://www.facebook.com/" target="_blank"><img src="./images/facebook.svg" height= 30px width= 30px></a>
-            <a href="https://www.snapchat.com/sv-SE" target="_blank"><img src="./images/snap.svg" height= 30px width= 30px></a>
-            <a href="https://twitter.com/?lang=sv" target="_blank"><img src="./images/twitter.svg" height= 30px width= 30px></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="./images/insta.svg" height= 30px width= 30px></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="./images/facebook.svg" height= 30px width= 30px></a>
+        <a href="https://www.snapchat.com/sv-SE" target="_blank"><img src="./images/snap.svg" height= 30px width= 30px></a>
+        <a href="https://twitter.com/?lang=sv" target="_blank"><img src="./images/twitter.svg" height= 30px width= 30px></a>
         </div>
         `
-    )
-
+        )
+        
     $(".main-content").append(
         `
         <div class="cookie-box">
-        <p>Hi there!</p>
-        <p>This site uses cookies for a better experience.</p>
-        <div class="button-wrapper">
-            <button class="deny cookie-btn">Deny</button>
-            <button class="allow cookie-btn">Allow</button>
+            <p>Hi there!</p>
+            <p>This site uses cookies for a better experience.</p>
+            <div class="button-wrapper">
+                <button class="deny cookie-btn">Deny</button>
+                <button class="allow cookie-btn">Allow</button>
+            </div>
         </div>
-    </div>
-        `
+         `
     )
 
+    $(".cookie-btn").on("click", () => {
+        $(".cookie-box").removeClass("show-cookie");
+    });
+
+    const allowCookie = () => {
+        $(".cookie-box").addClass("show-cookie");
+    }
+
+    allowCookie();
+        
 });
 
