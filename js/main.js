@@ -104,11 +104,11 @@ $(() => {
         $(".disable-cookie-button").toggle();
         const now = new Date();
         const expirationDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
-        document.cookie = "name=; expires=" + expirationDate.toUTCString() + "; path=/;";
+        document.cookie = "cookie1=; expires=" + expirationDate.toUTCString() + "; path=/;";
     };
 
     const allowCookie = () => {
-        if(document.cookie.includes("TheLiaPortal")) {
+        if(document.cookie.includes("TheLiaPortalCookie")) {
             $(".consent-box").toggle();
             $(".footer").append(
                 `<button class="disable-cookie-button">Disable cookies</button>`
@@ -116,7 +116,8 @@ $(() => {
             $(".disable-cookie-button").on("click", disableCookie);
         } else {
             $(".allow").on("click", () => {
-                document.cookie = "cookie1=TheLiaPortal; max-age="+ 60 * 60 * 24 * 7 + "; path=/";
+                document.cookie = "cookie1=TheLiaPortalCookie; max-age="+ 60 * 60 * 24 * 7 + "; path=/";
+                location.reload();
             });
         }
     };
@@ -143,7 +144,9 @@ $(() => {
     }
 
     const homePagePopup = () => {
-        (window.location.href.indexOf("index.html") > -1) ? identifyUser() : null;
+        if (document.cookie.includes("TheLiaPortalCookie")) {
+            (window.location.href.indexOf("index.html") > -1) ? identifyUser() : null;
+        }
     };
 
     homePagePopup();
@@ -162,6 +165,18 @@ $(() => {
 
     $(".student.identifier-button").on("click", createStudentCookie);
     $(".company.identifier-button").on("click", createCompanyCookie);
+
+    const displayRelevantContent = () => {
+        if (document.cookie.includes("userIsStudent")) {
+            $(".identify-user").toggle();
+            console.log("appending content relevant to student") //add this tomorrow
+        } else if (document.cookie.uncludes("userIsCompany")) {
+            $(".identify-user").toggle();
+            console.log("appending content relevant to company") //add this tomorrow
+        }
+    };
+
+    displayRelevantContent();
 
 });
 
