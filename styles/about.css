@@ -2,6 +2,9 @@
     --main-greenish: rgb(106, 158, 123);
     --hover-greenish: rgb(156, 186, 166);
     --dark-color: rgb(57, 63, 59);
+
+    --darkmode-blackish: rgb(34, 34, 34);
+    --darkmode-grey: rgb(61, 61, 61);
 }
 
 body {
@@ -133,6 +136,10 @@ span {
     .sidebar-coder:hover {
         color: var(--dark-color);
     }
+
+    .darkmode-black .sidebar-coder:hover {
+        color: var(--hover-greenish);
+    }
     
     .about-side-bar {
         width: 135px;
@@ -141,4 +148,14 @@ span {
     .welcome-image {
         width: 65%;
     }
+}
+
+.darkmode-black {
+    background-color: var(--darkmode-blackish);
+    color: white;
+}
+
+.darkmode-grey {
+    background-color: var(--darkmode-grey);
+    color: white;
 }

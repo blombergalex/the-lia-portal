@@ -95,6 +95,10 @@ $(() => {
             }, 800); 
             
             studentArray[index].createProfileLarge();
+
+            if ($(".profile-small").hasClass("darkmode-black")) {
+                $(".profile-large").addClass("darkmode-black")
+            }
         });
     }
     profiles();

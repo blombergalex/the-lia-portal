@@ -5,7 +5,13 @@
     --nav-active-color: rgb(59, 83, 67);
     --light-text-color: rgb(255, 255, 255);
     --shadow-color: rgb(38, 57, 77);
+
+    --darkmode-blackish: rgb(34, 34, 34);
+    --darkmode-grey: rgb(61, 61, 61);
+    --darkmode-hover: rgb(61, 66, 60);
 }
+
+
 
 * {
     box-sizing: border-box;
@@ -23,6 +29,10 @@ body {
     flex-direction: column;
     min-height: 100%;
     margin: 0;
+}
+
+.main-content {
+    min-height: 10%;
 }
 
 nav {
@@ -106,6 +116,10 @@ nav .sidebar li:first-child {
     display: flex;
 }
 
+.submenu-toggle {
+    cursor: pointer;
+}
+
 nav ul li  {
     position: relative;
 }
@@ -126,7 +140,7 @@ nav ul li  {
     height: 26px; 
 }
 
-.logo img {
+.nav-logo {
     height: 48px;
     background-color: var(--main-greenish);
 }
@@ -137,6 +151,12 @@ nav ul li  {
     background: var(--main-greenish);
 }
 
+.darkmode-black .navbar .logo a:hover,
+.darkmode-black .sidebar .logo a:hover,
+.darkmode-black .logo.active {
+    background: var(--darkmode-hover);
+}
+
 .container {
     align-items: center;
     text-align: center;
@@ -144,6 +164,7 @@ nav ul li  {
     font-size: 1rem;
     max-width: 100%;
     padding-bottom: 20px; 
+    flex-grow: 1;
   }
   
   .text-container {
@@ -192,7 +213,7 @@ footer > * {
 }
 
  
-footer img {
+.social-img {
     margin: 2px;
 }
 
@@ -237,3 +258,23 @@ footer img {
     } 
 }
 
+.darkmode-black {
+    background-color: var(--darkmode-blackish);
+    color: white;
+}
+
+.darkmode-grey {
+    background-color: var(--darkmode-grey);
+    color: white;
+}
+
+.darkmode-gradient {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/hero-desktop.jpg);
+}
+
+
+
+
+/* .darkmode-grey .navbar:hover {
+    background-color: var(--darkmode-hover);
+} */
