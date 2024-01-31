@@ -186,23 +186,15 @@ h1 {
     width: 80%;
 }
 
-.cookie-box.show-cookie {
-    /* bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);  */
-}
-
 .cookie-box > * {
     margin: 4px;
 }
-
 
 .button-wrapper {
   display: flex;
   justify-content: space-evenly;
   font-size: 2rem;
   padding: 8px 0 0;
-
 }
 
 .cookie-btn {
