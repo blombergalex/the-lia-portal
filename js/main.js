@@ -78,9 +78,9 @@ $(() => {
     $("footer").append(
         `
         <div class="footer-info">
-            <a href="mailto:${email}">${email}</a>
-            <p>Villkor</p>
-            <p>GDPR</p>
+        <a href="mailto:${email}">${email}</a>
+        <p>Villkor</p>
+        <p>GDPR</p>
         </div>
         <div class="button-container">
             <img class="toggle-darkmode dark-mode-img" src="./images/dark-mode.svg" height="40px">
@@ -92,6 +92,19 @@ $(() => {
             <a class="social-img" href="https://twitter.com/?lang=sv" target="_blank"><img src="./images/twitter.svg" height= 30px width= 30px></a>
         </div>
         `
+        )
+        
+    $(".main-content").append(
+        `
+        <div class="cookie-box">
+            <p>Hi there!</p>
+            <p>This site uses cookies for a better experience.</p>
+            <div class="button-wrapper">
+                <button class="deny cookie-btn">Deny</button>
+                <button class="allow cookie-btn">Allow</button>
+            </div>
+        </div>
+         `
     )
 
     const toggleDarkmode = () => {
@@ -110,8 +123,7 @@ $(() => {
         } else {
             window.localStorage.setItem('darkmode', 'true');
         }
-        
-        
+         
     });
 
 
@@ -133,62 +145,34 @@ if (localStorage.getItem('darkmode') === 'false') {
     $(".hero-img").addClass("darkmode-gradient")
 }        
 
-    
-//  let darkmode;
+ 
+    const disableCookie = () => {
+        console.log("Disabled cookies");
+        $(".disable-cookie-button").toggle();
+        const now = new Date();
+        const expirationDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
+        document.cookie = "name=; expires=" + expirationDate.toUTCString() + "; path=/;";
+    };
 
-//     if ($(".main-content").hasClass("darkmode-grey")) {
-//         darkmode = true;
-//         return darkmode;
-//     } else {
-//         darkmode = false;
-//         return darkmode;
-//     }
-   
-    // console.log(darkmode);
+    const allowCookie = () => {
+        if(document.cookie.includes("TheLiaPortal")) {
+            $(".cookie-box").remove();
+            $(".footer").append(
+                `<button class="disable-cookie-button">Disable cookies</button>`
+            )
+            $(".disable-cookie-button").on("click", disableCookie);
+        } else {
+            $(".allow").on("click", () => {
+                document.cookie = "name=TheLiaPortal; max-age="+ 60 * 60 * 24 * 7 + "; path=/";
+            });
+        }
+    };
+        
+    $(".cookie-btn").on("click", () => {
+        $(".cookie-box").toggle();
+    });
 
-    // const params = new URLSearchParams(window.location.search);
-    // const darkmodeOnOff = params.get('darkmode');
-
-    // if (darkmodeOnOff === 'true') {
-    //     darkmode = true; // If 'true' is passed in the URL, set darkmode to true
-    //     toggleDarkmode(); // Call the function to toggle dark mode
-    //     return darkmode;
-    // }
-
-    
-
-
-    // const params = new URLSearchParams(window.location.search);
-    // const darkmodeOnOff = params.get('darkmode');
-
-    // console.log(darkmodeOnOff);
-
-    // if (darkmodeOnOff) {
-    //     $(".main-content, .container, .text-container, .sidebar, .submenu, #button-search, .student-search, .search-input, .button-search, .filter-options, button .cancel-btn").addClass("darkmode-grey");
-    //     $("nav, .navbar, footer, .logo a, .main-search, .profile-small, .profile-large, .nav-logo, .clear-filter, .company-card, .popup, .about-side-bar").addClass("darkmode-black");
-    //     $(".hero-img").addClass("darkmode-gradient");
-    // }
-
-    // let darkmodeOnOff = darkmode;
-
-    // const params = new URLSearchParams(window.location.search);
-    // darkmodeOnOff = params.get('darkmode');
-
-    // console.log(darkmodeOnOff); // Check if darkmodeOnOff is correctly retrieved
-
-    
-
-    // if (darkmodeOnOff === undefined) {
-    //     darkmode = false;
-    // } else if (darkmodeOnOff === true) {
-    //     darkmode = true;
-    // } else {
-    //     darkmode = false;
-    // }
-
-    // if (darkmodeOnOff === 'true') {
-    //     toggleDarkmode(); // Call the function to toggle dark mode
-    // }
+    allowCookie();
 
 });
 

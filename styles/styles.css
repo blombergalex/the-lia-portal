@@ -195,6 +195,55 @@ h1 {
     width: 100%;
 }
 
+.cookie-box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 20px 30px -10px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    margin: 40px; 
+    padding: 24px;
+    text-align: center;
+    z-index: 1000; 
+    position: fixed;
+    width: 80%;
+}
+
+.cookie-box > * {
+    margin: 4px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  padding: 8px 0 0;
+}
+
+.cookie-btn {
+    border: none;
+    border-radius: 5px;
+    margin: 4px;
+    padding: 10px;
+    font-weight: 700;
+    box-shadow: 0px 10px 30px -10px var(--shadow-color);
+    cursor: pointer;
+}
+
+.allow {
+    background-color: var(--hover-greenish);
+    color: var(--light-text-color);
+    text-shadow: 1px 1px 2px var(--shadow-color);
+}
+
+.deny:hover {
+    box-shadow: 0px 0px 15px 5px rgb(228, 144, 144);
+}
+
+.allow:hover {
+    box-shadow: 0px 0px 15px 10px rgb(146, 202, 165);
+}
+
 footer {
     color: var(--light-text-color);
     background-color: var(--main-greenish);
@@ -210,14 +259,37 @@ footer > * {
     cursor: pointer;
     flex-wrap: wrap;
 }
- 
+
+.footer-info a {
+    text-decoration: none;
+    color: var(--light-text-color);
+}
+
+.footer-info a:hover {
+    color: var(--nav-active-color);
+}
+
 .footer-social {
     display: flex;
+    flex-wrap: nowrap;
 }
 
  
 .social-img {
     margin: 2px;
+}
+
+.disable-cookie-button {
+        background-color: var(--main-greenish);
+        border: 1px solid var(--hover-greenish);
+        border-radius: 5px;
+        color: var(--light-text-color);
+        cursor: pointer;
+        padding: 4px;
+    }
+
+.disable-cookie-button:hover {
+    background-color: var(--hover-greenish);
 }
 
 @media(max-width: 400px){
@@ -257,8 +329,8 @@ footer > * {
 
     .viewOnDesktop {
         display: flex;
+    }
     
-    } 
 }
 
 .darkmode-black {
