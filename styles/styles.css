@@ -172,6 +172,36 @@ h1 {
     width: 100%;
 }
 
+.cookie-box {
+    /* align-items: center; */
+    /* justify-content: center; */
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 20px 30px -10px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    padding: 16px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.cookie-box > * {
+    margin: 4px;
+}
+
+
+.cookie-buttons {
+  display: flex;
+}
+
+.cookie-btn {
+    border: none;
+}
+
+
 footer {
     color: var(--light-text-color);
     background-color: var(--main-greenish);
