@@ -25,7 +25,7 @@ $(() => {
         if (className === ".sidebar") {
             menuContent = `<li class="closebutton" onclick=hideSidebar()><a><img src="./images/closecross.svg"></a></li>` + menuContent;
         } else if (className === ".navbar") {
-            menuContent = `<li class="logo"><a href="index.html"><img class="nav-logo" src="./images/lia-logo2.png"></a></li>` + menuContent + `<li class="menubutton" onclick=showSidebar()><a><img src="./images/burgermenu.svg"></a></li>`;
+            menuContent = `<li class="logo"><a href="index.html"><img class="nav-logo" src="./images/darkmode-logo.png"></a></li>` + menuContent + `<li class="menubutton" onclick=showSidebar()><a><img src="./images/burgermenu.svg"></a></li>`;
         }
 
         $(className).append(menuContent);
