@@ -117,7 +117,7 @@ $(() => {
             $(".disable-cookie-button").on("click", disableCookie);
         } else {
             $(".allow").on("click", () => {
-                document.cookie = "name=TheLiaPortal; max-age="+ 60 * 60 * 24 * 7;
+                document.cookie = "name=TheLiaPortal; max-age="+ 60 * 60 * 24 * 7 + "; path=/";
             });
         }
     };
