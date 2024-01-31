@@ -254,6 +254,19 @@ footer img {
     margin: 2px;
 }
 
+.disable-cookie-button {
+        background-color: var(--main-greenish);
+        border: 1px solid var(--hover-greenish);
+        border-radius: 5px;
+        color: var(--light-text-color);
+        cursor: pointer;
+        padding: 4px;
+    }
+
+.disable-cookie-button:hover {
+    background-color: var(--hover-greenish);
+}
+
 @media(max-width: 400px){
     .sidebar {
         width: 100%;
