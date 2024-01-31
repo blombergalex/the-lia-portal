@@ -101,10 +101,14 @@ $(() => {
     )
 
     const disableCookie = () => {
+        console.log("Cookies disabled");
         $(".disable-cookie-button").toggle();
         const now = new Date();
         const expirationDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
         document.cookie = "cookie1=; expires=" + expirationDate.toUTCString() + "; path=/;";
+        if(document.cookie.includes("cookie2")) {
+            document.cookie = "cookie2=; expires=" + expirationDate.toUTCString() + "; path=/;";
+        };
     };
 
     const allowCookie = () => {
@@ -170,7 +174,7 @@ $(() => {
         if (document.cookie.includes("userIsStudent")) {
             $(".identify-user").toggle();
             console.log("appending content relevant to student") //add this tomorrow
-        } else if (document.cookie.uncludes("userIsCompany")) {
+        } else if (document.cookie.includes("userIsCompany")) {
             $(".identify-user").toggle();
             console.log("appending content relevant to company") //add this tomorrow
         }
