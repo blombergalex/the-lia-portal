@@ -109,14 +109,14 @@ $(() => {
 
     const allowCookie = () => {
         if(document.cookie.includes("TheLiaPortal")) {
-            $(".consent-box").remove();
+            $(".consent-box").toggle();
             $(".footer").append(
                 `<button class="disable-cookie-button">Disable cookies</button>`
             )
             $(".disable-cookie-button").on("click", disableCookie);
         } else {
             $(".allow").on("click", () => {
-                document.cookie = "name=TheLiaPortal; max-age="+ 60 * 60 * 24 * 7 + "; path=/";
+                document.cookie = "cookie1=TheLiaPortal; max-age="+ 60 * 60 * 24 * 7 + "; path=/";
             });
         }
     };
@@ -126,7 +126,6 @@ $(() => {
     });
 
     allowCookie();
-
 
     const identifyUser = () => {
         $(".main-content").append(
@@ -141,16 +140,28 @@ $(() => {
             </div>
             `
         )
-        console.log("identify user popup appended");
     }
 
     const homePagePopup = () => {
-        if (window.location.href.indexOf("index.html") > -1) {
-            identifyUser();
-        }
+        (window.location.href.indexOf("index.html") > -1) ? identifyUser() : null;
     };
 
     homePagePopup();
+
+    const createStudentCookie = () => {
+        console.log("User is student");
+        $(".identify-user").toggle();
+        document.cookie = "cookie2=userIsStudent; max-age="+ 60 * 60 * 24 * 30 + "; path=/";
+    }
+
+    const createCompanyCookie = () => {
+        console.log("User is company");
+        $(".identify-user").toggle();
+        document.cookie = "cookie2=userIsCompany; max-age="+ 60 * 60 * 24 * 30 + "; path=/";
+    }
+
+    $(".student.identifier-button").on("click", createStudentCookie);
+    $(".company.identifier-button").on("click", createCompanyCookie);
 
 });
 

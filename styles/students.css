@@ -136,6 +136,7 @@ label {
     border-radius: 15px;
     box-shadow: var(--shadow-color) 0px 20px 30px -10px;
     display: flex;
+    justify-content: space-evenly;
     flex-direction: column;
     height: min-content;
     position: fixed;
