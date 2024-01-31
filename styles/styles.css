@@ -143,6 +143,8 @@ nav ul li  {
 .nav-logo {
     height: 48px;
     background-color: var(--main-greenish);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
 }
 
 .navbar .logo a:hover,
@@ -206,6 +208,7 @@ footer > * {
     font-size: 12px;
     margin: 6px;
     cursor: pointer;
+    flex-wrap: wrap;
 }
  
 .footer-social {

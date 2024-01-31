@@ -95,8 +95,8 @@ $(() => {
     )
 
     const toggleDarkmode = () => {
-        $(".main-content, .container, .text-container, .sidebar, .submenu li #button-search, .submenu-item, .student-search, .search-input, .button-search, .filter-options, button .cancel-btn").toggleClass("darkmode-grey");
-        $("nav, .navbar, footer, .logo a, .main-search, .profile-small, .profile-large, .nav-logo, .clear-filter, .company-card, .popup, .about-side-bar").toggleClass("darkmode-black");
+        $(".main-content, .container, .text-container, #button-search, .student-search, .search-input, .button-search, .filter-options, button .cancel-btn").toggleClass("darkmode-grey");
+        $("nav, footer, .main-search, .profile-small, .profile-large, .clear-filter, .company-card, .popup, .about-side-bar").toggleClass("darkmode-black");
         $(".hero-img").toggleClass("darkmode-gradient");
     }
 
@@ -128,9 +128,9 @@ if (localStorage.getItem('darkmode') === 'false') {
 
     
    
-    $(".main-content, .container, .text-container, .sidebar, .submenu-item, #button-search, .student-search, .search-input, .button-search, .filter-options, button .cancel-btn").addClass("darkmode-grey");
-        $("nav, .navbar, footer, .logo a, logo active, .main-search, .profile-small, .profile-large, .nav-logo, .clear-filter, .company-card, .popup, .about-side-bar").addClass("darkmode-black");
-        $(".hero-img").addClass("darkmode-gradient")
+    $(".main-content, .container, .text-container, #button-search, .student-search, .search-input, .button-search, .filter-options, button .cancel-btn").addClass("darkmode-grey");
+    $("nav, footer, .main-search, .profile-small, .profile-large, .clear-filter, .company-card, .popup, .about-side-bar").addClass("darkmode-black");
+    $(".hero-img").addClass("darkmode-gradient")
 }        
 
     
