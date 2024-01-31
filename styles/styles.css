@@ -172,7 +172,8 @@ h1 {
     width: 100%;
 }
 
-.cookie-box {
+.cookie {
+    align-items: center;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 20px 30px -10px var(--shadow-color);
@@ -181,12 +182,24 @@ h1 {
     margin: 40px; 
     padding: 24px;
     text-align: center;
-    z-index: 1000; 
     position: fixed;
+}
+
+.consent-box {
+    z-index: 1000; 
     width: 80%;
 }
 
-.cookie-box > * {
+.identify-user {
+    background-color: var(--main-greenish);
+    z-index: 900;
+    box-shadow: 0px 10px 30px 10px var(--shadow-color);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.consent-box > *,
+.identify-user > * {
     margin: 4px;
 }
 
@@ -197,7 +210,8 @@ h1 {
   padding: 8px 0 0;
 }
 
-.cookie-btn {
+.cookie-btn,
+.identifier-button {
     border: none;
     border-radius: 5px;
     margin: 4px;
@@ -205,6 +219,10 @@ h1 {
     font-weight: 700;
     box-shadow: 0px 10px 30px -10px var(--shadow-color);
     cursor: pointer;
+}
+
+.identifier-button {
+    width: 150px;
 }
 
 .allow {
@@ -219,6 +237,10 @@ h1 {
 
 .allow:hover {
     box-shadow: 0px 0px 15px 10px rgb(146, 202, 165);
+}
+
+.identifier-button:hover {
+    box-shadow: 0px 0px 15px 10px var(--hover-greenish);
 }
 
 footer {
@@ -272,6 +294,11 @@ footer img {
         width: 100%;
     }
 
+    .button-wrapper {
+        display: flex;
+        flex-direction: column;
+    }   
+
     footer {
         flex-direction: column;
     }
@@ -281,6 +308,9 @@ footer img {
         flex-direction: column;
         text-align: center;
     }
+
+
+
 }
 
 @media screen and (min-width: 769px) {

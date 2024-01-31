@@ -89,7 +89,7 @@ $(() => {
         
     $(".main-content").append(
         `
-        <div class="cookie-box">
+        <div class="cookie consent-box">
             <p>Hi there!</p>
             <p>This site uses cookies for a better experience.</p>
             <div class="button-wrapper">
@@ -101,7 +101,6 @@ $(() => {
     )
 
     const disableCookie = () => {
-        console.log("Disabled cookies");
         $(".disable-cookie-button").toggle();
         const now = new Date();
         const expirationDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
@@ -110,7 +109,7 @@ $(() => {
 
     const allowCookie = () => {
         if(document.cookie.includes("TheLiaPortal")) {
-            $(".cookie-box").remove();
+            $(".consent-box").remove();
             $(".footer").append(
                 `<button class="disable-cookie-button">Disable cookies</button>`
             )
@@ -123,10 +122,35 @@ $(() => {
     };
         
     $(".cookie-btn").on("click", () => {
-        $(".cookie-box").toggle();
+        $(".consent-box").toggle();
     });
 
     allowCookie();
+
+
+    const identifyUser = () => {
+        $(".main-content").append(
+            `
+            <div class="cookie identify-user">
+                <h3>Welcome!</h3>
+                <p>What brings you here?</p>
+                <div class="button-wrapper">
+                    <button class="student identifier-button">I'm a student</button>
+                    <button class="company identifier-button">I represent a company</button>
+                </div>
+            </div>
+            `
+        )
+        console.log("identify user popup appended");
+    }
+
+    const homePagePopup = () => {
+        if (window.location.href.indexOf("index.html") > -1) {
+            identifyUser();
+        }
+    };
+
+    homePagePopup();
 
 });
 
