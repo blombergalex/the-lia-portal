@@ -100,15 +100,22 @@ $(() => {
          `
     )
 
-    $(".cookie-btn").on("click", () => {
-        $(".cookie-box").removeClass("show-cookie");
-    });
 
     const allowCookie = () => {
-        $(".cookie-box").addClass("show-cookie");
-    }
+        if(document.cookie.includes("TheLiaPortal")) {
+            $(".cookie-box").remove();
+            console.log("Cookie accepted")
+        } else {
+            $(".allow").on("click", () => {
+            document.cookie = "cookieBy = TheLiaPortal; max-age"+ 60 * 60 * 24 * 7;
+            });
+        }};
+
+    $(".cookie-btn").on("click", () => {
+                $(".cookie-box").toggle();
+            });
 
     allowCookie();
-        
+
 });
 

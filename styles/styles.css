@@ -183,14 +183,13 @@ h1 {
     text-align: center;
     z-index: 1000; 
     position: fixed;
-    right: -2000;
     width: 80%;
 }
 
 .cookie-box.show-cookie {
-    bottom: 0;
-    left: 40%;
-    transform: translate(-50%, -50%); 
+    /* bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);  */
 }
 
 .cookie-box > * {
