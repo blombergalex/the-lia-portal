@@ -100,18 +100,31 @@ $(() => {
          `
     )
 
+    const disableCookie = () => {
+        console.log("Disabled cookies");
+        $(".disable-cookie-button").toggle();
+        const now = new Date();
+        const expirationDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
+        document.cookie = "name=; expires=" + expirationDate.toUTCString() + "; path=/;";
+    };
+
     const allowCookie = () => {
         if(document.cookie.includes("TheLiaPortal")) {
             $(".cookie-box").remove();
+            $(".footer").append(
+                `<button class="disable-cookie-button">Disable cookies</button>`
+            )
+            $(".disable-cookie-button").on("click", disableCookie);
         } else {
             $(".allow").on("click", () => {
-            document.cookie = "name=TheLiaPortal; max-age="+ 60 * 60 * 24 * 7;
+                document.cookie = "name=TheLiaPortal; max-age="+ 60 * 60 * 24 * 7;
             });
-        }};
-
+        }
+    };
+        
     $(".cookie-btn").on("click", () => {
-                $(".cookie-box").toggle();
-            });
+        $(".cookie-box").toggle();
+    });
 
     allowCookie();
 
