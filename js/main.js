@@ -105,7 +105,7 @@ $(() => {
             $(".cookie-box").remove();
         } else {
             $(".allow").on("click", () => {
-            document.cookie = "cookieBy = TheLiaPortal; max-age"+ 60 * 60 * 24 * 7;
+            document.cookie = "name=TheLiaPortal; max-age="+ 60 * 60 * 24 * 7;
             });
         }};
 
