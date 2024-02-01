@@ -168,8 +168,8 @@ const disableCookie = () => {
 const allowCookie = () => {
     if(document.cookie.includes("TheLiaPortalCookie")) {
         $(".consent-box").toggle();
-        $(".footer").append(
-            `<button class="disable-cookie-button">Disable cookies</button>
+        $(".button-container").append(
+            `<img class="disable-cookie-button" src="./images/cookie.svg" height="40px">
             `
         )
         $(".disable-cookie-button").on("click", disableCookie);
