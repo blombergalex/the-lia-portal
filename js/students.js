@@ -58,6 +58,23 @@ $(() => {
     }
     displayAllStudents();
 
+    
+    
+   $(document).ready(() => {
+        let newWords = ["Search for skills", "Search for locations"]
+        let currentIndex = 0;
+        const placeHolderUpdate = () => {
+            $("#search-input").attr('placeholder', newWords[currentIndex]);
+            currentIndex = (currentIndex +1) % newWords.length;
+        }
+        const intervalId = setInterval(placeHolderUpdate, 2000);
+
+        $("#search-input").on('input', () => {
+            clearInterval(intervalId);
+        })
+   })
+   
+
     $("#button-search").on("click", () => {
         const searchTerm = $("#search-input").val().toLowerCase();
         $(".no-match").empty()
