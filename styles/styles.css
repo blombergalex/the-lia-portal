@@ -366,7 +366,7 @@ footer > * {
     }
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 431px) {
     .consent-box {
         width: 320px;
         position: fixed;

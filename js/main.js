@@ -94,7 +94,7 @@ $(() => {
         )
 
     const toggleDarkmode = () => {
-        $(".main-content, .container, .text-container, #button-search, .student-search, .search-input, .button-search, .filter-options, button .cancel-btn").toggleClass("darkmode-grey");
+        $(".consent-box, .main-content, .container, .text-container, #button-search, .student-search, .search-input, .button-search, .filter-options, button .cancel-btn").toggleClass("darkmode-grey");
         $("nav, footer, .main-search, .profile-small, .profile-large, .clear-filter, .company-card, .popup, .about-side-bar").toggleClass("darkmode-black");
         $(".hero-img").toggleClass("darkmode-gradient");
     }
@@ -112,35 +112,47 @@ $(() => {
 
 
 if (localStorage.getItem('darkmode') === 'false') {
-    // $(".main-content, .container, .text-container, .sidebar, .submenu, #button-search, .student-search, .search-input, .button-search, .filter-options, button .cancel-btn").removeClass("darkmode-grey");
-    // $("nav, .navbar, footer, .logo a, .main-search, .profile-small, .profile-large, .nav-logo, .clear-filter, .company-card, .popup, .about-side-bar").removeClass("darkmode-black");
-    // $(".hero-img").removeClass("darkmode-gradient");
     $(".darkmode-grey").removeClass("darkmode-black");
     $(".darkmode-black").removeClass("darkmode-black");
     $(".darkmode-gradient").removeClass("darkmode-black");
 
 } else if (localStorage.getItem('darkmode') === 'true') {
-    // toggleDarkmode();
-
-    
-   
-    $(".main-content, .container, .text-container, #button-search, .student-search, .search-input, .button-search, .filter-options, button .cancel-btn").addClass("darkmode-grey");
+    $(".consent-box, .main-content, .container, .text-container, #button-search, .student-search, .search-input, .button-search, .filter-options, button .cancel-btn").addClass("darkmode-grey");
     $("nav, footer, .main-search, .profile-small, .profile-large, .clear-filter, .company-card, .popup, .about-side-bar").addClass("darkmode-black");
     $(".hero-img").addClass("darkmode-gradient")
 }        
 
-$(".main-content").append(
-    `
-    <div class="consent-box">
-        <p>Hi there!</p>
-        <p>This site uses cookies for a better experience.</p>
-        <div class="button-wrapper">
-            <button class="deny cookie-btn">Deny</button>
-            <button class="allow cookie-btn">Allow</button>
+if ($("footer").hasClass("darkmode-black")) {
+
+    $(".main-content").append(
+        `
+        <div class="consent-box darkmode-grey">
+            <p>Hi there!</p>
+            <p>This site uses cookies for a better experience.</p>
+            <div class="button-wrapper">
+                <button class="deny cookie-btn">Deny</button>
+                <button class="allow cookie-btn">Allow</button>
+            </div>
         </div>
-    </div>
-     `
-)
+        `    
+    )
+
+} else {
+    $(".main-content").append(
+        `
+        <div class="consent-box">
+            <p>Hi there!</p>
+            <p>This site uses cookies for a better experience.</p>
+            <div class="button-wrapper">
+                <button class="deny cookie-btn">Deny</button>
+                <button class="allow cookie-btn">Allow</button>
+            </div>
+        </div>
+        `
+
+    
+    )
+}
 
 const disableCookie = () => {
     console.log("Cookies disabled");
