@@ -93,19 +93,6 @@ $(() => {
         </div>
         `
         )
-        
-    $(".main-content").append(
-        `
-        <div class="cookie-box">
-            <p>Hi there!</p>
-            <p>This site uses cookies for a better experience.</p>
-            <div class="button-wrapper">
-                <button class="deny cookie-btn">Deny</button>
-                <button class="allow cookie-btn">Allow</button>
-            </div>
-        </div>
-         `
-    )
 
     const toggleDarkmode = () => {
         $(".main-content, .container, .text-container, #button-search, .student-search, .search-input, .button-search, .filter-options, button .cancel-btn").toggleClass("darkmode-grey");
@@ -146,33 +133,5 @@ if (localStorage.getItem('darkmode') === 'false') {
 }        
 
  
-    const disableCookie = () => {
-        console.log("Disabled cookies");
-        $(".disable-cookie-button").toggle();
-        const now = new Date();
-        const expirationDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
-        document.cookie = "name=; expires=" + expirationDate.toUTCString() + "; path=/;";
-    };
-
-    const allowCookie = () => {
-        if(document.cookie.includes("TheLiaPortal")) {
-            $(".cookie-box").remove();
-            $(".footer").append(
-                `<button class="disable-cookie-button">Disable cookies</button>`
-            )
-            $(".disable-cookie-button").on("click", disableCookie);
-        } else {
-            $(".allow").on("click", () => {
-                document.cookie = "name=TheLiaPortal; max-age="+ 60 * 60 * 24 * 7 + "; path=/";
-            });
-        }
-    };
-        
-    $(".cookie-btn").on("click", () => {
-        $(".cookie-box").toggle();
-    });
-
-    allowCookie();
-
 });
 
