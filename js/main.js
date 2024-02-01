@@ -231,11 +231,33 @@ $(".company.identifier-button").on("click", createCompanyCookie);
 const displayRelevantContent = () => {
     if (document.cookie.includes("userIsStudent")) {
         $(".identify-user").toggle();
-        console.log("appending content relevant to student") //add this tomorrow
-        $(".")
+        $(".welcome-message").toggle();
+        $(".text-container").append(`
+            <p class="student-welcome-message">As founders of the LIA Portal, we are dedicated to empowering students like you on your journey
+            to success. Here, you'll discover a wealth of internship opportunities designed to enhance your
+            academic learning with real-world experience. Our platform serves as your gateway to connect
+            with leading companies, providing invaluable insights, mentorship, and hands-on training in your
+            chosen field. Take advantage of our user-friendly interface to explore a wide range of internships
+            tailored to your interests and career goals. Whether you're seeking to gain practical skills, expand
+            your network, or kick-start your professional career, the LIA Portal is your ultimate resource for
+            student success. Begin your internship journey today and unlock endless possibilities for growth
+            and development.<p>  
+        `)
     } else if (document.cookie.includes("userIsCompany")) {
         $(".identify-user").toggle();
-        console.log("appending content relevant to company") //add this tomorrow
+        $(".welcome-message").toggle();
+        $(".text-container").append(`
+            <p class="company-welcome-message">
+            At the LIA Portal, we understand the importance of finding the right talent to drive your company
+            forward. Our platform offers a seamless connection between forward-thinking organizations and
+            motivated learners seeking internship opportunities. By providing a user-friendly interface and
+            facilitating meaningful interactions, we streamline the process of finding the perfect match for
+            your company's needs. Whether you're looking to mentor emerging talent, gain fresh
+            perspectives, or expand your team, the LIA Portal is here to help you navigate the world of
+            internships with ease. Join us in shaping the future of professional development and unlock
+            endless possibilities for your company today
+            </p>
+        `)
     }
 };
 
