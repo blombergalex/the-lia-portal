@@ -58,28 +58,81 @@ $(() => {
     }
     displayAllStudents();
 
-    $("#button-search").on("click", () => {
+    
+    
+   $(document).ready(() => {
+        let newWords = ["Search for skills", "Search for locations"]
+        let currentIndex = 0;
+        const placeHolderUpdate = () => {
+            $("#search-input").attr('placeholder', newWords[currentIndex]);
+            currentIndex = (currentIndex +1) % newWords.length;
+        }
+        const intervalId = setInterval(placeHolderUpdate, 2000);
+
+        $("#search-input").on('input', () => {
+            clearInterval(intervalId);
+        })
+   })
+   
+
+    // $("#button-search").on("click", () => {
+    //     const searchTerm = $("#search-input").val().toLowerCase();
+    //     $(".no-match").empty()
+    //     $(".main-content").empty()
+        
+    //     $(studentArray).each((index, student) => {
+    //         let findSkill = student.skills.find((skill) => {
+    //             return skill.toLowerCase() === searchTerm;
+    //         })
+    //         let findLocation = student.location.find((locations) => {
+    //             return locations.toLowerCase() === searchTerm;
+    //         })
+    //         if(findSkill || findLocation) {
+    //             student.createProfileSmall(index)
+    //             profiles();
+    //         }
+    //     })
+    //     if ($(".main-content").is(":empty")) {
+    //            $(".no-match").text(` There are no student matching your search`)
+    //            displayAllStudents();
+    //            profiles();
+    //     }
+    // });
+
+    $("#search-input").on("input", () => {
         const searchTerm = $("#search-input").val().toLowerCase();
-        $(".no-match").empty()
-        $(".main-content").empty()
+        $(".no-match").empty();
+        $(".main-content").empty();
         
         $(studentArray).each((index, student) => {
             let findSkill = student.skills.find((skill) => {
                 return skill.toLowerCase() === searchTerm;
-            })
+            });
             let findLocation = student.location.find((locations) => {
                 return locations.toLowerCase() === searchTerm;
-            })
+            });
             if(findSkill || findLocation) {
-                student.createProfileSmall(index)
+                student.createProfileSmall(index);
                 profiles();
             }
-        })
+
+            if ($(".main-search").hasClass("darkmode-black")) {
+                $(".profile-small").addClass("darkmode-black")
+            }
+        });
         if ($(".main-content").is(":empty")) {
-               $(".no-match").text(` There are no student matching your search`)
-               displayAllStudents();
-               profiles();
+            $(".no-match").text(` There are no students matching your search`);
+            displayAllStudents();
+            profiles();
+
+            if ($(".main-search").hasClass("darkmode-black")) {
+                $(".profile-small").addClass("darkmode-black")
+            }
         }
+    });
+
+    $("#search-input").on("blur", () => {
+        $(".no-match").text("");
     });
    
     const profiles = () => {
@@ -95,6 +148,10 @@ $(() => {
             }, 800); 
             
             studentArray[index].createProfileLarge();
+
+            if ($(".profile-small").hasClass("darkmode-black")) {
+                $(".profile-large").addClass("darkmode-black")
+            }
         });
     }
     profiles();

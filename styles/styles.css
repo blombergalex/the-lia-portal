@@ -5,6 +5,11 @@
     --nav-active-color: rgb(59, 83, 67);
     --light-text-color: rgb(255, 255, 255);
     --shadow-color: rgb(38, 57, 77);
+
+    --darkmode-blackish: rgb(34, 34, 34);
+    --darkmode-grey: rgb(61, 61, 61);
+    --darkmode-hover: rgb(61, 66, 60);
+    --darkmode-active: rgb(116, 116, 116);
 }
 
 * {
@@ -23,6 +28,10 @@ body {
     flex-direction: column;
     min-height: 100%;
     margin: 0;
+}
+
+.main-content {
+    min-height: 10%;
 }
 
 nav {
@@ -106,6 +115,10 @@ nav .sidebar li:first-child {
     display: flex;
 }
 
+.submenu-toggle {
+    cursor: pointer;
+}
+
 nav ul li  {
     position: relative;
 }
@@ -126,9 +139,11 @@ nav ul li  {
     height: 26px; 
 }
 
-.logo img {
+.nav-logo {
     height: 48px;
-    background-color: var(--main-greenish);
+    /*background-color: var(--main-greenish);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;*/
 }
 
 .navbar .logo a:hover,
@@ -137,17 +152,44 @@ nav ul li  {
     background: var(--main-greenish);
 }
 
+.darkmode-black .navbar .logo a:hover,
+.darkmode-black .navbar .logo.active a {
+    background-color: var(--darkmode-blackish);
+}
+
+.darkmode-black .sidebar .logo a:hover,
+.darkmode-black .logo.active,
+.darkmode-black .navbar-item.active,
+.darkmode-black .submenu-item.active,
+nav.darkmode-black a:hover {
+    background: var(--darkmode-hover);
+}
+
+.darkmode-black .navbar-item.active,
+.darkmode-black .submenu-item.active,
+.darkmode-black .sidebar .active {
+    background: var(--darkmode-active);
+}
+
 .container {
-    align-items: center;
-    text-align: center;
-    color: #3F6634;
+    /* align-items: center;
+    text-align: center; */
     font-size: 1rem;
     max-width: 100%;
-    padding-bottom: 20px; 
+    padding: 20px; 
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   
   .text-container {
-    text-align: center;
+    
+    width: 90%;
+  }
+
+  .text-container p {
+    margin: 15px;
   }
 
   .container img {
@@ -165,6 +207,7 @@ nav ul li  {
 
 h1 {
     text-align: center;
+    margin: 0 0 30px 0;
 }
 
 .main-content {
@@ -261,6 +304,7 @@ footer > * {
     font-size: 12px;
     margin: 6px;
     cursor: pointer;
+    flex-wrap: wrap;
 }
 
 .footer-info a {
@@ -274,10 +318,10 @@ footer > * {
 
 .footer-social {
     display: flex;
+    flex-wrap: nowrap;
 }
 
- 
-footer img {
+.social-img {
     margin: 2px;
 }
 
@@ -356,3 +400,47 @@ footer img {
     }
 
 }
+
+@media screen and (min-width: 1025px) {
+    
+    h1 {
+        margin-top: 20px;
+    }
+
+    .text-container {
+        width: 50%;
+        max-width: 870px;
+    }
+    
+    .text-container p {
+        margin: 15px;
+    }
+    
+    .container img {
+        margin-right: 20px;
+        padding: 20px;
+    }
+}
+
+.darkmode-black,
+.darkmode-black .sidebar,
+.darkmode-black .submenu {
+    background-color: var(--darkmode-blackish);
+    color: white;
+}
+
+.darkmode-grey {
+    background-color: var(--darkmode-grey);
+    color: white;
+}
+
+.darkmode-gradient {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/hero-desktop.jpg);
+}
+
+
+
+
+/* .darkmode-grey .navbar:hover {
+    background-color: var(--darkmode-hover);
+} */

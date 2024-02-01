@@ -5,6 +5,10 @@
     --hover-greenish: rgb(156, 186, 166);
     --light-greenish: rgb(126, 158, 137);
     --light-text-color: rgb(255, 255, 255);
+
+    --darkmode-blackish: rgb(34, 34, 34);
+    --darkmode-grey: rgb(61, 61, 61);
+    --darkmode-hover: rgb(61, 66, 60);
 }
 
 .main-content {
@@ -22,7 +26,7 @@
     background-color: var(--main-greenish);  
 }
 
-#search-input {
+.search-input {
     background-color: var(--hover-greenish);
     border: none;
     padding: 5px;
@@ -30,7 +34,7 @@
     outline: none;
  }
 
-#button-search {
+.button-search {
     border: none;
     cursor: pointer;
     width: 30px;
@@ -39,8 +43,13 @@
     background-color: var(--hover-greenish);
 }
 
-#button-search:hover {
+.button-search:hover {
     background-color: var(--main-greenish);
+    border: 0.5px solid var(--dark-color);
+}
+
+.darkmode-black .button-search:hover {
+    background-color: var(--darkmode-hover);
     border: 0.5px solid var(--dark-color);
 }
 
@@ -199,6 +208,10 @@ label {
     .profile-small:hover {
         background-color: var(--hover-greenish);
     }
+
+    .darkmode-grey .profile-small:hover {
+        background-color: var(--darkmode-hover);
+    }
 }
 
 @media screen and (min-width: 1025px) {
@@ -207,3 +220,24 @@ label {
         width: 55%;
     }
 }
+
+.darkmode-black {
+    background-color: var(--darkmode-blackish);
+    color: white;
+}
+
+.darkmode-grey {
+    background-color: var(--darkmode-grey);
+    color: white;
+}
+
+#darkmode-black {
+    background-color: var(--darkmode-blackish);
+    color: white;
+}
+
+#darkmode-grey {
+    background-color: var(--darkmode-grey);
+    color: white;
+}
+
