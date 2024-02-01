@@ -154,8 +154,14 @@ $(() => {
         let popupHeight = $(".popup").height() + 250;
         $(".main-content").animate({ minHeight: popupHeight }, 'fast');
         $(".filter-options").slideUp();
+        $(".filter-image").removeClass("rotate");
         $(".popup").fadeToggle();
         $(".overlay").fadeToggle();
+
+        $("html, body").animate({
+            scrollTop: $(e.currentTarget).offset().top
+        }, 800);
+
     })
 
     const hidePopup = () => {
@@ -176,6 +182,9 @@ $(() => {
         $(".popup").fadeOut();
         $(".overlay").fadeOut();
         $(".main-content").animate({ 'min-height': "100%" }, 'fast');
+
+        $(".filter-options").slideUp();
+            $(".filter-image").removeClass("rotate");
     })
 
     const popup = company => {
@@ -240,7 +249,15 @@ $(() => {
 
     $(".filter-btn").on("click", () => {
         $(".filter-options").slideToggle();
+        $(".filter-image").toggleClass("rotate");
     })
+
+    $(".main-content").on("click", e => {
+        if (!$(e.target).closest(".filter-options").length && !$(e.target).closest(".company-card").length && !$(e.target).closest(".filter-btn").length) {
+            $(".filter-options").slideUp();
+            $(".filter-image").removeClass("rotate");
+        }
+    });
 
     const filter = () => {
         filterLocationArray = [];
@@ -279,7 +296,12 @@ $(() => {
         }
     };
 
-    $(".search-btn").on("click", () => {
+    $(".filter-location, .filter-skills").on("change", () => {
+        filter(); 
+    });
+
+    $(".clear-filter").on("click", () => {
+        $("input").prop("checked", false);
         filter();
     });  
 

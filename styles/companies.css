@@ -2,6 +2,10 @@
     --main-greenish: rgb(106, 158, 123);
     --hover-greenish: rgb(156, 186, 166);
     --dark-color: rgb(57, 63, 59);
+
+    --darkmode-blackish: rgb(34, 34, 34);
+    --darkmode-grey: rgb(61, 61, 61);
+    --darkmode-hover: rgb(61, 66, 60);
 }
 
 .main-content {
@@ -10,6 +14,7 @@
 
 .filter-container {
     padding: 16px 16px 0 16px;
+    position: relative;
 }
 
 .filter-btn {
@@ -23,15 +28,33 @@
     color: var(--hover-greenish);
 }
 
+.darkmode-grey .filter-btn:hover {
+    color: var(--hover-greenish);
+}
+
 .filter-image {
     height: 25px;
     width: 25px;
+    margin-right: 2px;
+    transition: transform 0.3s ease; 
+}
+
+.rotate {
+    transform: rotate(180deg);
 }
 
 .filter-options {
-    margin: 15px;
+    margin: 0 15px 15px 15px;
+    padding-left: 10px;
+    width: 95%;
     display: none;
-    
+    position: absolute;
+    top: 41px;
+    left: -5px;
+    z-index: 3;
+    background-color: white;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    opacity: 0.93;
 }
 
 .filter-boxes {
@@ -51,21 +74,26 @@ input {
     margin: 20px;
 }
 
-.search-btn {
+.clear-filter {
     color: white;
     background-color: var(--main-greenish);
-    width: 75px;
+    width: 85px;
     height: 25px;
     margin-top: 10px;
     cursor: pointer;
     border: none;
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin-left: 20px;
+    margin: 0 0 10px 20px;
 }
 
-.search-btn:hover {
+.clear-filter:hover {
     background-color: var(--hover-greenish);
+}
+
+.darkmode-grey .clear-filter:hover {
+    background-color: var(--darkmode-hover);
+    color: var(--main-greenish);
 }
 
 .info-content {
@@ -82,7 +110,7 @@ input {
     height: 100%;
     background-color: black;
     opacity: 0.8;
-    z-index: 2;
+    z-index: 5;
     display: none;
 }
 
@@ -95,7 +123,7 @@ input {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 85%;
-    z-index: 3;
+    z-index: 10;
     padding: 20px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     display: none;
@@ -153,6 +181,10 @@ span {
     margin: 10px;
 }
 
+.toggle-darkmode {
+    cursor: pointer;
+}
+
 
 @media screen and (min-width: 769px) {
 
@@ -164,6 +196,10 @@ span {
     .company-card:hover {
     background-color: var(--hover-greenish);
     }
+
+    .darkmode-grey .company-card:hover {
+        background-color: var(--darkmode-hover);
+        }
 
     .popup {
         width: 70%;
@@ -181,4 +217,14 @@ span {
         width: 55%;
     }
     
+}
+
+.darkmode-black {
+    background-color: var(--darkmode-blackish);
+    color: white;
+}
+
+.darkmode-grey {
+    background-color: var(--darkmode-grey);
+    color: white;
 }
