@@ -136,8 +136,10 @@ $(() => {
         $(".main-content").append(
             `
             <div class="cookie identify-user">
-                <h3>Welcome!</h3>
-                <p>What brings you here?</p>
+                <div class="text-wrapper">
+                    <h3>Welcome!</h3>
+                    <p>What brings you here?</p>
+                </div>
                 <div class="button-wrapper">
                     <button class="student identifier-button">I'm a student</button>
                     <button class="company identifier-button">I represent a company</button>

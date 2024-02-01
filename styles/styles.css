@@ -174,15 +174,15 @@ h1 {
 
 .cookie {
     align-items: center;
-    background-color: #fff;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
     text-align: center;
-    position: fixed;
 }
 
 .consent-box {
+    background-color: #fff;
+    flex-direction: column;
+    position: fixed;
     box-shadow: 0px 20px 30px 10px var(--shadow-color);
     margin: 8pxk;
     z-index: 1000; 
@@ -195,13 +195,17 @@ h1 {
 }
 
 .identify-user {
-    background-color: var(--main-greenish);
     box-shadow: 0px 10px 30px 10px var(--shadow-color);
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: rgba(106, 158, 123, 0.445);
+    width: 100%;
     z-index: 900;
-    margin: 40px;
-    padding: 24px;
+    margin: 40px 0px ;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: left;
+    justify-content: space-between;
 }
 
 .consent-box > *,
@@ -212,8 +216,11 @@ h1 {
 .button-wrapper {
   display: flex;
   justify-content: space-evenly;
-  font-size: 2rem;
   padding: 8px 0 0;
+}
+
+.identify-user > .button-wrapper {
+    flex-direction: column;
 }
 
 .cookie-btn,
@@ -225,10 +232,6 @@ h1 {
     font-weight: 700;
     box-shadow: 0px 10px 30px -10px var(--shadow-color);
     cursor: pointer;
-}
-
-.identifier-button {
-    width: 150px;
 }
 
 .allow {
