@@ -45,7 +45,6 @@ $(() => {
                 isSubmenuOpen = false;
                 $(".submenu").removeClass("open");
             });
-
         });
 
         $(document).on("click", (event) => {
@@ -115,7 +114,8 @@ $(() => {
         if(document.cookie.includes("TheLiaPortalCookie")) {
             $(".consent-box").toggle();
             $(".footer").append(
-                `<button class="disable-cookie-button">Disable cookies</button>`
+                `<button class="disable-cookie-button">Disable cookies</button>
+                `
             )
             $(".disable-cookie-button").on("click", disableCookie);
         } else {
