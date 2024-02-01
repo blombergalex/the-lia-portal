@@ -176,17 +176,24 @@ nav.darkmode-black a:hover {
 
 
 .container {
-    align-items: center;
-    text-align: center;
-    color: #3F6634;
+    /* align-items: center;
+    text-align: center; */
     font-size: 1rem;
     max-width: 100%;
-    padding-bottom: 20px; 
+    padding: 20px; 
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   
   .text-container {
-    text-align: center;
+    
+    width: 90%;
+  }
+
+  .text-container p {
+    margin: 15px;
   }
 
   .container img {
@@ -204,6 +211,7 @@ nav.darkmode-black a:hover {
 
 h1 {
     text-align: center;
+    margin: 0 0 30px 0;
 }
 
 .main-content {
@@ -347,6 +355,27 @@ footer > * {
         display: flex;
     }
     
+}
+
+@media screen and (min-width: 1025px) {
+    
+    h1 {
+        margin-top: 20px;
+    }
+
+    .text-container {
+        width: 50%;
+        max-width: 870px;
+    }
+    
+    .text-container p {
+        margin: 15px;
+    }
+    
+    .container img {
+        margin-right: 20px;
+        padding: 20px;
+    }
 }
 
 .darkmode-black,
