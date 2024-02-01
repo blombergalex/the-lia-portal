@@ -294,11 +294,6 @@ footer img {
         width: 100%;
     }
 
-    .button-wrapper {
-        display: flex;
-        flex-direction: column;
-    }   
-
     footer {
         flex-direction: column;
     }
@@ -308,9 +303,23 @@ footer img {
         flex-direction: column;
         text-align: center;
     }
+}
 
+@media screen and (min-width: 400px) {
+    .consent-box {
+        width: 320px;
+        position: fixed;
+        bottom: 0;
+        right: -328px;
+        margin:8px;
+        animation: slideIn 1s ease-in-out forwards; 
+    }
 
-
+    @keyframes slideIn {
+        to {
+            right: 0;
+        }
+}
 }
 
 @media screen and (min-width: 769px) {
