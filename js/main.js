@@ -232,6 +232,7 @@ const displayRelevantContent = () => {
     if (document.cookie.includes("userIsStudent")) {
         $(".identify-user").toggle();
         console.log("appending content relevant to student") //add this tomorrow
+        $(".")
     } else if (document.cookie.includes("userIsCompany")) {
         $(".identify-user").toggle();
         console.log("appending content relevant to company") //add this tomorrow
