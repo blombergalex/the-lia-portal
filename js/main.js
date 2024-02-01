@@ -149,8 +149,6 @@ if ($("footer").hasClass("darkmode-black")) {
             </div>
         </div>
         `
-
-    
     )
 }
 
@@ -159,9 +157,9 @@ const disableCookie = () => {
     $(".identify-user").toggle();
     const now = new Date();
     const expirationDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
-    document.cookie = "cookie1=; expires=" + expirationDate.toUTCString() + "; path=/;";
+    document.cookie = "cookie1=; max-age=0" + "; path=/;";
     if(document.cookie.includes("cookie2")) {
-        document.cookie = "cookie2=; expires=" + expirationDate.toUTCString() + "; path=/;";
+        document.cookie = "cookie2=; max-age=0" + "; path=/;";
     };
 };
 
