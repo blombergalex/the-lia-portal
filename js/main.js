@@ -88,7 +88,7 @@ $(() => {
         
     $(".main-content").append(
         `
-        <div class="cookie consent-box">
+        <div class="consent-box">
             <p>Hi there!</p>
             <p>This site uses cookies for a better experience.</p>
             <div class="button-wrapper">
@@ -135,7 +135,7 @@ $(() => {
     const identifyUser = () => {
         $(".main-content").append(
             `
-            <div class="cookie identify-user">
+            <div class="identify-user">
                 <div class="text-wrapper">
                     <h3>Welcome!</h3>
                     <p>What brings you here?</p>

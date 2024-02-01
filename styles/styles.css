@@ -172,40 +172,40 @@ h1 {
     width: 100%;
 }
 
-.cookie {
-    align-items: center;
-    border-radius: 5px;
-    display: flex;
-    text-align: center;
-}
-
 .consent-box {
+    animation: slideIn 1s ease-in-out forwards;
     background-color: #fff;
-    flex-direction: column;
-    position: fixed;
+    border-radius: 5px;
     box-shadow: 0px 20px 30px 10px var(--shadow-color);
-    margin: 8pxk;
-    z-index: 1000; 
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     height: min-content;
+    width: 100%;
+    padding: 16px;
+    position: fixed;
     bottom: 0;
     right: -360px;
-    animation: slideIn 1s ease-in-out forwards;
-    padding: 16px;
+    z-index: 1000; 
 }
 
 .identify-user {
+    align-items: center;
+    border-radius: 5px;
     box-shadow: 0px 10px 30px 10px var(--shadow-color);
     background-color: rgba(106, 158, 123, 0.445);
-    width: 100%;
-    z-index: 900;
-    margin: 40px 0px ;
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
+    text-align: left;
+    margin: 40px 0px ;
     position: absolute;
     top: 0;
     left: 0;
-    text-align: left;
-    justify-content: space-between;
+    width: 100%;
+    z-index: 900;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
 .consent-box > *,
@@ -240,16 +240,12 @@ h1 {
     text-shadow: 1px 1px 2px var(--shadow-color);
 }
 
-.deny:hover {
-    box-shadow: 0px 0px 15px 5px rgb(228, 144, 144);
-}
-
-.allow:hover {
-    box-shadow: 0px 0px 15px 10px rgb(146, 202, 165);
+.cookie-btn:hover {
+    box-shadow: 0px 20px 30px -10px var(--shadow-color);
 }
 
 .identifier-button:hover {
-    box-shadow: 0px 0px 15px 10px var(--hover-greenish);
+    box-shadow: 0px 0px 10px 5px var(--hover-greenish);
 }
 
 footer {
@@ -301,6 +297,12 @@ footer img {
 @keyframes slideIn {
     to {
         right: 0;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
     }
 }
 
