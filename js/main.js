@@ -157,6 +157,7 @@ if ($("footer").hasClass("darkmode-black")) {
 const disableCookie = () => {
     console.log("Cookies disabled");
     $(".disable-cookie-button").toggle();
+    $(".identify-user").toggle();
     const now = new Date();
     const expirationDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
     document.cookie = "cookie1=; expires=" + expirationDate.toUTCString() + "; path=/;";
@@ -166,7 +167,7 @@ const disableCookie = () => {
 };
 
 const allowCookie = () => {
-    if(document.cookie.includes("TheLiaPortalCookie")) {
+    if(document.cookie.includes("cookie1")) {
         $(".consent-box").toggle();
         $(".button-container").append(
             `<img class="disable-cookie-button" src="./images/cookie.svg" height="40px">
