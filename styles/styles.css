@@ -355,14 +355,16 @@ footer > * {
         width: 100%;
     }
 
-    footer {
-        flex-direction: column;
-    }
-
     .footer-info {
         display: flex;
         flex-direction: column;
         text-align: center;
+    }
+}
+
+@media(max-width: 430px){
+    footer {
+        flex-direction: column;
     }
 }
 
@@ -375,6 +377,7 @@ footer > * {
         margin:8px;
     }
 }
+    
 
 @media screen and (min-width: 769px) {
     nav a {

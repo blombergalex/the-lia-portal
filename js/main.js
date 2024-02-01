@@ -72,7 +72,7 @@ $(() => {
     window.showSidebar = showSidebar;
     window.hideSidebar = hideSidebar
 
-    let email = " kontakt:info@edu.cmeducations.se";
+    let email = "info@edu.cmeducations.se";
  
     $("footer").append(
         `
