@@ -387,6 +387,10 @@ footer > * {
         height: 400px;
     }
 
+    .darkmode-gradient {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/hero-desktop.jpg);
+    }
+
     .menubutton {
         display: none;
     }
@@ -418,5 +422,5 @@ footer > * {
 }
 
 .darkmode-gradient {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/hero-desktop.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/hero-mobile.jpg);
 }
