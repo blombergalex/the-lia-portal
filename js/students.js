@@ -57,10 +57,8 @@ $(() => {
         $(studentArray).each((index, student) => student.createProfileSmall(index));
     }
     displayAllStudents();
-
     
-    
-   $(document).ready(() => {
+    $(document).ready(() => {
         let newWords = ["Search for skills", "Search for locations"]
         let currentIndex = 0;
         const placeHolderUpdate = () => {
@@ -72,7 +70,7 @@ $(() => {
         $(".search-input").on('input', () => {
             clearInterval(intervalId);
         })
-   })
+    })
    
 
     // $("#button-search").on("click", () => {
@@ -154,6 +152,7 @@ $(() => {
             }
         });
     }
+
     profiles();
 
     const hidePopup = () => {
