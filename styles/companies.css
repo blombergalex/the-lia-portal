@@ -2,7 +2,7 @@
     --main-greenish: rgb(106, 158, 123);
     --hover-greenish: rgb(156, 186, 166);
     --dark-color: rgb(57, 63, 59);
-
+    
     --darkmode-blackish: rgb(34, 34, 34);
     --darkmode-grey: rgb(61, 61, 61);
     --darkmode-hover: rgb(61, 66, 60);
@@ -185,40 +185,6 @@ span {
     cursor: pointer;
 }
 
-
-@media screen and (min-width: 769px) {
-
-    .company-card {
-        width: 220px;
-        margin: 40px;
-    }   
-
-    .company-card:hover {
-    background-color: var(--hover-greenish);
-    }
-
-    .darkmode-grey .company-card:hover {
-        background-color: var(--darkmode-hover);
-        }
-
-    .popup {
-        width: 70%;
-    }
-    
-}
-
-@media screen and (min-width: 1025px) {
-
-    .popup-image {
-        width: 25%;
-    }
-
-    .popup {
-        width: 55%;
-    }
-    
-}
-
 .darkmode-black {
     background-color: var(--darkmode-blackish);
     color: white;
@@ -241,4 +207,35 @@ span {
 
 .main-content.darkmode-grey .info-content .cancel-btn {
     background-color: var(--darkmode-blackish);
+}
+
+@media screen and (min-width: 769px) {
+
+    .company-card {
+        width: 220px;
+        margin: 40px;
+    }   
+
+    .company-card:hover {
+    background-color: var(--hover-greenish);
+    }
+
+    .darkmode-grey .company-card:hover {
+        background-color: var(--darkmode-hover);
+        }
+
+    .popup {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    .popup-image {
+        width: 25%;
+    }
+
+    .popup {
+        width: 55%;
+    }  
 }
