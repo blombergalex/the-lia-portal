@@ -58,7 +58,7 @@ nav a {
     color: var(--light-text-color);
     display: flex;
     height: 100%;
-    padding: 0 30px;
+    padding: 0 15px;
     text-decoration: none;
 }
 
@@ -141,6 +141,7 @@ nav ul li  {
 
 .nav-logo {
     height: 48px;
+    padding-top: 5px;
     /*background-color: var(--main-greenish);
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;*/
