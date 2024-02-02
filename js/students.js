@@ -71,31 +71,6 @@ $(() => {
             clearInterval(intervalId);
         })
     })
-   
-
-    // $("#button-search").on("click", () => {
-    //     const searchTerm = $(".search-input").val().toLowerCase();
-    //     $(".no-match").empty()
-    //     $(".main-content").empty()
-        
-    //     $(studentArray).each((index, student) => {
-    //         let findSkill = student.skills.find((skill) => {
-    //             return skill.toLowerCase() === searchTerm;
-    //         })
-    //         let findLocation = student.location.find((locations) => {
-    //             return locations.toLowerCase() === searchTerm;
-    //         })
-    //         if(findSkill || findLocation) {
-    //             student.createProfileSmall(index)
-    //             profiles();
-    //         }
-    //     })
-    //     if ($(".main-content").is(":empty")) {
-    //            $(".no-match").text(` There are no student matching your search`)
-    //            displayAllStudents();
-    //            profiles();
-    //     }
-    // });
 
     $(".search-input").on("input", () => {
         const searchTerm = $(".search-input").val().toLowerCase();
