@@ -180,18 +180,17 @@ nav.darkmode-black a:hover {
   }
   
   .text-container {
-    
     width: 90%;
   }
 
-  .text-container p {
+.text-container p {
     margin: 15px;
-  }
+}
 
-  .container img {
+.container img {
     margin-left: 20px;
     padding: 20px;
-  }
+}
 
 .hero-img {
     background-image:linear-gradient(to right, rgba(106, 158, 123, 0.7) 0%, rgba(0, 128, 128, 0) 100%), url(../images/hero-mobile.jpg);

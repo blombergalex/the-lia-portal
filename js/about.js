@@ -9,7 +9,6 @@ $(() => {
         this.about = about,
         this.createAbout = function () {
             $(".about-container").append(`
-                
                 <div class="about-me">
                     <div class="center-content">
                         <img class="coder-image" src="${this.image}" height=100px width=100px alt="image of ${this.name}">
@@ -20,7 +19,6 @@ $(() => {
                     </div>
                     <p>${this.about}</p>
                 </div>
-                
                 `
             )
         }
@@ -110,5 +108,4 @@ $(() => {
             $(".about-welcome").show();
         }
     });
-
 });
