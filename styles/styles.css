@@ -200,6 +200,10 @@ nav.darkmode-black a:hover {
     justify-content: flex-end;
 }
 
+.hero-img.darkmode-gradient {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/hero-mobile.jpg);
+}
+
 h1 {
     text-align: center;
     margin: 0 0 30px 0;
@@ -387,7 +391,7 @@ footer > * {
         height: 400px;
     }
 
-    .darkmode-gradient {
+    .hero-img.darkmode-gradient {
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/hero-desktop.jpg);
     }
 
@@ -421,6 +425,3 @@ footer > * {
     }
 }
 
-.darkmode-gradient {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/hero-mobile.jpg);
-}
