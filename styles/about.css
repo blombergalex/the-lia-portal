@@ -7,13 +7,8 @@
     --darkmode-grey: rgb(61, 61, 61);
 }
 
-body {
-
-}
-
 .main-content {
     display: flex;
-    /* justify-content: center; */
 }
 
 .about-container {
@@ -47,7 +42,6 @@ body {
     padding: 24px;
     margin-left: 5%;
     width: 90%;
-    /* text-align: center; */
     display: none;
 }
 
@@ -66,7 +60,6 @@ span {
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
 
 .welcome-image {
     width: 100%;
@@ -92,6 +85,24 @@ span {
     font-weight: 600;
 }
 
+.darkmode-black {
+    background-color: var(--darkmode-blackish);
+    color: white;
+}
+
+.darkmode-grey {
+    background-color: var(--darkmode-grey);
+    color: white;
+}
+
+.main-content .about-container a {  
+    text-decoration: none;
+    color: black;
+}
+
+.main-content.darkmode-grey .about-container a {
+    color: var(--light-text-color);
+}
 
 @media screen and (min-width: 769px) {
 
@@ -115,7 +126,6 @@ span {
     .welcome-image {
         width: 75%;
     }
-    
 }
 
 @media screen and (min-width: 1025px) {
@@ -148,23 +158,4 @@ span {
     .welcome-image {
         width: 65%;
     }
-}
-
-.darkmode-black {
-    background-color: var(--darkmode-blackish);
-    color: white;
-}
-
-.darkmode-grey {
-    background-color: var(--darkmode-grey);
-    color: white;
-}
-
-.main-content .about-container a {  
-    text-decoration: none;
-    color: black;
-}
-
-.main-content.darkmode-grey .about-container a {
-    color: var(--light-text-color);
 }
