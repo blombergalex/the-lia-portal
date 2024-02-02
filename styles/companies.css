@@ -228,3 +228,17 @@ span {
     background-color: var(--darkmode-grey);
     color: white;
 }
+
+.main-content .info-content a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-content.darkmode-grey .info-content a, .cancel-btn {
+    color: white;
+
+}
+
+.main-content.darkmode-grey .info-content .cancel-btn {
+    background-color: var(--darkmode-blackish);
+}

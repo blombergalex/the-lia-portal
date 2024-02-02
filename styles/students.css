@@ -241,3 +241,12 @@ label {
     color: white;
 }
 
+.main-content.dark-blur a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-content.dark-blur.darkmode-grey a, #cancel-btn  {
+    color: white;
+}
+

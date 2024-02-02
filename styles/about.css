@@ -159,3 +159,12 @@ span {
     background-color: var(--darkmode-grey);
     color: white;
 }
+
+.main-content .about-container a {  
+    text-decoration: none;
+    color: black;
+}
+
+.main-content.darkmode-grey .about-container a {
+    color: var(--light-text-color);
+}
