@@ -142,9 +142,6 @@ nav ul li  {
 .nav-logo {
     height: 48px;
     padding-top: 5px;
-    /*background-color: var(--main-greenish);
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;*/
 }
 
 .navbar .logo a:hover,
@@ -173,8 +170,6 @@ nav.darkmode-black a:hover {
 }
 
 .container {
-    /* align-items: center;
-    text-align: center; */
     font-size: 1rem;
     max-width: 100%;
     padding: 20px; 
@@ -326,6 +321,22 @@ footer > * {
     margin: 2px;
 }
 
+.darkmode-black,
+.darkmode-black .sidebar,
+.darkmode-black .submenu {
+    background-color: var(--darkmode-blackish);
+    color: white;
+}
+
+.darkmode-grey {
+    background-color: var(--darkmode-grey);
+    color: white;
+}
+
+.darkmode-gradient {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/hero-desktop.jpg);
+}
+
 @keyframes slideIn {
     to {
         right: 0;
@@ -366,7 +377,6 @@ footer > * {
     }
 }
     
-
 @media screen and (min-width: 769px) {
     nav a {
         justify-content: center;
@@ -389,7 +399,6 @@ footer > * {
     .viewOnDesktop {
         display: flex;
     }
-
 }
 
 @media screen and (min-width: 1025px) {
@@ -412,26 +421,3 @@ footer > * {
         padding: 20px;
     }
 }
-
-.darkmode-black,
-.darkmode-black .sidebar,
-.darkmode-black .submenu {
-    background-color: var(--darkmode-blackish);
-    color: white;
-}
-
-.darkmode-grey {
-    background-color: var(--darkmode-grey);
-    color: white;
-}
-
-.darkmode-gradient {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/hero-desktop.jpg);
-}
-
-
-
-
-/* .darkmode-grey .navbar:hover {
-    background-color: var(--darkmode-hover);
-} */
